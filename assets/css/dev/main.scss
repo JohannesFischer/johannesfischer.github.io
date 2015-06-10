@@ -3,6 +3,7 @@
 //
 
 @import '../../bower_components/foundation/scss/foundation/components/grid';
+@import '../../bower_components/foundation/scss/foundation/components/progress-bars';
 
 
 //
@@ -22,6 +23,27 @@ body {
   color: #555
 }
 
-.project {
-  box-shadow: 0 2px 5px rgba(160, 160, 160, .85);
+.projects {
+  overflow: hidden;
+  position: relative;
+
+  .project {
+    box-shadow: 0 2px 5px rgba(160, 160, 160, .85);
+    margin: .15em;
+  }
+}
+
+
+.progress {
+  position: relative;
+
+  .title {
+    color: #fff;
+    font-size: .8rem;
+    height: 1.5625rem;
+    left: 2%;
+    line-height: 1.5625rem;
+    position: absolute;
+    top: 0;
+  }
 }

@@ -1,11 +1,27 @@
 var showProject = function(p) {
-  var delay = 0;
+  var positions;
 
-  $('.project').each(function(i, el) {
-    $(el).velocity('fadeOut', { delay: delay + (150 * i), duration: 500 });
+  // set projects container height
+  $('.projects').css({
+    height: $('.projects').height()
   });
 
-  console.log('changed');
+  positions = [];
+  $('.project').each(function(i, el) {
+    positions.push($(el).parent().position());
+  });
+
+  // hide projects elements
+  $('.project').each(function(i, el) {
+    $(el).parent().css({
+      left: positions[i].left,
+      position: 'absolute',
+      top: positions[i].top
+    });
+    $(el).velocity('fadeOut', { delay: 0 + (125 * i), duration: 500 });
+  });
+
+  // show detail container
 };
 
 $(window).ready(function() {
