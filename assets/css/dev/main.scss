@@ -13,6 +13,13 @@ $nav-height: 50px;
 //
 // Mixins
 
+@mixin transition ($property: all, $duration: .5s, $timing: ease) {
+  -moz-transition: $property $duration $timing;
+  -webkit-transition: $property $duration $timing;
+  -o-transition: $property $duration $timing;
+  transition: $property $duration $timing;
+}
+
 
 //
 // Basic Styles
@@ -32,6 +39,7 @@ nav {
   overflow: hidden;
   position: fixed;
   top: 0;
+  @include transition(background-color);
   width: 100%;
   z-index: 1;
 
