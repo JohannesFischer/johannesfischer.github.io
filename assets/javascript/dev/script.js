@@ -1,3 +1,11 @@
+var Helper = {
+  // FUTURE Y U NO make rgb method?
+  getRGBA: function(selector) {
+    var bg_color = $(selector).first().css('background-color');
+    return /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+),\s*(\d+[\.\d+]*)*\)/g.exec(bg_color).slice(1, 5);
+  }
+};
+
 var showProject = function(p) {
   var positions;
 
@@ -18,34 +26,42 @@ var showProject = function(p) {
       position: 'absolute',
       top: positions[i].top
     });
-    $(el).velocity('fadeOut', { delay: 0 + (125 * i), duration: 500 });
+    $(el).velocity('fadeOut', { delay: 25 + (125 * i), duration: 500 });
   });
 
   // show detail container
 };
 
-$(window).ready(function() {
-  var nav_color,
-      rgb;
+//
+// DOM ready
 
-  nav_color = $('nav').css('background-color');
-  rgb = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(,\s*\d+[\.\d+]*)*\)/g.exec(nav_color).slice(1, 4).join(',');
+$(window).ready(function() {
+  var link_rgba,
+      nav_rgb_str;
+
+  link_rgba = Helper.getRGBA('nav a');
+  nav_rgb_str = Helper.getRGBA('nav').splice(0, 3).join(',');
 
   $(window).on('scroll', function() {
-    var a,
+    var alpha,
+        link_alpha,
         limit,
-        p,
-        st;
+        scroll_top;
 
     limit = 200;
-    st = $(window).scrollTop();
+    scroll_top = $(window).scrollTop();
 
-    if (st < limit) {
-      p = limit * st / 100;
-      a = p / 100;
-
+    if (scroll_top < limit) {
+      alpha = (limit * scroll_top / 100) / 100; // TODO round me!
       $('nav').css({
-        backgroundColor: 'rgba(' + rgb + ',' + a + ')'
+        backgroundColor: 'rgba(' + nav_rgb_str + ',' + alpha + ')'
+      });
+
+      // start from the stylesheet value and go from there to full opacity depending on the scrolly p
+      link_alpha = (limit * scroll_top / 100) / 100;// link_rgba[3] // I'm the initial value
+      console.log(link_alpha);
+      $('nav a').css({
+        backgroundColor: 'rgba(' + link_rgba.splice(0, 3).join(',') + ',' + link_alpha + ')'
       });
     }
   });
