@@ -31,6 +31,30 @@ var showProject = function(p) {
 };
 
 $(window).ready(function() {
+  var nav_color,
+      rgb;
+
+  nav_color = $('nav').css('background-color');
+  rgb = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(,\s*\d+[\.\d+]*)*\)/g.exec(nav_color).slice(1, 4).join(',');
+
+  $(window).on('scroll', function() {
+    var a,
+        limit,
+        p,
+        st;
+
+    limit = 200;
+    st = $(window).scrollTop();
+
+    if (st < limit) {
+      p = limit * st / 100;
+      a = p / 100;
+
+      $('nav').css({
+        backgroundColor: 'rgba(' + rgb + ',' + a + ')'
+      });
+    }
+  });
 
   $('.project img').on('click', function() {
     showProject($(this));

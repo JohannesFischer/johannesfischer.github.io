@@ -1,6 +1,5 @@
 //
 // Foundation Compontents
-//
 
 @import '../../bower_components/foundation/scss/foundation/components/grid';
 @import '../../bower_components/foundation/scss/foundation/components/progress-bars';
@@ -9,19 +8,62 @@
 //
 // Sass Variables
 
+$nav-height: 50px;
 
 //
 // Mixins
-//
 
 
 //
 // Basic Styles
-//
 
 body {
   color: #555
 }
+
+
+//
+// Navigation
+
+nav {
+  background-color: rgba(215, 98, 21, 0);
+  height: $nav-height;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+      float: left;
+    }
+
+    a {
+      background: rgba(200, 200, 200, .8);
+      padding: .5em .75em;
+      text-decoration: none;
+    }
+  }
+}
+
+
+//
+// Main Sections
+
+section {
+  &.intro {
+    padding-top: $nav-height;
+  }
+}
+
+
+//
+// Page Content
 
 .projects {
   overflow: hidden;
@@ -32,7 +74,6 @@ body {
     margin: .15em;
   }
 }
-
 
 .progress {
   position: relative;
