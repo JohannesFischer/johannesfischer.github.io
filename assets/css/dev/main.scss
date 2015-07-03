@@ -9,17 +9,8 @@
 //
 // Sass Variables
 
+$transition-duration: .5s;
 $nav-height: 50px;
-
-//
-// Mixins
-
-@mixin transition ($property: all, $duration: .5s, $timing: ease) {
-  -moz-transition: $property $duration $timing;
-  -webkit-transition: $property $duration $timing;
-  -o-transition: $property $duration $timing;
-  transition: $property $duration $timing;
-}
 
 
 //
@@ -40,7 +31,7 @@ nav {
   overflow: hidden;
   position: fixed;
   top: 0;
-  @include transition(background-color);
+  transition: background-color $transition-duration ease;
   width: 100%;
   z-index: 1;
 

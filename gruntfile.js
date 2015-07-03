@@ -11,6 +11,7 @@ module.exports = function(grunt) {
         }
       }
     },
+    
     concat: {
       css: {
         src: [
@@ -28,6 +29,7 @@ module.exports = function(grunt) {
         dest: 'assets/javascript/build/script.js'
       }
     },
+    
     cssmin: {
       options: {
         shorthandCompacting: false,
@@ -43,12 +45,27 @@ module.exports = function(grunt) {
         }]
       }
     },
+    
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('pixrem')(), // add fallbacks for rem units
+          require('autoprefixer-core')({browsers: 'last 2 versions'}) // add vendor prefixes
+        ]
+      },
+      dist: {
+        src: 'assets/css/build/*.css'
+      }
+    },
+    
     uglify: {
       build: {
         src: 'assets/javascript/build/script.js',
         dest: 'assets/javascript/build/script.min.js'
       }
     },
+    
     watch: {
       scripts: {
         files: ['assets/javascript/dev/*.js'],
@@ -69,9 +86,10 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['sass', 'concat', 'cssmin', 'uglify']);
+  grunt.registerTask('default', ['sass', 'concat', 'postcss', 'cssmin', 'uglify']);
 };
