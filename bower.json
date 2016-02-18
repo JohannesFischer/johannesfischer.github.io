@@ -1,9 +1,6 @@
 {
   "name": "johannesfischer.github.io",
   "dependencies": {
-    "foundation": "~5.5.2",
-    "normalize.css": "latest",
-    "velocity": "~1.2.2",
-    "zepto": "~1.1.6"
+    "normalize.css": "latest"
   }
 }
