@@ -1,6 +1,7 @@
 {
   "name": "johannesfischer.github.io",
   "dependencies": {
-    "normalize.css": "latest"
+    "normalize.css": "latest",
+    "react": "^0.14.7"
   }
 }
