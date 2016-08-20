@@ -1,7 +1,20 @@
 {
-  "name": "johannesfischer.github.io",
+  "name": "allstar",
+  "authors": [
+    "Johannes Fischer <git@johannes-fischer.de>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "normalize.css": "latest",
-    "react": "^0.14.7"
+    "skeleton": "^2.0.4"
   }
 }

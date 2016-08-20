@@ -1,0 +1,19 @@
+@import url(../bower_components/skeleton/css/normalize.css);
+@import url(../bower_components/skeleton/css/skeleton.css);
+body {
+  font-family: "Roboto condensed", sans-serif;
+}
+
+div {
+  margin: 2em auto;
+  text-align: center;
+}
+div img {
+  max-height: 50vh;
+}
+div p {
+  font-size: 2em;
+  margin: 1em 0;
+}
+
+/*# sourceMappingURL=style__0.1.0.css.map */

@@ -1,0 +1,22 @@
+@import url(../bower_components/skeleton/css/normalize.css);
+@import url(../bower_components/skeleton/css/skeleton.css);
+body {
+  font-family: "Roboto condensed", sans-serif;
+}
+
+.logo__container {
+  background-color: yellow;
+  height: 300px;
+  margin: 30vh auto 0;
+  position: relative;
+  width: 300px;
+}
+.logo__text {
+  bottom: 0;
+  color: #000;
+  font-size: 8.5em;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  text-transform: uppercase;
+}
