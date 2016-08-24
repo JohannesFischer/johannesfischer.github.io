@@ -1,6 +1,6 @@
 .logo {
   &__container {
-    background-color: yellow;
+    background-color: $logo-color;
     height: 300px;
     margin: 30vh auto 0;
     position: relative;
@@ -9,8 +9,8 @@
 
   &__text {
     bottom: 0;
-    color: #000;
-    font-size: 8.5em;
+    color: $font-color;
+    font-size: 10em;
     font-weight: bold;
     position: absolute;
     right: 20px;
