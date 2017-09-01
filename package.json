@@ -4,6 +4,7 @@
   "version": "0.3.0",
   "description": "A simple grunt starter kit",
   "devDependencies": {
+    "express-dev-server": "^0.2.1",
     "grunt": "^1.0.1",
     "grunt-autoprefixer": "^3.0.4",
     "grunt-contrib-concat": "^1.0.1",

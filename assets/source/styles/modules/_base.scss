@@ -1,3 +1,27 @@
 body {
-  font-family: "Roboto condensed", sans-serif;
+  color: $font-color;
+  font-family: "Arial Narrow", sans-serif;
+  font-size: 17px;
+  font-weight: 200;
+  letter-spacing: -0.3px;
+
+  &.webfont {
+    font-family: Dosis;
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+}
+
+a {
+  color: $font-color;
+  text-decoration: none;
+}
+
+b {
+  font-weight: 700;
+}
+
+section {
+  background: #ea7d44;
+  min-height: 100vh;
 }
