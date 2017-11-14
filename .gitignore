@@ -1,4 +1,4 @@
 node_modules/
-assets/bower_components/
-.sass-cache/
+package-lock.json
 .DS_Store
+*.log
