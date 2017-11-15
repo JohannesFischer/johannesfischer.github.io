@@ -1,27 +1,23 @@
 import path from 'path';
 import webpack from 'webpack';
-import rucksack from 'rucksack-css';
-import cssnano from 'cssnano';
-import mixins from 'postcss-mixins';
-import cssnext from 'postcss-cssnext';
-import postcssImport from 'postcss-import';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import scss from 'postcss-scss';
 
 export default webpackConfig;
 
 function webpackConfig(options) {
   const isBuild = !!options.build;
   const isDev = !!options.dev;
-  const isDevBuild = (isBuild && isDev);
+  const isDevBuild =isBuild && isDev;
   const isTest = !!options.test;
   const exclude = /node_modules/;
+  const context = __dirname + '/src';
+
   const config = {
-    context: __dirname + '/src',
+    context,
     entry: {
       app: [
         './index.js',
-        './style.css'
+        './app.css'
       ]
     },
     output: {
@@ -38,60 +34,52 @@ function webpackConfig(options) {
         {
           test: /\.css$/,
           use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
             use: [
               {
                 loader: 'css-loader',
-                options: { importLoaders: 1 },
+                options: {
+                  importLoaders: 1
+                }
               },
               {
                 loader: 'postcss-loader',
-                options: { parser: scss }
+                options: {
+                  // ident: 'postcss',
+                  plugins: (loader) => postCssPlugins()
+                }
               }
-            ],
-          }),
+            ]
+          })
         },
         {
-          test: /\.(png|jpg|jpeg|gif|GIF|svg|woff|woff2|ttf|eot)$/,
-          loader: 'file',
+          test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+          loader: 'file-loader',
           exclude
         }
       ]
     },
     plugins: [
-      new ExtractTextPlugin('[name].bundle.css'),
+      new ExtractTextPlugin('[name].css'),
     ],
     resolve: {
       alias: {}
     }
   };
 
-  // config.plugins = createPlugins();
-
-  function postcss(webp) {
-    const cssnanoOpt = { discardUnused: false, zindex: false };
-    const rucksackOpt = { autoprefixer: true };
-    const devPlugins = [
-      postcssImport({ addDependencyTo: webp }),
-      mixins,
-      rucksack(rucksackOpt),
-      cssnext
+  function postCssPlugins() {
+    const plugins = [
+      require('postcss-import')({ root: context }),
+      require('postcss-cssnext')({ browsers: [ 'last 2 versions' ] })
     ];
-    const prodPlugins = [cssnano(cssnanoOpt)];
 
-    return isBuild ? [...devPlugins, ...prodPlugins] : devPlugins;
-  }
-
-  function createPlugins() {
-    const devPlugins = [
-      new ExtractTextPlugin('bundle.css'),
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'style',
-        filename: '[name].js'
-      })
+    const prodPlugins = [
+      require('cssnano')()
     ];
-    const buildPlugins = [];
 
-    return isBuild ? [...devPlugins, ...buildPlugins] : devPlugins;
+    return isDevBuild
+      ? plugins
+      : [...plugins, ...prodPlugins]
   }
 
   return config;

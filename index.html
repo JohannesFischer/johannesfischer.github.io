@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Johannes Fischer - Front-end Developer</title>
   <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="assets/build/css/style__0.3.0.css">
+  <link rel="stylesheet" href="dist/app.css">
   <link rel="apple-touch-icon" sizes="57x57" href="assets/images/page-icon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="assets/images/page-icon/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="assets/images/page-icon/apple-icon-72x72.png">
@@ -24,18 +24,28 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-  <header>
-    <div class="logo__container">
-      <span class="logo__text">JF</span>
-    </div>
-  </header>
-  <nav>
-    <ul>
-      <li>
-        <a href="#">Link</a>
-      </li>
-    </ul>
-  </nav>
+  <section class="titleCard">
+    <h1 class="titleCard-headline">Headline</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="#">Link One</a>
+        </li>
+        <li>
+          <a href="#" rel="external">
+            <i class="icon github"></i>
+            Link Two
+          </a>
+        </li>
+        <li>
+          <a href="#" rel="external">
+            <i class="icon linkedin"></i>
+            Link Three
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </section>
   <script src="dist/bundle.js"></script>
 </body>
 </html>

@@ -1,0 +1,18 @@
+:root {
+  --iconSize: 20px;
+}
+
+.icon {
+  background-size: cover;
+  display: inline-block;
+  height: var(--iconSize);
+  margin: 0 .5em 0 0;
+  width: var(--iconSize);
+
+  &.github {
+    background-image: url('svg/iconmonstr-github-1.svg');
+  }
+  &.linkedin {
+    background-image: url('svg/iconmonstr-linkedin-4.svg');
+  }
+}
