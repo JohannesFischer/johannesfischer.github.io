@@ -7,6 +7,7 @@ export default webpackConfig;
 function webpackConfig(options) {
   const isBuild = !!options.build;
   const isDev = !!options.dev;
+  const watch = !!options.watch;
   const isDevBuild =isBuild && isDev;
   const isTest = !!options.test;
   const exclude = /node_modules/;
@@ -20,6 +21,7 @@ function webpackConfig(options) {
         './app.css'
       ]
     },
+    watch,
     output: {
       path: __dirname + '/dist',
       filename: 'bundle.js'
