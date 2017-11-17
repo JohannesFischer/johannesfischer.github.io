@@ -89,13 +89,12 @@ var fontRegular = new _fontfaceobserver2.default('Dosis', { weight: 400 });
 var fontBold = new _fontfaceobserver2.default('Dosis', { weight: 700 });
 
 Promise.all([fontRegular.load(), fontBold.load()]).then(function () {
-  console.log('Family A & B have loaded');
   document.body.classList.add('webfont-loaded');
 });
 
-document.body.addEventListener('click', function () {
-  document.body.classList.toggle('webfont-loaded');
-});
+// document.body.addEventListener('click', () => {
+//   document.body.classList.toggle('webfont-loaded');
+// });
 
 /***/ }),
 /* 2 */
