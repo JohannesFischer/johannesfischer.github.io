@@ -11,10 +11,12 @@ function webpackConfig(options) {
   const isDevBuild =isBuild && isDev;
   const isTest = !!options.test;
   const exclude = /node_modules/;
-  const context = __dirname + '/src';
+  const context = path.join(__dirname, 'src');
+  const distFolder = path.join(__dirname, 'dist');
 
   const config = {
     context,
+    devServer: devServer(),
     entry: {
       app: [
         './index.js',
@@ -23,8 +25,9 @@ function webpackConfig(options) {
     },
     watch,
     output: {
-      path: __dirname + '/dist',
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      path: distFolder,
+      publicPath: 'dist/'
     },
     module: {
       loaders: [
@@ -47,7 +50,7 @@ function webpackConfig(options) {
               {
                 loader: 'postcss-loader',
                 options: {
-                  // ident: 'postcss',
+                  ident: 'postcss',
                   plugins: (loader) => postCssPlugins()
                 }
               }
@@ -68,6 +71,17 @@ function webpackConfig(options) {
       alias: {}
     }
   };
+
+  function devServer() {
+    return !isDev ? {} :  {
+      contentBase: [
+        __dirname,
+        distFolder
+      ],
+      compress: true,
+      port: 8000
+    };
+  }
 
   function postCssPlugins() {
     const plugins = [

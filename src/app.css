@@ -20,17 +20,32 @@ body {
 }
 
 section {
+  display: grid;
+
   &.titleCard {
     background-color: var(--backgroundColor);
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    grid-template-rows: 60px 1fr;
     min-height: 100vh;
 
     & h1 {
+      background: color(#fff alpha(-50%));
       color: #fff;
+      height: 60px;
     }
   }
 }
 
 nav {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  & li:not(:last-of-type) {
+    margin-bottom: 1em;
+  }
+
   & a {
     align-content: center;
     align-items: center;
@@ -38,7 +53,7 @@ nav {
     border-radius: var(--borderRadius);
     color: #fff;
     display: flex;
+    padding: .25em .5em;
     text-decoration: none;
-    width: 20%;
   }
 }
