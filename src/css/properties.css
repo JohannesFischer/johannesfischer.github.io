@@ -1,4 +1,7 @@
 :root {
-  --backgroundColor: rgb(255, 138, 29);
+  --backgroundColor: #f2f2f2;
   --borderRadius: 5px;
+  --highlightColorOne: #00a0ae;
+  --highlightColorTwo: #684458;
+  --highlightColorThree: #f46177;
 }

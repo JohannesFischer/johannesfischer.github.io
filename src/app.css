@@ -1,5 +1,6 @@
 @import "css/properties.css";
 @import "css/reset.css";
+@import "css/flex.css";
 @import "css/icons.css";
 
 body {
@@ -20,8 +21,6 @@ body {
 }
 
 section {
-  display: grid;
-
   &.titleCard {
     background-color: var(--backgroundColor);
     grid-template-columns: repeat(1, 1fr);
@@ -30,30 +29,47 @@ section {
     min-height: 100vh;
 
     & h1 {
-      background: color(#fff alpha(-50%));
-      color: #fff;
+      color: var(--highlightColorThree);
       height: 60px;
+      font-size: 2em;
+      text-align: center;
     }
   }
 }
-
+// hello
 nav {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-
   & li:not(:last-of-type) {
     margin-bottom: 1em;
   }
 
   & a {
-    align-content: center;
-    align-items: center;
-    background: color(#fff alpha(-50%));
+    background-color: color(var(--backgroundColor) lightness(-5%));
     border-radius: var(--borderRadius);
     color: #fff;
-    display: flex;
+    display: block;
     padding: .25em .5em;
+    position: relative;
     text-decoration: none;
+    transition: padding ease .3s, background-color ease .2s;
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   z-index: -1;
+    //   top: 50%;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   background-color: var(--highlightColorOne);
+    //   border-radius: 100%;
+    //   transform: scale(0);
+    //   transition-property: transform;
+    //   transition-duration: 0.3s;
+    //   transition-timing-function: ease-out;
+    // }
+
+    // &:hover::before {
+    //   transform: scale(2);
+    // }
   }
 }

@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import scss from 'postcss-scss';
 
 export default webpackConfig;
 
@@ -51,6 +52,7 @@ function webpackConfig(options) {
                 loader: 'postcss-loader',
                 options: {
                   ident: 'postcss',
+                  parser: scss,
                   plugins: (loader) => postCssPlugins()
                 }
               }
