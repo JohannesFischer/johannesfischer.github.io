@@ -1,7 +1,12 @@
 :root {
+  /* Colors */
   --backgroundColor: #f2f2f2;
-  --borderRadius: 5px;
+  --fontColor: #454545;
   --highlightColorOne: #00a0ae;
   --highlightColorTwo: #684458;
   --highlightColorThree: #f46177;
+  /* Other stuff */
+  --borderRadius: 5px;
+  --transformDurationMedium: .4s;
+  --transformDurationShort: .25s;
 }

@@ -88,7 +88,8 @@ function webpackConfig(options) {
   function postCssPlugins() {
     const plugins = [
       require('postcss-import')({ root: context }),
-      require('postcss-cssnext')({ browsers: [ 'last 2 versions' ] })
+      require('postcss-cssnext')({ browsers: [ 'last 2 versions' ] }),
+      require('postcss-inline-svg')()
     ];
 
     const prodPlugins = [

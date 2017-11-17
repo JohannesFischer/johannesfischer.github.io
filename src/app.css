@@ -4,8 +4,9 @@
 @import "css/icons.css";
 
 body {
+  color: var(--fontColor);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 1.5em;
   font-weight: 400;
   letter-spacing: -0.25px;
   line-height: 1.4;
@@ -13,63 +14,75 @@ body {
 
   &.webfont-loaded {
     font-family: Dosis;
-    font-size: 16px;
     letter-spacing: 0;
     line-height: 1;
     word-spacing: 0;
   }
 }
 
-section {
-  &.titleCard {
-    background-color: var(--backgroundColor);
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 10px;
-    grid-template-rows: 60px 1fr;
-    min-height: 100vh;
+h1 {
+  height: 60px;
+  font-size: 2em;
+  text-align: center;
+}
 
-    & h1 {
-      color: var(--highlightColorThree);
-      height: 60px;
-      font-size: 2em;
-      text-align: center;
-    }
+.titleCard {
+  background-color: var(--backgroundColor);
+  min-height: 100vh;
+
+  & header {
+    color: var(--highlightColorThree);
+    margin: 0 0 2em;
+    text-align: center;
+  }
+
+  & h2 {
+    color: initial;
   }
 }
-// hello
+
 nav {
   & li:not(:last-of-type) {
     margin-bottom: 1em;
   }
 
   & a {
-    background-color: color(var(--backgroundColor) lightness(-5%));
+    align-items: center;
+    background-color: color(var(--backgroundColor) lightness(-10%));
     border-radius: var(--borderRadius);
     color: #fff;
-    display: block;
-    padding: .25em .5em;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: .25em .75em;
     position: relative;
     text-decoration: none;
-    transition: padding ease .3s, background-color ease .2s;
+    transform:  perspective(1px) translateZ(0);
+    transition: padding ease var(--transformDurationMedium),
+                background-color ease var(--transformDurationShort);
 
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   z-index: -1;
-    //   top: 50%;
-    //   left: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   background-color: var(--highlightColorOne);
-    //   border-radius: 100%;
-    //   transform: scale(0);
-    //   transition-property: transform;
-    //   transition-duration: 0.3s;
-    //   transition-timing-function: ease-out;
-    // }
+    &::before {
+      background-color: var(--highlightColorOne);
+      border-radius: 100%;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      position: absolute;
+      transform: scale(0);
+      transition: transform .4s ease, opacity .25s ease;
+      z-index: -1;
+    }
 
-    // &:hover::before {
-    //   transform: scale(2);
-    // }
+    &:hover,
+    &:focus,
+    &:active {
+      &:before {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+    }
   }
 }

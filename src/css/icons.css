@@ -1,5 +1,5 @@
 :root {
-  --iconSize: 20px;
+  --iconSize: 30px;
 }
 
 .icon {
@@ -10,9 +10,9 @@
   width: var(--iconSize);
 
   &.github {
-    background-image: url('svg/iconmonstr-github-1.svg');
+    background-image: svg-load('../svg/iconmonstr-github-1.svg', 'fill: #fff');
   }
   &.linkedin {
-    background-image: url('svg/iconmonstr-linkedin-4.svg');
+    background-image: svg-load('../svg/iconmonstr-linkedin-4.svg', 'fill: #fff');
   }
 }
