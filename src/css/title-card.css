@@ -1,0 +1,60 @@
+.titleCard {
+  background-color: var(--backgroundColor);
+  min-height: 100vh;
+
+  & header {
+    color: var(--highlightColorThree);
+    margin: 0 0 2em;
+    text-align: center;
+  }
+
+  & h2 {
+    color: initial;
+  }
+}
+
+nav {
+  & li:not(:last-of-type) {
+    margin-bottom: 1em;
+  }
+
+  & a {
+    align-items: center;
+    background-color: color(var(--backgroundColor) lightness(-10%));
+    border-radius: var(--borderRadius);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: .25em .75em;
+    position: relative;
+    text-decoration: none;
+    transform:  perspective(1px) translateZ(0);
+    transition: padding ease var(--transformDurationMedium),
+                background-color ease var(--transformDurationShort);
+
+    &::before {
+      background-color: var(--highlightColorOne);
+      border-radius: 100%;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      position: absolute;
+      transform: scale(0);
+      transition: transform .4s ease, opacity .25s ease;
+      z-index: -1;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &:before {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+    }
+  }
+}

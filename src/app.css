@@ -2,14 +2,16 @@
 @import "css/reset.css";
 @import "css/flex.css";
 @import "css/icons.css";
+@import "css/title-card.css";
 
 body {
   color: var(--fontColor);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: 400;
   letter-spacing: -0.25px;
   line-height: 1.4;
+  min-width: 320px;
   word-spacing: -0.6px;
 
   &.webfont-loaded {
@@ -26,63 +28,53 @@ h1 {
   text-align: center;
 }
 
-.titleCard {
-  background-color: var(--backgroundColor);
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.35em;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.aboutMe {
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-gap: 0;
   min-height: 100vh;
+}
 
-  & header {
-    color: var(--highlightColorThree);
-    margin: 0 0 2em;
-    text-align: center;
-  }
-
-  & h2 {
-    color: initial;
+@media (max-width: 640px) {
+  .aboutMe {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
   }
 }
 
-nav {
-  & li:not(:last-of-type) {
-    margin-bottom: 1em;
-  }
+aside {
+  background: #333;
+  color: #fff;
 
-  & a {
-    align-items: center;
-    background-color: color(var(--backgroundColor) lightness(-10%));
-    border-radius: var(--borderRadius);
-    color: #fff;
+  & > div {
     display: flex;
-    justify-content: center;
-    overflow: hidden;
-    padding: .25em .75em;
-    position: relative;
-    text-decoration: none;
-    transform:  perspective(1px) translateZ(0);
-    transition: padding ease var(--transformDurationMedium),
-                background-color ease var(--transformDurationShort);
-
-    &::before {
-      background-color: var(--highlightColorOne);
-      border-radius: 100%;
-      content: "";
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 0;
-      position: absolute;
-      transform: scale(0);
-      transition: transform .4s ease, opacity .25s ease;
-      z-index: -1;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      &:before {
-        opacity: 1;
-        transform: scale(1.5);
-      }
-    }
+    flex-direction: column;
+    padding: 1rem .5rem;
   }
+
+  & img {
+    align-self: center;
+    border-radius: var(--borderRadius);
+    margin-bottom: 1rem;
+    width: 192px;
+  }
+}
+
+article {
+  background: #eee;
+  padding: 1rem;
 }
