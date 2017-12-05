@@ -84,9 +84,10 @@ var _fontfaceobserver2 = _interopRequireDefault(_fontfaceobserver);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var font = new _fontfaceobserver2.default('Dosis');
-var fontRegular = new _fontfaceobserver2.default('Dosis', { weight: 400 });
-var fontBold = new _fontfaceobserver2.default('Dosis', { weight: 700 });
+var fontFamily = 'Quicksand';
+var font = new _fontfaceobserver2.default(fontFamily);
+var fontRegular = new _fontfaceobserver2.default(fontFamily, { weight: 400 });
+var fontBold = new _fontfaceobserver2.default(fontFamily, { weight: 700 });
 
 Promise.all([fontRegular.load(), fontBold.load()]).then(function () {
   document.body.classList.add('webfont-loaded');
