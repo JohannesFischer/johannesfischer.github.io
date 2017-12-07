@@ -22,7 +22,7 @@
   <link rel="manifest" href="assets/images/page-icon/manifest.json">
 </head>
 <body>
-  <section class="titleCard flex-box center-items">
+  <section class="titleCard flex-box center-items" id="top">
     <header>
       <h1 >Johannes Fischer</h1>
       <h2>Front-end developer</h2>
@@ -47,7 +47,8 @@
       </ul>
     </nav>
   </section>
-  <section class="aboutMe" id="about">
+
+  <section class="about-me" id="about">
     <aside class="side-bar">
       <div>
         <img src="/assets/images/page-icon/android-icon-192x192.png" alt="Avatar Johannes Fischer">
@@ -66,7 +67,7 @@
         Currently I am working as a front-end developer at Rakuten in Tokyo, Japan.
       </p>
 
-      <section>
+      <section id="work-experience">
         <h4>Work Experience</h4>
 
         <h5>Rakuten, Inc. - Tokyo</h5>
@@ -120,11 +121,11 @@
         <ul>
           <li>Web Developer at hmmh multimediahaus AG , Aug 2008 - Dec 2008, Oldenburg, Germany</li>
           <li>Web Developer at New Voice GmbH, May 2007 - Aug 2008, Oldenburg, Germany</li>
-          <li>Intern at New Voice GmbH, Nov 2006 - Jul 2008, Oldenburg Germany</li>
+          <li>Intern at New Voice GmbH, Nov 2006 - May 2007, Oldenburg Germany</li>
         </ul>
       </section>
 
-      <section id="Skills">
+      <section id="skills">
         <h4>Technical skills</h4>
         <ul class="list-inline">
           <li>ES6</li>
@@ -138,7 +139,18 @@
         </ul>
       </section>
 
+      <section id="side-projects">
+        <h4>Side Projects</h4>
 
+        <h5>SoundCloud Control Firefox Extension</h5>
+        <p>A Firefox extension I made to control SoundCloud without switching tabs.</p>
+
+        <h5>Crimson House Menu</h5>
+        <p>Node package that displays the Rakkuten crimson house Tokyo cafeteria menu in the terminal.</p>
+
+        <h5>This page</h5>
+        <p>Was made with github page, have a look under the hood if you like.</p>
+      </section>
     </article>
   </section>
   <script src="dist/bundle.js"></script>

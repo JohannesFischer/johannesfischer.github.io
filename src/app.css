@@ -24,7 +24,7 @@ body {
   }
 }
 
-.aboutMe {
+.about-me {
   background: #eee;
   display: grid;
   grid-template-columns: [sidebar] 300px [content] minmax(50%, 800px);
@@ -33,7 +33,7 @@ body {
 }
 
 @media (max-width: 640px) {
-  .aboutMe {
+  .about-me {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
   }
