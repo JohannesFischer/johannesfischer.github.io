@@ -1,0 +1,27 @@
+ul {
+  list-style: none;
+  margin: 0 0 1rem 1rem;
+
+  & li {
+    background-image: svg-load('../svg/arrow.svg', 'fill: #545454');
+    background-position: 0 2px;
+    background-repeat: no-repeat;
+    background-size: var(--listIconSize);
+    padding: 0 0 0 calc(var(--listIconSize) + 8px);
+    margin: .45rem 0;
+  }
+
+  &.list-inline {
+    display: flex;
+    margin-left: 0;
+
+    & li {
+      @apply --simple-li;
+
+      &:not(:last-of-type):after {
+        content: ",";
+        padding: 0 .25rem 0 0;
+      }
+    }
+  }
+}

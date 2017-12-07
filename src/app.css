@@ -1,6 +1,7 @@
 @import "css/properties.css";
 @import "css/reset.css";
 @import "css/typography.css";
+@import "css/lists.css";
 @import "css/flex.css";
 @import "css/icons.css";
 @import "css/title-card.css";
@@ -54,13 +55,12 @@ aside {
     margin-bottom: 1rem;
     width: 192px;
   }
+
+  & li {
+    @apply --simple-li;
+  }
 }
 
 article {
   padding: 1rem;
-
-  & ul {
-    list-style: disc;
-    margin: 0 0 1rem 1rem;
-  }
 }

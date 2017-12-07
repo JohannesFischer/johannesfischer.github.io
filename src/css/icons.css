@@ -6,7 +6,7 @@
   background-size: cover;
   display: inline-block;
   height: var(--iconSize);
-  margin: 0 .5em 0 0;
+  margin: 0 .5rem 0 0;
   width: var(--iconSize);
 
   &.github {

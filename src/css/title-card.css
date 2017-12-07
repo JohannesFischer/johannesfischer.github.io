@@ -4,7 +4,7 @@
 
   & header {
     color: var(--highlightColorThree);
-    margin: 0 0 2em;
+    margin: 0 0 2rem;
     text-align: center;
   }
 
@@ -14,8 +14,12 @@
 }
 
 nav {
-  & li:not(:last-of-type) {
-    margin-bottom: 1em;
+  & li {
+    @apply --simple-li;
+
+    &:not(:last-of-type) {
+      margin-bottom: 1rem;
+    }
   }
 
   & a {
@@ -27,7 +31,7 @@ nav {
     height: 2.5rem;
     justify-content: center;
     overflow: hidden;
-    padding: 0 .75em;
+    padding: 0 .75rem;
     position: relative;
     text-decoration: none;
     transform:  perspective(1px) translateZ(0);

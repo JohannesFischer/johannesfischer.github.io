@@ -9,4 +9,10 @@
   --borderRadius: 5px;
   --transformDurationMedium: .4s;
   --transformDurationShort: .25s;
+  /* Lists */
+  --listIconSize: 18px;
+  --simple-li: {
+    background: none;
+    padding: 0;
+  };
 }
