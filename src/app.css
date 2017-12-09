@@ -63,4 +63,8 @@ aside {
 
 article {
   padding: 1rem;
+
+  & ul {
+    margin: 0 0 2rem;
+  }
 }
