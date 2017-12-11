@@ -1,5 +1,5 @@
 :root {
-  --iconSize: 30px;
+  --iconSize: 26px;
 }
 
 .icon {
@@ -14,5 +14,8 @@
   }
   &.linkedin {
     background-image: svg-load('../svg/iconmonstr-linkedin-4.svg', 'fill: #fff');
+  }
+  &.pdf {
+    background-image: svg-load('../svg/pdf.svg', 'fill: #fff');
   }
 }
