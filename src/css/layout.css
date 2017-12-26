@@ -1,0 +1,22 @@
+body > section {
+  display: grid;
+  grid-template-columns: [title] minmax(150px, 20%) [about] 2fr;
+  grid-gap: 0;
+}
+
+body > section > section {
+  min-height: 100vh;
+}
+
+@media (min-width: 640px) {
+  .hide-on-large {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  body > section {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

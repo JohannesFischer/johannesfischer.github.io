@@ -1,10 +1,11 @@
 @import "css/properties.css";
 @import "css/reset.css";
+@import "css/layout.css";
 @import "css/typography.css";
 @import "css/lists.css";
-@import "css/flex.css";
 @import "css/icons.css";
 @import "css/title-card.css";
+@import "css/about-me.css";
 
 body {
   color: var(--fontColor);
@@ -21,50 +22,5 @@ body {
     letter-spacing: 0;
     line-height: 1.2;
     word-spacing: 0;
-  }
-}
-
-.about-me {
-  background: #eee;
-  display: grid;
-  grid-template-columns: [sidebar] 300px [content] minmax(50%, 800px);
-  grid-gap: 0;
-  min-height: 100vh;
-}
-
-@media (max-width: 640px) {
-  .about-me {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
-  }
-}
-
-aside {
-  background: #333;
-  color: #fff;
-
-  & > div {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem .5rem;
-  }
-
-  & img {
-    align-self: center;
-    border-radius: var(--borderRadius);
-    margin-bottom: 1rem;
-    width: 192px;
-  }
-
-  & li {
-    @apply --simple-li;
-  }
-}
-
-article {
-  padding: 1rem;
-
-  & ul {
-    margin: 0 0 2rem;
   }
 }

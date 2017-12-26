@@ -1,15 +1,29 @@
-.titleCard {
+.title-card {
+  align-items: center;
   background-color: var(--backgroundColor);
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   & header {
     color: var(--highlightColorThree);
     margin: 0 0 2rem;
+    position: sticky;
     text-align: center;
+    top: 1rem;
   }
 
   & h2 {
     color: initial;
+  }
+}
+
+@media (max-width: 640px) {
+  .title-card {
+    justify-content: center;
+
+    & header {
+      position: initial;
+    }
   }
 }
 
@@ -62,4 +76,20 @@ nav {
       }
     }
   }
+}
+
+.go-to-about {
+  animation-duration: 1.5s;
+  animation-name: leviate;
+  animation-iteration-count: infinite;
+  bottom: .15rem;
+  left: calc(50% - (var(--iconSize) / 2) - var(--iconPadding));
+  padding: var(--iconPadding);
+  position: absolute;
+}
+
+@keyframes leviate {
+  0% { bottom: .15rem; }
+  40% { bottom: .75rem }
+  100% { bottom: .15rem; }
 }

@@ -2,18 +2,27 @@
   --iconSize: 26px;
 }
 
+nav .icon {
+  margin: 0 .5rem 0 0;
+}
+
 .icon {
   background-size: cover;
   display: inline-block;
   height: var(--iconSize);
-  margin: 0 .5rem 0 0;
   width: var(--iconSize);
 
+  &.about {
+    background-image: svg-load('../svg/about.svg', 'fill: #fff');
+  }
+  &.arrow-down {
+    background-image: svg-load('../svg/arrow-down.svg', 'fill: #fff');
+  }
   &.github {
-    background-image: svg-load('../svg/iconmonstr-github-1.svg', 'fill: #fff');
+    background-image: svg-load('../svg/github.svg', 'fill: #fff');
   }
   &.linkedin {
-    background-image: svg-load('../svg/iconmonstr-linkedin-4.svg', 'fill: #fff');
+    background-image: svg-load('../svg/linkedin.svg', 'fill: #fff');
   }
   &.pdf {
     background-image: svg-load('../svg/pdf.svg', 'fill: #fff');
