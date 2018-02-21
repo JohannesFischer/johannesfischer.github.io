@@ -10,6 +10,10 @@
     /* grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto); */
   }
+
+  h1 {
+    height: auto;
+  }
 }
 
 aside {
