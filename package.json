@@ -15,7 +15,9 @@
     "prepare": "panda codegen",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -u \"github-actions-bot <github-actions@github.com>\" --repo https://x-access-token:${GITHUB_TOKEN}@github.com/<your-username>/<your-repo-name>.git"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
