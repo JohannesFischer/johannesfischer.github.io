@@ -1,0 +1,41 @@
+import * as React from "react";
+
+import { css } from "../styled-system/css";
+
+interface CareerItemProps extends React.PropsWithChildren {
+  company?: string;
+  role: string;
+  startDate?: string;
+  endDate?: string;
+}
+
+const CareerItem: React.FunctionComponent<CareerItemProps> = ({
+  company,
+  children,
+  role,
+  startDate,
+  endDate,
+}) => (
+  <div>
+    <div
+      className={css({
+        alignItems: ["start", undefined, undefined, "center"],
+        display: "flex",
+        flexDir: ["column", undefined, undefined, "row"],
+        gap: 2,
+        justifyContent: "space-between",
+        marginBlockEnd: 4,
+      })}
+    >
+      <h4 className={css({ textStyle: "heading.h4" })}>{role}</h4>
+      {company && startDate && endDate && (
+        <p
+          className={css({ textStyle: "heading.h3", color: "textSecondary" })}
+        >{`${startDate} – ${endDate} // ${company}`}</p>
+      )}
+    </div>
+    <div className={css({ color: "" })}>{children}</div>
+  </div>
+);
+
+export default CareerItem;
