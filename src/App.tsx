@@ -135,14 +135,14 @@ const App = () => {
                 role="Accessibility Engineer, Indeed"
               />
               <Testimonial
-                name="Thomas H."
-                quote="Johannes has a ton of Frontend expertise and is always sharing that knowledge in MR in helpful tips. He has been a huge help in building out the [internal component library]."
-                role="Software Engineer I, Indeed"
+                name="Todd O."
+                quote="Johannes extensive FE experience is a major asset to the Representation team and [internal component library]. He's one of our best FE resources. He's always on top of code reviews and gives thorough and well thought out feedback."
+                role="Senior UX Developer, Indeed"
               />
               <Testimonial
-                name="Todd O."
-                quote="Johannes has a ton of Frontend expertise and is always sharing that knowledge in MR in helpful tips. He has been a huge help in building out the JSPL components used in all of the rezQ modules and helped land the updated libraries into our modules containing rezQ fields MR."
-                role="Senior UX Developer, Indeed"
+                name="Thomas S."
+                quote="Johannes has a ton of Frontend expertise and is always sharing that knowledge in MR in helpful tips. He has been a huge help in building out the [internal component library]."
+                role="Software Engineer I, Indeed"
               />
               <Testimonial
                 name="Scott C."
