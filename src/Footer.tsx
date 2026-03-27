@@ -6,11 +6,13 @@ import { URLS } from "./const";
 const Footer: React.FunctionComponent = () => (
   <footer
     className={css({
-      alignItems: "center",
+      alignItems: ["start", "center"],
       backgroundColor: "neutral",
+      flexDir: ["column", "row"],
       display: "flex",
       justifyContent: "space-between",
       layerStyle: "navigation",
+      rowGap: 2,
     })}
   >
     <p
@@ -45,7 +47,7 @@ const Footer: React.FunctionComponent = () => (
       </li>
       <li>
         <a href={URLS.LINKEDIN} rel="external">
-          LinkedIn
+          linkedin
         </a>
       </li>
       <li>

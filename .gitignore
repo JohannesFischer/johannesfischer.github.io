@@ -3,7 +3,6 @@ package-lock.json
 .DS_Store
 *.log
 .idea/
-.dist/
 ## Panda
 styled-system
 styled-system-studio

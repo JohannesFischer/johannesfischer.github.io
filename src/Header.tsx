@@ -6,7 +6,7 @@ import { URLS } from "./const";
 // import { ThemeContext } from "./App";
 import ButtonLink from "./ButtonLink";
 
-const Header = () => {
+const Header: React.FunctionComponent = () => {
   // const theme = React.useContext(ThemeContext);
 
   return (

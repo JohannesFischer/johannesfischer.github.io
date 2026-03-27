@@ -11,15 +11,18 @@ import {
 
 import "./index.css";
 import { css } from "../styled-system/css";
+import { grid } from "../styled-system/patterns";
 import { URLS } from "./const";
 
 import ButtonLink from "./ButtonLink";
 import CareerItem from "./CareerItem";
+import Carousel from "./Carousel";
 import Footer from "./Footer";
 import Header from "./Header";
 import HeadingGroup from "./HeadingGroup";
 import SkillCard from "./SkillCard";
 import Status from "./Status";
+import Testimonial from "./Testimonial.tsx";
 import ThemeContext from "./ThemeContext";
 
 const App = () => {
@@ -39,7 +42,7 @@ const App = () => {
         <Header />
         <main
           className={css({
-            "& section:nth-child(2)": { background: "backgroundLight" },
+            "& section:nth-child(even)": { background: "backgroundLight" },
           })}
         >
           <section className={css({ layerStyle: "section" })}>
@@ -77,11 +80,11 @@ const App = () => {
               headingSup="Stack / Capabilities"
             />
             <div
-              className={css({
+              className={grid({
                 columnGap: [6, undefined, 8],
-                display: "grid",
-                gridTemplateColumns: ["repeat(2, 1fr)", "repeat(3, 1fr)"],
+                columns: [2, 3],
                 rowGap: 12,
+                minChildWidth: "1fr",
               })}
             >
               <SkillCard
@@ -118,6 +121,38 @@ const App = () => {
           </section>
           <section
             className={css({
+              layerStyle: "section",
+            })}
+          >
+            <HeadingGroup
+              heading="Testimonials"
+              headingSup="Peer Validations"
+            />
+            <Carousel>
+              <Testimonial
+                name="Pete W."
+                quote="Johannes is nothing short of a god when it comes to his development knowledge and delivery here at Indeed. He was responsible for planning, architecture, and delivery the most heavily used [internal a11y] utility [...] and for the crucial storybook add-on."
+                role="Accessibility Engineer, Indeed"
+              />
+              <Testimonial
+                name="Thomas H."
+                quote="Johannes has a ton of Frontend expertise and is always sharing that knowledge in MR in helpful tips. He has been a huge help in building out the [internal component library]."
+                role="Software Engineer I, Indeed"
+              />
+              <Testimonial
+                name="Todd O."
+                quote="Johannes has a ton of Frontend expertise and is always sharing that knowledge in MR in helpful tips. He has been a huge help in building out the JSPL components used in all of the rezQ modules and helped land the updated libraries into our modules containing rezQ fields MR."
+                role="Senior UX Developer, Indeed"
+              />
+              <Testimonial
+                name="Scott C."
+                quote="Participating in mentorship with Johannes has continued to be a fruitful experience over this semester. In our weekly meetings he continually finds meaningful subject matter for us to discuss and work through together. [...] This has helped me stay motived and gives me purpose."
+                role="Content Aggregation Engineer, Indeed"
+              />
+            </Carousel>
+          </section>
+          <section
+            className={css({
               display: "grid",
               gridTemplateColumns: ["1fr", "1fr 2fr"],
               layerStyle: "section",
@@ -134,13 +169,13 @@ const App = () => {
               <CareerItem
                 company="Indeed"
                 endDate="03.2026"
-                role="Senior Front-end Developer"
+                role="Senior UX Developer"
                 startDate="2018"
               >
                 <p>
                   I translated UX concepts into interactive prototypes and
                   production-ready React components, bridging design and
-                  engineering to deliver user-centered solutions. I build and
+                  engineering to deliver user-centered solutions. I built and
                   maintained the company design system and internal component
                   libraries to ensure visual consistency, and I collaborated
                   closely with product managers, designers, and developers. My
@@ -185,10 +220,23 @@ const App = () => {
               </CareerItem>
 
               <CareerItem role="Previous Experiences">
-                <ul>
-                  <li>Cewe Color Group - Web Developer</li>
-                  <li>hmmh Multimedia Haus - Web Developer</li>
-                  <li>New Voice GmbH - Web Developer</li>
+                <ul
+                  className={css({
+                    "& span": {
+                      color: "textSecondary",
+                      _before: { content: '"– "' },
+                    },
+                  })}
+                >
+                  <li>
+                    Cewe Color Group <span>Web Developer</span>
+                  </li>
+                  <li>
+                    hmmh Multimedia Haus <span>Web Developer</span>
+                  </li>
+                  <li>
+                    New Voice GmbH <span>Web Developer</span>
+                  </li>
                 </ul>
               </CareerItem>
               <div

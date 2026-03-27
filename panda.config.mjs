@@ -4,6 +4,7 @@ export default defineConfig({
   preflight: true,
   include: ["./src/**/*.{js,jsx,ts,tsx}"],
   exclude: [],
+  strictTokens: true,
   conditions: {
     light: "[data-color-mode=light] &",
     dark: "[data-color-mode=dark] &",
@@ -106,6 +107,39 @@ export default defineConfig({
               _dark: "#d8c3ad",
             },
           },
+        },
+      },
+    },
+  },
+  patterns: {
+    extend: {
+      scrollable: {
+        description: "A container that allows for scrolling",
+        defaultValues: {
+          direction: "vertical",
+          hideScrollbar: true,
+        },
+        properties: {
+          // The direction of the scroll
+          direction: { type: "enum", value: ["horizontal", "vertical"] },
+          // Whether to hide the scrollbar
+          hideScrollbar: { type: "boolean" },
+        },
+        // disallow the `overflow` property (in TypeScript)
+        blocklist: ["overflow"],
+        transform(props) {
+          const { direction, hideScrollbar, ...rest } = props;
+          return {
+            overflow: "auto",
+            height: direction === "horizontal" ? "100%" : "auto",
+            width: direction === "vertical" ? "100%" : "auto",
+            scrollbarWidth: hideScrollbar ? "none" : "auto",
+            WebkitOverflowScrolling: "touch",
+            "&::-webkit-scrollbar": {
+              display: hideScrollbar ? "none" : "auto",
+            },
+            ...rest,
+          };
         },
       },
     },

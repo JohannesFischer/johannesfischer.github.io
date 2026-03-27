@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { css } from "../styled-system/css";
+import { square } from "../styled-system/patterns";
 
 const Status: React.FunctionComponent = () => (
   <div
@@ -17,10 +18,9 @@ const Status: React.FunctionComponent = () => (
     })}
   >
     <div
-      className={css({
+      className={square({
         background: "green",
-        width: ".75em",
-        height: ".75em",
+        size: ".75em",
       })}
     ></div>
     <span>Status: Available for new opportunities</span>
