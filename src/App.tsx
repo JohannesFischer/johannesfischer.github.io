@@ -103,19 +103,19 @@ const App = () => {
                 A11y Testing / WCAG / Automation_Testing
               </SkillCard>
               <SkillCard icon={<BugOff strokeWidth={2} />} title="Testing">
-                Jest / Vitest / Cypress / Chromatic
-              </SkillCard>
-              <SkillCard
-                icon={<Combine strokeWidth={2} />}
-                title="State_Management"
-              >
-                Redux / Redux_Toolkit / Zustand
+                Jest / Vitest / Testing Library / Cypress / Chromatic
               </SkillCard>
               <SkillCard icon={<Rocket strokeWidth={2} />} title="Deployment">
                 GitLab_CI / Docker / Jenkins
               </SkillCard>
               <SkillCard icon={<Puzzle strokeWidth={2} />} title="Dev_Tools">
                 StoryBook / Git / AI assisted development
+              </SkillCard>
+              <SkillCard
+                icon={<Combine strokeWidth={2} />}
+                title="State_Management"
+              >
+                Redux / Redux_Toolkit / Zustand
               </SkillCard>
             </div>
           </section>

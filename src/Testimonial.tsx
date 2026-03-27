@@ -21,6 +21,7 @@ const Testimonial: React.FunctionComponent<HeadingGroupProps> = ({
       display: "flex",
       flexDir: "column",
       padding: 4,
+      paddingBlockEnd: 12,
       rowGap: 2,
     })}
   >

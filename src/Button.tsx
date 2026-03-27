@@ -1,20 +1,26 @@
 import * as React from "react";
 
 import { css } from "../styled-system/css";
-import { type ButtonProps } from "./Button";
 
-type ButtonLinkProps = React.PropsWithChildren &
-  React.AnchorHTMLAttributes<HTMLAnchorElement> &
-  Pick<ButtonProps, "size" | "variant">;
+export interface ButtonProps
+  extends
+    React.PropsWithChildren,
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    React.AriaAttributes {
+  size?: "md" | "lg";
+  variant?: "primary" | "secondary";
+}
 
-const ButtonLink: React.FunctionComponent<ButtonLinkProps> = ({
+const Button: React.FunctionComponent<ButtonProps> = ({
   children,
+  disabled = false,
   size = "md",
   variant = "primary",
   ...props
 }) => {
   return (
-    <a
+    <button
+      type="button"
       {...props}
       className={css({
         background: variant === "primary" ? "primary" : "buttonSecondary",
@@ -24,7 +30,9 @@ const ButtonLink: React.FunctionComponent<ButtonLinkProps> = ({
         fontSize: size === "md" ? "sm" : "md",
         fontWeight: "bold",
         letterSpacing: 2,
+        opacity: disabled ? 0.5 : 1,
         padding: size === "md" ? 1 : 2,
+        pointerEvents: disabled ? "none" : "initial",
         textTransform: "uppercase",
         transition: "all",
         transitionDuration: "slow",
@@ -41,8 +49,8 @@ const ButtonLink: React.FunctionComponent<ButtonLinkProps> = ({
       })}
     >
       {children}
-    </a>
+    </button>
   );
 };
 
-export default ButtonLink;
+export default Button;
