@@ -19,10 +19,10 @@ const App = () => {
       <div
         data-color-mode={colorScheme}
         className={css({
-          backgroundColor: "background",
+          bg: "background",
           color: "body",
-          fontSize: "16px",
-          minHeight: "100vh",
+          fontSize: "md",
+          minHeight: "dvh",
         })}
       >
         <Header />

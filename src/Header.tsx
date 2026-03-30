@@ -1,13 +1,13 @@
-import * as React from "react";
-// import {Moon, Sun} from "lucide-react";
+// import React, { useContext } from "react";
+// import { Moon, Sun } from "lucide-react";
 
 import { css } from "../styled-system/css";
 import { URLS } from "./const";
-// import { ThemeContext } from "./App";
+// import ThemeContext from "./ThemeContext";
 import ButtonLink from "./ButtonLink";
 
 const Header: React.FunctionComponent = () => {
-  // const theme = React.useContext(ThemeContext);
+  // const theme = useContext(ThemeContext);
 
   return (
     <header

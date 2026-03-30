@@ -20,7 +20,7 @@ const Testimonial: React.FunctionComponent<HeadingGroupProps> = ({
       borderColor: "primary",
       display: "flex",
       flexDir: "column",
-      padding: 4,
+      p: 4,
       rowGap: 2,
     })}
   >
@@ -29,7 +29,7 @@ const Testimonial: React.FunctionComponent<HeadingGroupProps> = ({
       strokeWidth="0"
       className={css({
         boxSize: "2rem",
-        color: "body/40",
+        color: "primary/50",
         justifySelf: "end",
       })}
     />

@@ -7,7 +7,7 @@ const Footer: React.FunctionComponent = () => (
   <footer
     className={css({
       alignItems: ["start", "center"],
-      backgroundColor: "neutral",
+      bg: "neutral",
       flexDir: ["column", "row"],
       display: "flex",
       justifyContent: "space-between",

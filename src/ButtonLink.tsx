@@ -24,7 +24,7 @@ const ButtonLink: React.FunctionComponent<ButtonLinkProps> = ({
         fontSize: size === "md" ? "sm" : "md",
         fontWeight: "bold",
         letterSpacing: 2,
-        padding: size === "md" ? 1 : 2,
+        p: size === "md" ? 1 : 2,
         textTransform: "uppercase",
         transition: "all",
         transitionDuration: "slow",

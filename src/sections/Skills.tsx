@@ -23,8 +23,8 @@ const Skills: React.FunctionComponent = () => (
     />
     <div
       className={grid({
-        columnGap: [6, undefined, 8],
-        columns: [2, 3],
+        columnGap: [undefined, 6, 8],
+        columns: [1, 2, 3],
         rowGap: 12,
         minChildWidth: "1fr",
       })}
@@ -33,25 +33,25 @@ const Skills: React.FunctionComponent = () => (
         JavaScript / TypeScript / React / Vue
       </SkillCard>
       <SkillCard icon={<Palette strokeWidth={2} />} title="UI_Design">
-        CSS-in-JS / Emotion / Design_Systems
+        CSS-in-JS / Emotion / Design Systems
       </SkillCard>
       <SkillCard
         icon={<PersonStanding strokeWidth={2} />}
         title="Accessibility"
       >
-        A11y Testing / WCAG / Automation_Testing
+        A11y Testing / WCAG / Automation Testing
       </SkillCard>
       <SkillCard icon={<BugOff strokeWidth={2} />} title="Testing">
         Jest / Vitest / Testing Library / Cypress / Chromatic
       </SkillCard>
       <SkillCard icon={<Rocket strokeWidth={2} />} title="Deployment">
-        GitLab_CI / Docker / Jenkins
+        GitLab CI / Docker / Jenkins
       </SkillCard>
       <SkillCard icon={<Puzzle strokeWidth={2} />} title="Dev_Tools">
         StoryBook / Git / AI assisted development
       </SkillCard>
       <SkillCard icon={<Combine strokeWidth={2} />} title="State_Management">
-        Redux / Redux_Toolkit / Zustand
+        Redux / Redux Toolkit / Zustand
       </SkillCard>
     </div>
   </section>

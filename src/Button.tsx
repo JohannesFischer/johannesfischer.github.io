@@ -31,7 +31,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
         fontWeight: "bold",
         letterSpacing: 2,
         opacity: disabled ? 0.5 : 1,
-        padding: size === "md" ? 1 : 2,
+        p: size === "md" ? 1 : 2,
         pointerEvents: disabled ? "none" : "initial",
         textTransform: "uppercase",
         transition: "all",

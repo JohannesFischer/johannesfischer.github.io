@@ -4,7 +4,6 @@ export default defineConfig({
   preflight: true,
   include: ["./src/**/*.{js,jsx,ts,tsx}"],
   exclude: [],
-  strictTokens: true,
   conditions: {
     light: "[data-color-mode=light] &",
     dark: "[data-color-mode=dark] &",
@@ -36,10 +35,10 @@ export default defineConfig({
         heading: {
           DEFAULT: {
             value: {
+              color: "headline",
               fontFamily: "Space Grotesk",
               fontWeight: "bold",
               fontSize: "2xl",
-              color: "headline",
               lineHeight: "1.2",
             },
           },
@@ -78,16 +77,15 @@ export default defineConfig({
       },
       tokens: {
         colors: {
-          primary: { value: "#f59e0b" },
           secondary: { value: "#986f3b" },
-          neutral: { value: "#0f172a" },
           border: { value: "#20232e" },
-          headline: { value: "#dae2fd" },
           textSecondary: { value: "#9e8c79" },
-          buttonSecondary: { value: "#171f33" },
         },
       },
       semanticTokens: {
+        buttonSecondary: { value: {
+          _light: "#eee",
+          _dark: "#171f33"} },
         colors: {
           background: {
             value: {
@@ -105,6 +103,24 @@ export default defineConfig({
             value: {
               _light: "#0b1326",
               _dark: "#d8c3ad",
+            },
+          },
+          headline: {
+            value: {
+              _light: "#131b2e",
+              _dark: "#dae2fd",
+            },
+          },
+          neutral: {
+            value: {
+              _light: "#fff",
+              _dark: "#0f172a",
+            },
+          },
+          primary: {
+            value: {
+              _light: "#4f46e5",
+              _dark: "#f59e0b",
             },
           },
         },

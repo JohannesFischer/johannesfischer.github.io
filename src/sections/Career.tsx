@@ -95,13 +95,13 @@ const Career: React.FunctionComponent = () => (
       </CareerItem>
       <div
         className={css({
-          background: "buttonSecondary",
+          bg: "background",
           borderBlockStart: "2px solid",
           borderColor: "primary",
           display: "flex",
           flexDir: "column",
+          p: 6,
           rowGap: 4,
-          padding: 6,
         })}
       >
         <h4 className={css({ textStyle: "heading" })}>
