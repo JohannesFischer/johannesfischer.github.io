@@ -3,7 +3,7 @@ import { Children, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { css } from "../styled-system/css";
-import { flex, scrollable } from "../styled-system/patterns";
+import { grid, scrollable } from "../styled-system/patterns";
 
 import Button from "./Button";
 
@@ -14,15 +14,15 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
   const [firstVisibleIndex, setFirstVisibleIndex] = React.useState(0);
   const [lastIndexVisibleIndex, setLastVisibleIndex] = React.useState(0);
 
+  const getScrollItemWidth = () =>
+    (
+      scrollContainer?.current?.querySelector("[data-carousel-index]")
+        ?.firstChild as HTMLElement
+    )?.offsetWidth || 0;
   const handleScrollEnd = useCallback(() => {
     if (scrollContainer.current) {
       const { scrollLeft } = scrollContainer.current;
-      const scrollItemWidth =
-        (
-          scrollContainer.current.querySelector(
-            "[data-carousel-index]",
-          ) as HTMLElement
-        )?.offsetWidth || 0;
+      const scrollItemWidth = getScrollItemWidth();
 
       const firstIndex = Math.ceil(scrollLeft / scrollItemWidth);
       setFirstVisibleIndex(firstIndex);
@@ -38,13 +38,7 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
 
   const handleScrollForward = useCallback(() => {
     if (scrollContainer.current) {
-      const scrollItemWidth =
-        (
-          scrollContainer.current.querySelector(
-            "[data-carousel-index]",
-          ) as HTMLElement
-        )?.offsetWidth || 0;
-
+      const scrollItemWidth = getScrollItemWidth();
       const { scrollWidth } = scrollContainer.current;
       const currentScrollLeft = scrollContainer.current.scrollLeft;
 
@@ -61,13 +55,7 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
 
   const handleScrollBack = useCallback(() => {
     if (scrollContainer.current) {
-      const scrollItemWidth =
-        (
-          scrollContainer.current.querySelector(
-            "[data-carousel-index]",
-          ) as HTMLElement
-        )?.offsetWidth || 0;
-
+      const scrollItemWidth = getScrollItemWidth();
       const currentScrollLeft = scrollContainer.current.scrollLeft;
 
       scrollContainer.current.scrollTo({
@@ -92,8 +80,8 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
         })}
       >
         <Button
-          disabled={firstVisibleIndex === 0}
           aria-label="Scroll to previous item"
+          disabled={firstVisibleIndex === 0}
           onClick={handleScrollBack}
         >
           <ChevronLeft />
@@ -108,34 +96,38 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
       </div>
       <div
         className={css(
-          flex.raw({}),
+          grid.raw({
+            alignItems: "start",
+            gridAutoFlow: "column",
+            gridAutoColumns: [
+              "calc(100vw - token(spacing.4) * 3)",
+              "calc(50vw - token(spacing.4) * 2)",
+            ],
+            gridTemplateRows: "max-content auto max-content max-content",
+            rowGap: 2,
+          }),
           scrollable.raw({ direction: "vertical", hideScrollbar: true }),
           {
             scrollSnapStop: "always",
             scrollSnapType: "x mandatory",
-            "& > div": {
-              scrollSnapAlign: "start",
-              width: [
-                "calc(100vw - token(spacing.4) * 3)",
-                "calc(50vw - token(spacing.4) * 2)",
-              ],
-              flexShrink: 0,
-            },
           },
         )}
         onScrollEnd={handleScrollEnd}
         ref={scrollContainer}
       >
-        {(
-          children as React.ReactElement<
-            React.RefAttributes<HTMLDivElement> & {
-              "data-carousel-index": string;
-            }
-          >[]
-        )?.map((child, index) => (
+        {(children as React.ReactElement[])?.map((child, index) => (
           <div
             data-carousel-index={String(index)}
             key={`carousel-item-${index}`}
+            className={css({
+              display: "contents",
+              "& > div": {
+                display: "grid",
+                gridRow: "1/6",
+                gridTemplateRows: "subgrid",
+                scrollSnapAlign: "start",
+              },
+            })}
           >
             {child}
           </div>

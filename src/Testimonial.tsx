@@ -21,7 +21,6 @@ const Testimonial: React.FunctionComponent<HeadingGroupProps> = ({
       display: "flex",
       flexDir: "column",
       padding: 4,
-      paddingBlockEnd: 12,
       rowGap: 2,
     })}
   >
@@ -29,10 +28,9 @@ const Testimonial: React.FunctionComponent<HeadingGroupProps> = ({
       fill="currentColor"
       strokeWidth="0"
       className={css({
-        alignSelf: "end",
+        boxSize: "2rem",
         color: "body/40",
-        height: "2rem",
-        width: "2rem",
+        justifySelf: "end",
       })}
     />
     <blockquote>
