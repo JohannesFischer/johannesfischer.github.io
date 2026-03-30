@@ -1,0 +1,60 @@
+import * as React from "react";
+import {
+  BugOff,
+  Code,
+  Combine,
+  Palette,
+  PersonStanding,
+  Puzzle,
+  Rocket,
+} from "lucide-react";
+
+import { css } from "../../styled-system/css";
+import { grid } from "../../styled-system/patterns";
+
+import HeadingGroup from "../HeadingGroup";
+import SkillCard from "../SkillCard";
+
+const Skills: React.FunctionComponent = () => (
+  <section className={css({ layerStyle: "section" })}>
+    <HeadingGroup
+      heading="Technical Skills"
+      headingSup="Stack / Capabilities"
+    />
+    <div
+      className={grid({
+        columnGap: [6, undefined, 8],
+        columns: [2, 3],
+        rowGap: 12,
+        minChildWidth: "1fr",
+      })}
+    >
+      <SkillCard icon={<Code strokeWidth={2} />} title="Frontend_Coding">
+        JavaScript / TypeScript / React / Vue
+      </SkillCard>
+      <SkillCard icon={<Palette strokeWidth={2} />} title="UI_Design">
+        CSS-in-JS / Emotion / Design_Systems
+      </SkillCard>
+      <SkillCard
+        icon={<PersonStanding strokeWidth={2} />}
+        title="Accessibility"
+      >
+        A11y Testing / WCAG / Automation_Testing
+      </SkillCard>
+      <SkillCard icon={<BugOff strokeWidth={2} />} title="Testing">
+        Jest / Vitest / Testing Library / Cypress / Chromatic
+      </SkillCard>
+      <SkillCard icon={<Rocket strokeWidth={2} />} title="Deployment">
+        GitLab_CI / Docker / Jenkins
+      </SkillCard>
+      <SkillCard icon={<Puzzle strokeWidth={2} />} title="Dev_Tools">
+        StoryBook / Git / AI assisted development
+      </SkillCard>
+      <SkillCard icon={<Combine strokeWidth={2} />} title="State_Management">
+        Redux / Redux_Toolkit / Zustand
+      </SkillCard>
+    </div>
+  </section>
+);
+
+export default Skills;
