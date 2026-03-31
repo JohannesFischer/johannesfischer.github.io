@@ -75,17 +75,14 @@ export default defineConfig({
           },
         },
       },
-      tokens: {
-        colors: {
-          secondary: { value: "#986f3b" },
-          border: { value: "#20232e" },
-          textSecondary: { value: "#9e8c79" },
-        },
-      },
+      tokens: {},
       semanticTokens: {
-        buttonSecondary: { value: {
-          _light: "#eee",
-          _dark: "#171f33"} },
+        buttonSecondary: {
+          value: {
+            _light: "#eee",
+            _dark: "#171f33",
+          },
+        },
         colors: {
           background: {
             value: {
@@ -103,6 +100,12 @@ export default defineConfig({
             value: {
               _light: "#0b1326",
               _dark: "#d8c3ad",
+            },
+          },
+          border: {
+            value: {
+              _light: "#bababa",
+              _dark: "#20232e",
             },
           },
           headline: {
@@ -123,6 +126,8 @@ export default defineConfig({
               _dark: "#f59e0b",
             },
           },
+          secondary: { value: { _light: "#777", _dark: "#986f3b" } },
+          textSecondary: { value: { _light: "#777", _dark: "#9e8c79" } },
         },
       },
     },

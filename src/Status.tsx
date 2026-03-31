@@ -7,7 +7,7 @@ const Status: React.FunctionComponent = () => (
   <div
     className={css({
       alignItems: "center",
-      bg: "gray.800/40",
+      bg: "backgroundLight",
       border: "1px solid",
       borderColor: "border",
       display: "flex",
@@ -23,7 +23,7 @@ const Status: React.FunctionComponent = () => (
         size: "3",
       })}
     ></div>
-    <span>Status: Available to job opportunities</span>
+    <span>Status: Available for job opportunities</span>
   </div>
 );
 
