@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { css } from "../styled-system/css";
+import { cva } from "../styled-system/css";
 
 export interface ButtonProps
   extends
@@ -11,41 +11,74 @@ export interface ButtonProps
   variant?: "primary" | "secondary";
 }
 
+export const buttonStyles = cva({
+  base: {
+    border: "1px solid",
+    fontWeight: "bold",
+    letterSpacing: 2,
+    textTransform: "uppercase",
+    transition: "all",
+    transitionDuration: "slow",
+  },
+  variants: {
+    disabled: {
+      ["true"]: {
+        opacity: 0.5,
+        pointerEvents: "none",
+      },
+    },
+    size: {
+      md: {
+        fontSize: "sm",
+        p: 1,
+      },
+      lg: {
+        fontSize: "md",
+        p: 2,
+      },
+    },
+    variant: {
+      primary: {
+        bg: "primary",
+        borderColor: "transparent",
+        color: "neutral",
+        _hover: {
+          background: "neutral",
+          borderColor: "primary",
+          color: "primary",
+        },
+      },
+      secondary: {
+        bg: "neutral",
+        borderColor: "border",
+        color: "primary",
+        _hover: {
+          borderColor: "primary/50",
+        },
+      },
+    },
+  },
+  defaultVariants: {
+    variant: 'primary',
+    size: 'md'
+  }
+});
+
 const Button: React.FunctionComponent<ButtonProps> = ({
   children,
   disabled = false,
-  size = "md",
-  variant = "primary",
+  size,
+  variant,
   ...props
 }) => {
   return (
     <button
       type="button"
       {...props}
-      className={css({
-        background: variant === "primary" ? "primary" : "buttonSecondary",
-        border: "1px solid",
-        borderColor: variant === "primary" ? "transparent" : "border",
-        color: variant === "primary" ? "neutral" : "primary",
-        fontSize: size === "md" ? "sm" : "md",
-        fontWeight: "bold",
-        letterSpacing: 2,
-        opacity: disabled ? 0.5 : 1,
-        p: size === "md" ? 1 : 2,
-        pointerEvents: disabled ? "none" : "initial",
-        textTransform: "uppercase",
-        transition: "all",
-        transitionDuration: "slow",
-        _hover:
-          variant === "primary"
-            ? {
-                background: "neutral",
-                borderColor: "primary",
-                color: "primary",
-              }
-            : {
-                borderColor: "primary/50",
-              },
+      className={buttonStyles({
+        disabled,
+        size,
+        variant,
       })}
     >
       {children}
