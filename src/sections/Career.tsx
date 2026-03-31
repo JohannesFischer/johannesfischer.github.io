@@ -1,8 +1,9 @@
 import * as React from "react";
 
 import { css } from "../../styled-system/css";
-
 import { URLS } from "../const";
+import resumeFile from "../../files/resume-johannes-fischer.pdf";
+
 import ButtonLink from "../ButtonLink";
 import CareerItem from "../CareerItem";
 import HeadingGroup from "../HeadingGroup";
@@ -118,7 +119,7 @@ const Career: React.FunctionComponent = () => (
             marginBlockStart: 4,
           })}
         >
-          <ButtonLink href={URLS.RESUME} size="lg">
+          <ButtonLink href={resumeFile} size="lg" target="_blank">
             Resume
           </ButtonLink>
           <ButtonLink

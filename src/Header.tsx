@@ -2,7 +2,8 @@ import * as React from "react";
 // import { Moon, Sun } from "lucide-react";
 
 import { css } from "../styled-system/css";
-import { URLS } from "./const";
+import resumeFile from "../files/resume-johannes-fischer.pdf";
+
 // import ThemeContext from "./ThemeContext";
 import ButtonLink from "./ButtonLink";
 
@@ -29,7 +30,7 @@ const Header: React.FunctionComponent = () => {
       >
         Johannes_Fischer
       </p>
-      <ButtonLink href={URLS.RESUME} target="_blank">
+      <ButtonLink href={resumeFile} target="_blank">
         Resume
       </ButtonLink>
       {/*{theme === COLOR_SCHEMES.LIGHT ? <Sun /> : <Moon />}*/}

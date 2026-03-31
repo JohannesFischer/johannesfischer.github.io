@@ -12,37 +12,35 @@ const ButtonLink: React.FunctionComponent<ButtonLinkProps> = ({
   size = "md",
   variant = "primary",
   ...props
-}) => {
-  return (
-    <a
-      {...props}
-      className={css({
-        background: variant === "primary" ? "primary" : "buttonSecondary",
-        border: "1px solid",
-        borderColor: variant === "primary" ? "transparent" : "border",
-        color: variant === "primary" ? "neutral" : "primary",
-        fontSize: size === "md" ? "sm" : "md",
-        fontWeight: "bold",
-        letterSpacing: 2,
-        p: size === "md" ? 1 : 2,
-        textTransform: "uppercase",
-        transition: "all",
-        transitionDuration: "slow",
-        _hover:
-          variant === "primary"
-            ? {
-                background: "neutral",
-                borderColor: "primary",
-                color: "primary",
-              }
-            : {
-                borderColor: "primary/50",
-              },
-      })}
-    >
-      {children}
-    </a>
-  );
-};
+}) => (
+  <a
+    {...props}
+    className={css({
+      background: variant === "primary" ? "primary" : "buttonSecondary",
+      border: "1px solid",
+      borderColor: variant === "primary" ? "transparent" : "border",
+      color: variant === "primary" ? "neutral" : "primary",
+      fontSize: size === "md" ? "sm" : "md",
+      fontWeight: "bold",
+      letterSpacing: 2,
+      p: size === "md" ? 1 : 2,
+      textTransform: "uppercase",
+      transition: "all",
+      transitionDuration: "slow",
+      _hover:
+        variant === "primary"
+          ? {
+              background: "neutral",
+              borderColor: "primary",
+              color: "primary",
+            }
+          : {
+              borderColor: "primary/50",
+            },
+    })}
+  >
+    {children}
+  </a>
+);
 
 export default ButtonLink;
