@@ -1,8 +1,7 @@
 import { createContext } from "react";
 
-import { getPreferredColorScheme } from "./utils";
+import { COLOR_SCHEMES } from "./const";
 
-// TODO: change back to getPreferredColorScheme() when light theme is implemented
-const ThemeContext = createContext(getPreferredColorScheme());
+const ThemeContext = createContext(COLOR_SCHEMES.DEFAULT);
 
 export default ThemeContext;

@@ -1,6 +1,7 @@
 export const COLOR_SCHEMES = {
   LIGHT: "light",
   DARK: "dark",
+  DEFAULT: "system",
 };
 
 export const URLS = {

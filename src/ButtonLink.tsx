@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { type ButtonProps } from "./Button";
-import { buttonStyles } from "./styles/button.ts";
+import { buttonStyles } from "./styles/button";
 
 type ButtonLinkProps = React.PropsWithChildren &
   React.AnchorHTMLAttributes<HTMLAnchorElement> &

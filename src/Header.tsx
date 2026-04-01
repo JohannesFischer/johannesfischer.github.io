@@ -1,14 +1,18 @@
-import * as React from "react";
-// import { Moon, Sun } from "lucide-react";
+import React, { useContext } from "react";
+import { Moon, Sun } from "lucide-react";
 
 import { css } from "../styled-system/css";
-import resumeFile from "../files/resume-johannes-fischer.pdf";
+import { COLOR_SCHEMES } from "./const";
 
-// import ThemeContext from "./ThemeContext";
-import ButtonLink from "./ButtonLink";
+import Button from "./Button";
+import ThemeContext from "./ThemeContext";
 
-const Header: React.FunctionComponent = () => {
-  // const theme = useContext(ThemeContext);
+type HeaderProps = {
+  onThemeChange: React.MouseEventHandler<HTMLButtonElement>;
+};
+
+const Header: React.FunctionComponent<HeaderProps> = ({ onThemeChange }) => {
+  const theme = useContext(ThemeContext);
 
   return (
     <header
@@ -30,10 +34,9 @@ const Header: React.FunctionComponent = () => {
       >
         Johannes_Fischer
       </p>
-      <ButtonLink href={resumeFile} target="_blank">
-        Resume
-      </ButtonLink>
-      {/*{theme === COLOR_SCHEMES.LIGHT ? <Sun /> : <Moon />}*/}
+      <Button onClick={onThemeChange} variant="tertiary">
+        {theme === COLOR_SCHEMES.LIGHT ? <Sun /> : <Moon />}
+      </Button>
     </header>
   );
 };

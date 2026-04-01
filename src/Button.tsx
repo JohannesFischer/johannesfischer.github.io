@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { buttonStyles } from "./styles/button.ts";
+import { buttonStyles } from "./styles/button";
 
 export interface ButtonProps
   extends
@@ -8,7 +8,7 @@ export interface ButtonProps
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     React.AriaAttributes {
   size?: "md" | "lg";
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "tertiary";
 }
 
 const Button: React.FunctionComponent<ButtonProps> = ({

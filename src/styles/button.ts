@@ -29,7 +29,6 @@ export const buttonStyles = cva({
     variant: {
       primary: {
         bg: "primary",
-        borderColor: "transparent",
         color: "neutral",
         _hover: {
           background: "neutral",
@@ -43,6 +42,17 @@ export const buttonStyles = cva({
         color: "primary",
         _hover: {
           borderColor: "primary/50",
+        },
+      },
+      tertiary: {
+        bg: "transparent",
+        borderColor: "transparent",
+        color: "primary",
+        _focus: {
+          borderColor: "primary",
+        },
+        _hover: {
+          borderColor: "primary",
         },
       },
     },
