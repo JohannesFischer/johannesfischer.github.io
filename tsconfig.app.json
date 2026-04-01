@@ -18,11 +18,13 @@
 
     /* Linting */
     "strict": true,
+    "allowUnreachableCode": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "noPropertyAccessFromIndexSignature": true
   },
   "include": ["src"]
 }

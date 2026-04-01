@@ -12,13 +12,14 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
 }) => {
   const scrollContainer = useRef<HTMLDivElement>(null);
   const [firstVisibleIndex, setFirstVisibleIndex] = React.useState(0);
-  const [lastIndexVisibleIndex, setLastVisibleIndex] = React.useState(0);
+  const [lastVisibleIndex, setLastVisibleIndex] = React.useState(0);
 
   const getScrollItemWidth = () =>
     (
       scrollContainer?.current?.querySelector("[data-carousel-index]")
         ?.firstChild as HTMLElement
     )?.offsetWidth || 0;
+
   const handleScrollEnd = useCallback(() => {
     if (scrollContainer.current) {
       const { scrollLeft } = scrollContainer.current;
@@ -34,7 +35,7 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
         ),
       );
     }
-  }, []);
+  }, [setFirstVisibleIndex, setLastVisibleIndex]);
 
   const handleScrollForward = useCallback(() => {
     if (scrollContainer.current) {
@@ -88,7 +89,7 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
         </Button>
         <Button
           aria-label="Scroll to next item"
-          disabled={lastIndexVisibleIndex === Children.count(children) - 1}
+          disabled={lastVisibleIndex === Children.count(children) - 1}
           onClick={handleScrollForward}
         >
           <ChevronRight />
