@@ -127,7 +127,9 @@ export default defineConfig({
             },
           },
           secondary: { value: { _light: "#777", _dark: "#986f3b" } },
-          textSecondary: { value: { _light: "#777", _dark: "#9e8c79" } },
+          textSecondary: {
+            value: { _light: "#777", _dark: "#9e8c79" },
+          },
         },
       },
     },
@@ -142,7 +144,10 @@ export default defineConfig({
         },
         properties: {
           // The direction of the scroll
-          direction: { type: "enum", value: ["horizontal", "vertical"] },
+          direction: {
+            type: "enum",
+            value: ["horizontal", "vertical"],
+          },
           // Whether to hide the scrollbar
           hideScrollbar: { type: "boolean" },
         },

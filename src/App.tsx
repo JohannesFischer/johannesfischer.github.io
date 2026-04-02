@@ -41,7 +41,7 @@ const App = () => {
         <Header onThemeChange={handleThemeChange} />
         <main
           className={css({
-            "& section:nth-child(even)": { background: "backgroundLight" },
+            "& section:nth-child(even)": { bg: "backgroundLight" },
           })}
         >
           <IntroSection />

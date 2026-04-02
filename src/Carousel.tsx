@@ -69,7 +69,11 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
 
   return (
     <div
-      className={css({ display: "flex", flexDir: "column", rowGap: [4, 8] })}
+      className={css({
+        display: "flex",
+        flexDir: "column",
+        rowGap: [4, 8],
+      })}
     >
       <div
         className={css({
@@ -107,7 +111,10 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
             gridTemplateRows: "max-content auto max-content max-content",
             rowGap: 2,
           }),
-          scrollable.raw({ direction: "vertical", hideScrollbar: true }),
+          scrollable.raw({
+            direction: "vertical",
+            hideScrollbar: true,
+          }),
           {
             scrollSnapStop: "always",
             scrollSnapType: "x mandatory",

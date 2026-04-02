@@ -30,7 +30,10 @@ const CareerItem: React.FunctionComponent<CareerItemProps> = ({
       <h4 className={css({ textStyle: "heading.h4" })}>{role}</h4>
       {company && startDate && endDate && (
         <p
-          className={css({ textStyle: "heading.h3", color: "textSecondary" })}
+          className={css({
+            color: "textSecondary",
+            textStyle: "heading.h3",
+          })}
         >{`${startDate} – ${endDate} // ${company}`}</p>
       )}
     </div>
