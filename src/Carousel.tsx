@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { css } from "../styled-system/css";
 import { grid, scrollable } from "../styled-system/patterns";
 
-import Button from "./Button";
+import Button from "./components/Button";
 
 const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
   children,

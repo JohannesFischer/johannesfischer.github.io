@@ -4,7 +4,7 @@ import { Moon, Sun } from "lucide-react";
 import { css } from "../styled-system/css";
 import { COLOR_SCHEMES } from "./const";
 
-import Button from "./Button";
+import Button from "./components/Button";
 import ThemeContext from "./ThemeContext";
 
 type HeaderProps = {

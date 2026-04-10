@@ -1,12 +1,14 @@
 import * as React from "react";
 
-import { buttonStyles } from "./styles/button";
+import ButtonContent from "./ButtonContent";
+import { buttonStyles } from "../styles/button";
 
 export interface ButtonProps
   extends
     React.PropsWithChildren,
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     React.AriaAttributes {
+  iconAfter?: React.ReactNode;
   size?: "md" | "lg";
   variant?: "primary" | "secondary" | "tertiary";
 }
@@ -14,6 +16,7 @@ export interface ButtonProps
 const Button: React.FunctionComponent<ButtonProps> = ({
   children,
   disabled = false,
+  iconAfter,
   size,
   variant,
   ...props
@@ -28,7 +31,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
         variant,
       })}
     >
-      {children}
+      <ButtonContent iconAfter={iconAfter}>{children}</ButtonContent>
     </button>
   );
 };

@@ -12,7 +12,7 @@ const Testimonials: React.FunctionComponent = () => (
       layerStyle: "section",
     })}
   >
-    <HeadingGroup heading="Testimonials" headingSup="Peer Validations" />
+    <HeadingGroup heading="Testimonials" headingSup="Peer Feedback" />
     <Carousel>
       <Testimonial
         name="Pete W."

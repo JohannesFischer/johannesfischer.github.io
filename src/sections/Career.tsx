@@ -1,10 +1,11 @@
 import * as React from "react";
+import { ExternalLink, FileDown} from "lucide-react";
 
 import { css } from "../../styled-system/css";
 import { URLS } from "../const";
 import resumeFile from "../../files/resume-johannes-fischer.pdf";
 
-import ButtonLink from "../ButtonLink";
+import ButtonLink from "../components/ButtonLink";
 import CareerItem from "../CareerItem";
 import HeadingGroup from "../HeadingGroup";
 
@@ -119,11 +120,17 @@ const Career: React.FunctionComponent = () => (
             marginBlockStart: 4,
           })}
         >
-          <ButtonLink href={resumeFile} size="lg" target="_blank">
+          <ButtonLink
+            href={resumeFile}
+            iconAfter={<FileDown />}
+            size="lg"
+            target="_blank"
+          >
             Resume
           </ButtonLink>
           <ButtonLink
             href={URLS.LINKEDIN}
+            iconAfter={<ExternalLink />}
             rel="external"
             size="lg"
             variant="secondary"
