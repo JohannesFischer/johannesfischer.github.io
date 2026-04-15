@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Quote } from "lucide-react";
 
 import { css } from "../styled-system/css";
@@ -36,7 +35,7 @@ const Testimonial: React.FunctionComponent<HeadingGroupProps> = ({
     <blockquote>
       <p
         className={css({
-          fontFamily: "Space Grotesk",
+          fontFamily: "headline",
           fontSize: "lg",
           color: "headline",
           marginBlockEnd: 4,

@@ -1,5 +1,4 @@
-import * as React from "react";
-import { Children, useCallback, useRef } from "react";
+import { Children, useCallback, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { css } from "../styled-system/css";
@@ -11,8 +10,8 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
   children,
 }) => {
   const scrollContainer = useRef<HTMLDivElement>(null);
-  const [firstVisibleIndex, setFirstVisibleIndex] = React.useState(0);
-  const [lastVisibleIndex, setLastVisibleIndex] = React.useState(0);
+  const [firstVisibleIndex, setFirstVisibleIndex] = useState(0);
+  const [lastVisibleIndex, setLastVisibleIndex] = useState(0);
 
   const getScrollItemWidth = () =>
     (
@@ -123,7 +122,7 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
         onScrollEnd={handleScrollEnd}
         ref={scrollContainer}
       >
-        {(children as React.ReactElement[])?.map((child, index) => (
+        {Children.toArray(children).map((child, index) => (
           <div
             data-carousel-index={String(index)}
             key={`carousel-item-${index}`}

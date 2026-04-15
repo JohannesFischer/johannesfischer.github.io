@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import ButtonContent from "./ButtonContent";
 import { buttonStyles } from "../styles/button";
 

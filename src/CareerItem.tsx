@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import { css } from "../styled-system/css";
 
 interface CareerItemProps extends React.PropsWithChildren {

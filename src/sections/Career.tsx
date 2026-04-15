@@ -1,5 +1,4 @@
-import * as React from "react";
-import { ExternalLink, FileDown} from "lucide-react";
+import { ExternalLink, FileDown } from "lucide-react";
 
 import { css } from "../../styled-system/css";
 import { URLS } from "../const";

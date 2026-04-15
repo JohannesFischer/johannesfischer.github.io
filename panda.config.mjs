@@ -36,7 +36,7 @@ export default defineConfig({
           DEFAULT: {
             value: {
               color: "headline",
-              fontFamily: "Space Grotesk",
+              fontFamily: "headline",
               fontWeight: "bold",
               fontSize: "2xl",
               lineHeight: "1.2",
@@ -75,7 +75,11 @@ export default defineConfig({
           },
         },
       },
-      tokens: {},
+      tokens: {
+        fonts: {
+            headline: { value: "Space Grotesk" },
+        }
+      },
       semanticTokens: {
         buttonSecondary: {
           value: {

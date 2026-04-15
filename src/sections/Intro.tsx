@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import { css } from "../../styled-system/css";
 import Status from "../Status";
 
