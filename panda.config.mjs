@@ -77,8 +77,8 @@ export default defineConfig({
       },
       tokens: {
         fonts: {
-            headline: { value: "Space Grotesk" },
-        }
+          headline: { value: "Space Grotesk" },
+        },
       },
       semanticTokens: {
         buttonSecondary: {
