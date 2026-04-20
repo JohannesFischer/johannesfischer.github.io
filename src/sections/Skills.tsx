@@ -11,8 +11,8 @@ import {
 import { css } from "../../styled-system/css";
 import { grid } from "../../styled-system/patterns";
 
-import HeadingGroup from "../HeadingGroup";
-import SkillCard from "../SkillCard";
+import HeadingGroup from "../components/HeadingGroup";
+import SkillCard from "../components/SkillCard";
 
 const Skills: React.FunctionComponent = () => (
   <section className={css({ layerStyle: "section" })}>

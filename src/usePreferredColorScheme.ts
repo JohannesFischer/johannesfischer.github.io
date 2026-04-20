@@ -16,4 +16,4 @@ const getSnapshot = () =>
 
 export const usePreferredColorScheme = () => {
   return useSyncExternalStore(subscribe, getSnapshot);
-}
+};

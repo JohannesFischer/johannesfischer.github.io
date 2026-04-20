@@ -1,5 +1,5 @@
 import { css } from "../../styled-system/css";
-import Status from "../Status";
+import Status from "../components/Status";
 
 const Intro: React.FunctionComponent = () => (
   <section className={css({ layerStyle: "section" })}>

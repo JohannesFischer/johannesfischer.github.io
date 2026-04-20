@@ -1,5 +1,5 @@
-import { css } from "../styled-system/css";
-import { square } from "../styled-system/patterns";
+import { css } from "../../styled-system/css";
+import { square } from "../../styled-system/patterns";
 
 const Status: React.FunctionComponent = () => (
   <div

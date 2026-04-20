@@ -1,4 +1,4 @@
-import { css } from "../styled-system/css";
+import { css } from "../../styled-system/css";
 
 interface CareerItemProps extends React.PropsWithChildren {
   company?: string;

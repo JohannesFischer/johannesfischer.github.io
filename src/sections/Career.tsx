@@ -5,8 +5,8 @@ import { URLS } from "../const";
 import resumeFile from "../../files/resume-johannes-fischer.pdf";
 
 import ButtonLink from "../components/ButtonLink";
-import CareerItem from "../CareerItem";
-import HeadingGroup from "../HeadingGroup";
+import CareerItem from "../components/CareerItem";
+import HeadingGroup from "../components/HeadingGroup";
 
 const Career: React.FunctionComponent = () => (
   <section

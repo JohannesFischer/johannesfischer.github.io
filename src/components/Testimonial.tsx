@@ -1,6 +1,6 @@
 import { Quote } from "lucide-react";
 
-import { css } from "../styled-system/css";
+import { css } from "../../styled-system/css";
 
 interface HeadingGroupProps {
   name: string;

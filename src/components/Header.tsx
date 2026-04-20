@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Moon, Sun } from "lucide-react";
 
-import { css } from "../styled-system/css";
-import { COLOR_SCHEMES } from "./const";
+import { css } from "../../styled-system/css";
+import { COLOR_SCHEMES } from "../const";
 
-import Button from "./components/Button";
-import ThemeContext from "./ThemeContext";
+import Button from "./Button";
+import ThemeContext from "../ThemeContext";
 
 type HeaderProps = {
   onThemeChange: React.MouseEventHandler<HTMLButtonElement>;

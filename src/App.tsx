@@ -5,13 +5,13 @@ import { css } from "../styled-system/css";
 import { COLOR_SCHEMES } from "./const";
 
 import CareerSection from "./sections/Career";
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import IntroSection from "./sections/Intro";
 import SkillSection from "./sections/Skills";
 import TestimonialSection from "./sections/Testimonials";
 import ThemeContext from "./ThemeContext";
-import { usePreferredColorScheme } from "./theme";
+import { usePreferredColorScheme } from "./usePreferredColorScheme";
 
 const App = () => {
   const preferredColorScheme = usePreferredColorScheme();

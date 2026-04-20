@@ -1,5 +1,5 @@
-import { css } from "../styled-system/css";
-import { URLS } from "./const";
+import { css } from "../../styled-system/css";
+import { URLS } from "../const";
 
 const Footer: React.FunctionComponent = () => (
   <footer

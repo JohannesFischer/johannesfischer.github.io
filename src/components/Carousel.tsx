@@ -1,10 +1,10 @@
 import { Children, useCallback, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import { css } from "../styled-system/css";
-import { grid, scrollable } from "../styled-system/patterns";
+import { css } from "../../styled-system/css";
+import { grid, scrollable } from "../../styled-system/patterns";
 
-import Button from "./components/Button";
+import Button from "./Button";
 
 const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
   children,
