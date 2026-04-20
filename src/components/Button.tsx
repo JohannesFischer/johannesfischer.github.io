@@ -1,11 +1,11 @@
-import ButtonContent from "./ButtonContent";
 import { buttonStyles } from "../styles/button";
+import ButtonContent from "./ButtonContent";
 
 export interface ButtonProps
   extends
-    React.PropsWithChildren,
+    React.AriaAttributes,
     React.ButtonHTMLAttributes<HTMLButtonElement>,
-    React.AriaAttributes {
+    React.PropsWithChildren {
   iconAfter?: React.ReactNode;
   size?: "md" | "lg";
   variant?: "primary" | "secondary" | "tertiary";

@@ -1,9 +1,8 @@
-import { Children, useCallback, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Children, useCallback, useRef, useState } from "react";
 
 import { css } from "../../styled-system/css";
 import { grid, scrollable } from "../../styled-system/patterns";
-
 import Button from "./Button";
 
 const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
@@ -43,12 +42,12 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
       const currentScrollLeft = scrollContainer.current.scrollLeft;
 
       scrollContainer.current.scrollTo({
-        top: 0,
+        behavior: "smooth",
         left: Math.min(
           scrollWidth - scrollItemWidth,
           currentScrollLeft + scrollItemWidth,
         ),
-        behavior: "smooth",
+        top: 0,
       });
     }
   }, []);
@@ -59,9 +58,9 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
       const currentScrollLeft = scrollContainer.current.scrollLeft;
 
       scrollContainer.current.scrollTo({
-        top: 0,
-        left: Math.max(0, currentScrollLeft - scrollItemWidth),
         behavior: "smooth",
+        left: Math.max(0, currentScrollLeft - scrollItemWidth),
+        top: 0,
       });
     }
   }, []);
@@ -102,11 +101,11 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
         className={css(
           grid.raw({
             alignItems: "start",
-            gridAutoFlow: "column",
             gridAutoColumns: [
               "calc(100vw - token(spacing.4) * 3)",
               "calc(50vw - token(spacing.4) * 2)",
             ],
+            gridAutoFlow: "column",
             gridTemplateRows: "max-content auto max-content max-content",
             rowGap: 2,
           }),
@@ -124,8 +123,6 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
       >
         {Children.toArray(children).map((child, index) => (
           <div
-            data-carousel-index={String(index)}
-            key={`carousel-item-${index}`}
             className={css({
               display: "contents",
               "& > div": {
@@ -135,6 +132,8 @@ const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
                 scrollSnapAlign: "start",
               },
             })}
+            data-carousel-index={String(index)}
+            key={`carousel-item-${index}`}
           >
             {child}
           </div>

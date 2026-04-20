@@ -6,9 +6,9 @@ interface SkillCardProps extends React.PropsWithChildren {
 }
 
 const SkillCard: React.FunctionComponent<SkillCardProps> = ({
+  children,
   icon,
   title,
-  children,
 }) => (
   <div
     className={css({

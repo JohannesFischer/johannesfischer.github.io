@@ -10,7 +10,6 @@ import {
 
 import { css } from "../../styled-system/css";
 import { grid } from "../../styled-system/patterns";
-
 import HeadingGroup from "../components/HeadingGroup";
 import SkillCard from "../components/SkillCard";
 
@@ -24,8 +23,8 @@ const Skills: React.FunctionComponent = () => (
       className={grid({
         columnGap: [undefined, 6, 8],
         columns: [1, 2, 3],
-        rowGap: 12,
         minChildWidth: "1fr",
+        rowGap: 12,
       })}
     >
       <SkillCard icon={<Code strokeWidth={2} />} title="Frontend_Coding">

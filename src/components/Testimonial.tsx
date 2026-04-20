@@ -24,13 +24,13 @@ const Testimonial: React.FunctionComponent<HeadingGroupProps> = ({
     })}
   >
     <Quote
-      fill="currentColor"
-      strokeWidth="0"
       className={css({
         boxSize: "2rem",
         color: "primary/50",
         justifySelf: "end",
       })}
+      fill="currentColor"
+      strokeWidth="0"
     />
     <blockquote>
       <p

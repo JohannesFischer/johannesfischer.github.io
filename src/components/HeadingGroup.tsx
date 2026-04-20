@@ -1,8 +1,8 @@
 import { css } from "../../styled-system/css";
 
 interface HeadingGroupProps {
-  headingSup: string;
   heading: string;
+  headingSup: string;
 }
 
 const HeadingGroup: React.FunctionComponent<HeadingGroupProps> = ({

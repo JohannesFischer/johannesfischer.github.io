@@ -2,11 +2,10 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import "./index.css";
 import { css } from "../styled-system/css";
-import { COLOR_SCHEMES } from "./const";
-
-import CareerSection from "./sections/Career";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import { COLOR_SCHEMES } from "./const";
+import CareerSection from "./sections/Career";
 import IntroSection from "./sections/Intro";
 import SkillSection from "./sections/Skills";
 import TestimonialSection from "./sections/Testimonials";
@@ -34,13 +33,13 @@ const App = () => {
   return (
     <ThemeContext value={theme}>
       <div
-        data-color-mode={theme}
         className={css({
           bg: "background",
           color: "body",
           fontSize: "md",
           minHeight: "dvh",
         })}
+        data-color-mode={theme}
       >
         <Header onThemeChange={handleThemeChange} />
         <main

@@ -1,3 +1,4 @@
+/* eslint-disable perfectionist/sort-objects */
 import { cva } from "../../styled-system/css";
 
 export const buttonStyles = cva({

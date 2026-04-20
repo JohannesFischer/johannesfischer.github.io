@@ -1,5 +1,4 @@
 import { css } from "../../styled-system/css";
-
 import Carousel from "../components/Carousel";
 import HeadingGroup from "../components/HeadingGroup";
 import Testimonial from "../components/Testimonial";

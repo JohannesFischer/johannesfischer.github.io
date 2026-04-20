@@ -2,17 +2,17 @@ import { css } from "../../styled-system/css";
 
 interface CareerItemProps extends React.PropsWithChildren {
   company?: string;
+  endDate?: string;
   role: string;
   startDate?: string;
-  endDate?: string;
 }
 
 const CareerItem: React.FunctionComponent<CareerItemProps> = ({
-  company,
   children,
+  company,
+  endDate,
   role,
   startDate,
-  endDate,
 }) => (
   <div>
     <div

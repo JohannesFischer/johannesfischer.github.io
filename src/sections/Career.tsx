@@ -1,12 +1,11 @@
 import { ExternalLink, FileDown } from "lucide-react";
 
-import { css } from "../../styled-system/css";
-import { URLS } from "../const";
 import resumeFile from "../../files/resume-johannes-fischer.pdf";
-
+import { css } from "../../styled-system/css";
 import ButtonLink from "../components/ButtonLink";
 import CareerItem from "../components/CareerItem";
 import HeadingGroup from "../components/HeadingGroup";
+import { URLS } from "../const";
 
 const Career: React.FunctionComponent = () => (
   <section
