@@ -45,7 +45,7 @@ export default defineConfig({
           h1: {
             value: {
               textStyle: "heading",
-              fontSize: "7xl",
+              fontSize: "5xl",
               lineHeight: "1.1",
               marginBlockEnd: 8,
             },

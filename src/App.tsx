@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { COLOR_SCHEMES } from "./const";
 import CareerSection from "./sections/Career";
-import IntroSection from "./sections/Intro";
+import HeroSection from "./sections/Hero";
 import SkillSection from "./sections/Skills";
 import TestimonialSection from "./sections/Testimonials";
 import ThemeContext from "./ThemeContext";
@@ -47,7 +47,7 @@ const App = () => {
             "& section:nth-child(even)": { bg: "backgroundLight" },
           })}
         >
-          <IntroSection />
+          <HeroSection />
           <SkillSection />
           <TestimonialSection />
           <CareerSection />
