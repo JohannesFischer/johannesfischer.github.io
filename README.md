@@ -10,6 +10,7 @@ Personal portfolio site. Static React SPA deployed to GitHub Pages.
 - [Panda CSS](https://panda-css.com/) — atomic CSS-in-JS, design tokens, CVA variants
 - [Framer Motion](https://www.framer.com/motion/) — animations
 - [Lucide React](https://lucide.dev/) — icons
+- [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks) + [lint-staged](https://github.com/lint-staged/lint-staged) — pre-commit linting and formatting
 
 ## Getting started
 
@@ -28,8 +29,6 @@ npm run lint       # ESLint on src/
 npm run format     # Prettier on all files
 npm run prepare    # regenerate Panda CSS types
 ```
-
-Run `npm run format && npm run lint` before committing.
 
 ## Project structure
 
