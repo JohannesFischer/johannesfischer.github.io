@@ -8,7 +8,6 @@ Personal portfolio site for Johannes Fischer. Static React SPA deployed to GitHu
 - **TypeScript** — strict mode, ES2023 target
 - **Vite** — build tool and dev server
 - **Panda CSS** — atomic CSS-in-JS, design tokens, CVA variants
-- **Framer Motion** — animations
 - **Lucide React** — icons
 
 ## Commands

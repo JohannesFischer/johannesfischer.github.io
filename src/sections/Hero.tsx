@@ -1,4 +1,3 @@
-import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 import { css } from "../../styled-system/css";
@@ -42,7 +41,7 @@ const Hero: React.FunctionComponent = () => {
 
   useEffect(() => {
     const id = setInterval(
-      () => setCurrentIndex((id) => (id === headlines.length - 1 ? 0 : id + 1)),
+      () => setCurrentIndex((i) => (i === headlines.length - 1 ? 0 : i + 1)),
       2500,
     );
 
@@ -62,30 +61,29 @@ const Hero: React.FunctionComponent = () => {
       >
         Design-minded developer shipping{" "}
         <span className={css({ display: "block", position: "relative" })}>
-          <AnimatePresence initial={false}>
-            <span className={css({ opacity: 0 })}>
-              {headlines[currentIndex].text}
-            </span>
-            <motion.span
-              animate={{ opacity: 1, y: 0 }}
-              className={css({
-                backgroundClip: "text",
-                bg: "linear-gradient(to bottom right, var(--from), var(--to))",
-                bottom: -4,
-                color: "transparent",
-                display: "block",
-                position: "absolute",
-                top: 0,
-                _motionReduce: { transition: "none" },
-              })}
-              exit={{ opacity: 0, transition: { duration: 0.2 } }}
-              initial={{ opacity: 0, y: "-100%" }}
-              key={currentIndex}
-              style={gradientStyle}
-            >
-              {headlines[currentIndex].text}
-            </motion.span>
-          </AnimatePresence>
+          <span className={css({ opacity: 0 })}>
+            {headlines[currentIndex].text}
+          </span>
+          <span
+            className={css({
+              animation: "slideDown",
+              animationDuration: "medium",
+              animationTimingFunction: "ease-out",
+              backgroundClip: "text",
+              bg: "linear-gradient(to bottom right, var(--from), var(--to))",
+              bottom: -4,
+              color: "transparent",
+              display: "block",
+              position: "absolute",
+              top: 0,
+              _motionReduce: { animation: "none", opacity: "1" },
+            })}
+            data-placement="top"
+            key={currentIndex}
+            style={gradientStyle}
+          >
+            {headlines[currentIndex].text}
+          </span>
         </span>
       </h1>
       <p
@@ -98,7 +96,7 @@ const Hero: React.FunctionComponent = () => {
           textWrap: "pretty",
         })}
       >
-        I’m a frontend developer specializing in fast, accessible, and
+        I'm a frontend developer specializing in fast, accessible, and
         maintainable web interfaces. I turn designs into responsive,
         component-driven code, optimize performance, and focus on delightful
         interactions — all with attention to accessibility and scalability.

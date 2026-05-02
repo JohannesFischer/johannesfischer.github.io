@@ -76,6 +76,11 @@ export default defineConfig({
         },
       },
       tokens: {
+        durations: {
+          fast: { value: "100ms" },
+          medium: { value: "250ms" },
+          slow: { value: "500ms" },
+        },
         fonts: {
           headline: { value: "Space Grotesk" },
         },

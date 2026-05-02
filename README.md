@@ -8,7 +8,6 @@ Personal portfolio site. Static React SPA deployed to GitHub Pages.
 - [TypeScript](https://www.typescriptlang.org/) — strict mode
 - [Vite](https://vitejs.dev/) — build tool and dev server
 - [Panda CSS](https://panda-css.com/) — atomic CSS-in-JS, design tokens, CVA variants
-- [Framer Motion](https://www.framer.com/motion/) — animations
 - [Lucide React](https://lucide.dev/) — icons
 - [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks) + [lint-staged](https://github.com/lint-staged/lint-staged) — pre-commit linting and formatting
 
