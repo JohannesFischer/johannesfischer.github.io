@@ -22,7 +22,6 @@ const headlines: Array<{ gradient: [ColorToken, ColorToken]; text: string }> = [
     gradient: ["green.300", "green.500"],
     text: "prototypes that validate ideas",
   },
-  //   { gradient: ["teal.300", "teal.500"], text: "high-conversion landing pages" },
   {
     gradient: ["fuchsia.300", "fuchsia.500"],
     text: "cross-browser polished UI",
@@ -101,8 +100,8 @@ const Hero: React.FunctionComponent = () => {
       >
         I’m a frontend developer specializing in fast, accessible, and
         maintainable web interfaces. I turn designs into responsive,
-        component-driven code, optimize performance, and focus on satisfying
-        user interactions — all with attention to accessibility and scalability.
+        component-driven code, optimize performance, and focus on delightful
+        interactions — all with attention to accessibility and scalability.
       </p>
     </section>
   );

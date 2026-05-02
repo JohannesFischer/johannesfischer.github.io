@@ -28,7 +28,7 @@ const Testimonials: React.FunctionComponent = () => (
       />
       <Testimonial
         name="Scott C."
-        quote="Participating in mentorship with Johannes has continued to be a fruitful experience over this semester. In our weekly meetings he continually finds meaningful subject matter for us to discuss and work through together. [...] This has helped me stay motived and gives me purpose."
+        quote="Participating in mentorship with Johannes has continued to be a fruitful experience over this semester. In our weekly meetings he continually finds meaningful subject matter for us to discuss and work through together. [...] This has helped me stay motivated and gives me purpose."
         role="Content Aggregation Engineer, Indeed"
       />
     </Carousel>

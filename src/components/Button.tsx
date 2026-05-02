@@ -21,6 +21,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
 }) => {
   return (
     <button
+      aria-disabled={disabled}
       type="button"
       {...props}
       className={buttonStyles({

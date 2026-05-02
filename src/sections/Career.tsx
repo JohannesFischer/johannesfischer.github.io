@@ -35,8 +35,8 @@ const Career: React.FunctionComponent = () => (
           deliver user-centered solutions. I built and maintained the company
           design system and internal component libraries to ensure visual
           consistency, and I collaborated closely with product managers,
-          designers, and developers. My sophisticated prototypes validated
-          design decisions and helped communicate ideas clearly to stakeholders.
+          designers, and developers. My prototypes validated design decisions
+          and helped communicate ideas clearly to stakeholders.
         </p>
       </CareerItem>
       <CareerItem
@@ -66,10 +66,10 @@ const Career: React.FunctionComponent = () => (
           I developed responsive websites and single-page apps with AngularJS
           and React, built a CMS for user-generated content using Ruby on Rails
           and AngularJS, and optimized sites for mobile performance while
-          conducting UI/UX testing to ensure visual consistency across devices.
-          I translated Photoshop designs into clean, standards‑compliant
+          conducting UI/UX testing to achieve a cohesive look across screen
+          sizes. I translated Photoshop designs into clean, standards‑compliant
           HTML/CSS and worked closely with designers and product managers to
-          iterate quickly in a fast‑paced startup environment.
+          iterate quickly in a startup environment.
         </p>
       </CareerItem>
 
