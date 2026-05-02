@@ -66,9 +66,10 @@ const Hero: React.FunctionComponent = () => {
           </span>
           <span
             className={css({
-              animation: "slideDown",
+              animationName: "slideDown",
               animationDuration: "medium",
               animationTimingFunction: "ease-out",
+              animationFillMode: "forwards",
               backgroundClip: "text",
               bg: "linear-gradient(to bottom right, var(--from), var(--to))",
               bottom: -4,
@@ -76,10 +77,10 @@ const Hero: React.FunctionComponent = () => {
               display: "block",
               position: "absolute",
               top: 0,
-              _motionReduce: { animation: "none", opacity: "1" },
+              _motionReduce: { animationName: "none", opacity: "1" },
             })}
             data-placement="top"
-            key={currentIndex}
+            key={`healine-${currentIndex}`}
             style={gradientStyle}
           >
             {headlines[currentIndex].text}
@@ -99,7 +100,7 @@ const Hero: React.FunctionComponent = () => {
         I'm a frontend developer specializing in fast, accessible, and
         maintainable web interfaces. I turn designs into responsive,
         component-driven code, optimize performance, and focus on delightful
-        interactions — all with attention to accessibility and scalability.
+        interactions — all with attention to scalability.
       </p>
     </section>
   );
