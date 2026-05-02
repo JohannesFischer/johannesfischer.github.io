@@ -58,7 +58,7 @@ const Career: React.FunctionComponent = () => (
       </CareerItem>
       <CareerItem
         company="Nanameue"
-        endDate="2018"
+        endDate="2015"
         role="Front-end Developer"
         startDate="2014"
       >
