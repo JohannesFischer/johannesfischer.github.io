@@ -1,0 +1,82 @@
+[data-color-mode="mujin"] {
+  --color-background: #fafafa;
+  --color-background-gray: #e7e7e7;
+  --color-primary: #ff6410;
+  --color-link: #5d5d5d;
+  --color-link-hover: #1a1a1a;
+  --color-body: #1a1a1a;
+  --color-body-light: #ffffff;
+  --global-font-body: Switzer, sans-serif;
+  --header-height: 3.5rem;
+  --sizes-breakpoint-sm: 640px;
+  --sizes-breakpoint-md: 768px;
+  --sizes-breakpoint-lg: 1024px;
+  --sizes-breakpoint-xl: 1280px;
+  --sizes-breakpoint-2xl: 1536px;
+  --z-indices-menu: 100;
+  --z-indices-overlay: 10;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-body);
+  font-family: var(--global-font-body);
+}
+
+::selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
+}
+
+h1,
+h2 h3 {
+  font-weight: var(--font-weights-bold);
+  margin-block-end: var(--spacing-4);
+}
+
+h1 {
+  font-size: var(--font-sizes-5xl);
+}
+
+h2 {
+  font-size: var(--font-sizes-4xl);
+}
+
+h3 {
+  font-size: var(--font-sizes-4xl);
+  font-weight: var(--font-weights-bold);
+}
+
+h4 {
+  font-size: var(--font-sizes-xl);
+}
+
+h6 {
+  font-size: var(--font-sizes-md);
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url("/assets/Switzer-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url("/assets/Switzer-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url("/assets/Switzer-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
