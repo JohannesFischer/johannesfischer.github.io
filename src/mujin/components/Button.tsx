@@ -15,6 +15,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
 }) => {
   const [hoverState, setHoverState] = useState(false);
   const ref = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     return hover(ref.current, () => {
       setHoverState(true);
@@ -23,6 +24,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
       return () => setHoverState(false);
     });
   }, []);
+
   return (
     <button
       type="button"
@@ -47,15 +49,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
       })}
       ref={ref}
     >
-      <span
-        className={css({
-          //   display: "inline-block",
-          //   minInlineSize: "fit-content",
-          //   zIndex: 2,
-        })}
-      >
-        {children}
-      </span>
+      {children}
       <svg
         aria-hidden="true"
         className={css({

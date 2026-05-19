@@ -1,4 +1,5 @@
 import {
+  AnimatePresence,
   motion,
   useMotionValueEvent,
   useScroll,
@@ -11,21 +12,25 @@ import "./theme.css";
 import ceweLogo from "../../assets/images/cewe-logo.svg";
 import indeedLogo from "../../assets/images/indeed-logo.svg";
 import rakutenLogo from "../../assets/images/rakuten-logo.svg";
+import bgVideoPoster from "../../assets/images/robot.jpg";
 import tabletCodeImg from "../../assets/images/tablet-code.png";
 import webDevImg from "../../assets/images/webdev.png";
 import bgVideo from "../../files/robot.mp4";
 import { css } from "../../styled-system/css";
 import Button from "./components/Button";
+import ContactDialog from "./components/ContactDialog";
 import ContentContainer from "./components/ContentContainer";
 import DetailsItem from "./components/DetailsItem";
 import FadeUp from "./components/FadeUp";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Headline from "./components/Headline";
+import ImageCard from "./components/ImageCard";
 
 const App: React.FunctionComponent = () => {
   const [openDetailsItem, setOpenDetailsItem] = useState(-1);
   const [heroPast, setHeroPast] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: cardScrollProgress } = useScroll({
     offset: ["start end", "center end"],
@@ -75,7 +80,7 @@ const App: React.FunctionComponent = () => {
             alignContent: "center",
             bg: "rgba(26,26,26,.45)",
             display: "flex",
-            flexDirection: "column",
+            flexDir: "column",
             gap: 12,
             minBlockSize: "100vh",
             placeContent: "center",
@@ -95,7 +100,7 @@ const App: React.FunctionComponent = () => {
                 letterSpacing: "-0.02em",
               })}
             >
-              Advancing robotics with physical AI
+              Crafting interfaces that move the world
             </FadeUp>
             <FadeUp
               as="h2"
@@ -105,7 +110,7 @@ const App: React.FunctionComponent = () => {
               })}
               transition={{ delay: 0.15 }}
             >
-              Frontend engineering for Mujin — the no-code robotics platform
+              How I'd contribute to Mujin as a Senior Frontend Engineer
             </FadeUp>
           </div>
           <FadeUp transition={{ delay: 0.3 }}>
@@ -134,6 +139,7 @@ const App: React.FunctionComponent = () => {
             })}
             loop={true}
             muted={true}
+            poster={bgVideoPoster}
             src={bgVideo}
           />
         </div>
@@ -142,7 +148,7 @@ const App: React.FunctionComponent = () => {
         <ContentContainer
           styles={{
             display: "flex",
-            flexDirection: ["column", undefined, undefined, "row"],
+            flexDir: ["column", undefined, undefined, "row"],
             gap: 4,
             p: 4,
           }}
@@ -150,11 +156,12 @@ const App: React.FunctionComponent = () => {
           <div>
             <Headline level="h2">My role at Mujin</Headline>
             <p>
-              Mujin is building the global standard for intelligent
-              robotics—uniting technology, product, and operations through a
-              single no-code platform: MujinOS. When powered by MujinOS, robots
-              take on complex tasks so teams can deploy faster, adapt with ease,
-              and scale without compromise.
+              I'm a senior frontend engineer specialising in React and
+              TypeScript, with a track record of building accessible,
+              component-driven UIs for complex domains. I'd join Mujin's
+              Frontend System Team to improve MujinOS's real-time controller UI
+              — raising the bar on responsiveness, animation fidelity, and
+              maintainability while mentoring junior engineers along the way.
             </p>
           </div>
           <img
@@ -222,7 +229,7 @@ const App: React.FunctionComponent = () => {
               <div
                 className={css({
                   display: "flex",
-                  flexDirection: "column",
+                  flexDir: "column",
                   justifyContent: "space-between",
                 })}
               >
@@ -230,45 +237,47 @@ const App: React.FunctionComponent = () => {
                   <DetailsItem
                     onClick={() => handleOpenDetailsItem(0)}
                     open={openDetailsItem === 0}
-                    summary="Details"
+                    summary="Performance-first engineering"
                   >
                     <p>
-                      Speed to production is yours to set, with MujinOS removing
-                      coding delays and integration hurdles so your systems
-                      start delivering value in weeks, not months.
+                      I profile, analyse bundle size, and reach for browser APIs
+                      before abstractions. Satisfying UIs can't afford jank, I
+                      treat performance as a feature, not a fix.
                     </p>
                   </DetailsItem>
                   <DetailsItem
                     onClick={() => handleOpenDetailsItem(1)}
                     open={openDetailsItem === 1}
-                    summary="Details2"
+                    summary="Component systems that scale"
                   >
                     <p>
-                      Speed to production is yours to set, with MujinOS removing
-                      coding delays and integration hurdles so your systems
-                      start delivering value in weeks, not months.
+                      I build reusable, typed component libraries with clear
+                      APIs. Consistency across a large codebase reduces
+                      onboarding friction and keeps the UI predicatable and
+                      maintainable.
                     </p>
                   </DetailsItem>
                   <DetailsItem
                     onClick={() => handleOpenDetailsItem(2)}
                     open={openDetailsItem === 2}
-                    summary="Details3"
+                    summary="Animation & visual engineering"
                   >
                     <p>
-                      Speed to production is yours to set, with MujinOS removing
-                      coding delays and integration hurdles so your systems
-                      start delivering value in weeks, not months.
+                      From CSS transitions to SVG path animations, I implement
+                      motion that communicates system state, not just
+                      decoration. Relevant for a UI where users must find
+                      information at a glance.
                     </p>
                   </DetailsItem>
                   <DetailsItem
                     onClick={() => handleOpenDetailsItem(3)}
                     open={openDetailsItem === 3}
-                    summary="Details4"
+                    summary="Code quality & team growth"
                   >
                     <p>
-                      Speed to production is yours to set, with MujinOS removing
-                      coding delays and integration hurdles so your systems
-                      start delivering value in weeks, not months.
+                      I like a proper Lint setup and tests that catch
+                      regressions before they ship. I enjoy code review as a
+                      teaching tool, not a gate.
                     </p>
                   </DetailsItem>
                 </div>
@@ -290,10 +299,22 @@ const App: React.FunctionComponent = () => {
         })}
       >
         <ContentContainer>
-          <Headline level="h2">
-            Automate as an integrator or by industry
-          </Headline>
-          <div>inspirational stuff here</div>
+          <Headline level="h2">What I bring to your team</Headline>
+          <div
+            className={css({
+              display: "flex",
+              gap: 6,
+              "& > div": {
+                flexBasis: "50%",
+              },
+            })}
+          >
+            <ImageCard imageSrc={webDevImg} title="Real-time UI expertise" />
+            <ImageCard
+              imageSrc={webDevImg}
+              title="No-code interface thinking"
+            />
+          </div>
         </ContentContainer>
       </section>
       <section
@@ -309,7 +330,7 @@ const App: React.FunctionComponent = () => {
             className={css({
               alignItems: "center",
               display: "flex",
-              flexDirection: "row",
+              flexDir: "row",
               flexWrap: "wrap",
               justifyContent: "center",
               gap: 8,
@@ -340,26 +361,29 @@ const App: React.FunctionComponent = () => {
         <ContentContainer>
           <div
             className={css({
-              "& p": {
-                fontSize: "var(--font-sizes-xl)",
-              },
               bg: "var(--color-primary)",
               borderRadius: "lg",
               boxShadow: "md",
               color: "var(--color-body-light)",
               display: "flex",
+              flexDir: ["column", undefined, "row"],
               gap: 8,
+              justifyContent: ["center", undefined, "flex-start"],
               marginBlockEnd: 6,
               mx: 4,
               px: 12,
               py: 6,
+              "& p": {
+                fontSize: "var(--font-sizes-xl)",
+              },
             })}
           >
             <div>
-              <h3>Have a question?</h3>
+              <h3>Let's talk about the role</h3>
               <p>
-                Learn how MujinOS delivers real-time perception, motion control,
-                and no-code deployment—across any robotic system
+                I'd love to discuss how my experience with React, TypeScript,
+                and performance optimizations to the challenges Mujin is
+                solving.
               </p>
             </div>
             <motion.button
@@ -372,15 +396,19 @@ const App: React.FunctionComponent = () => {
                 minInlineSize: "fit-content",
                 p: 4,
               })}
+              onClick={() => setDialogOpen(true)}
               type="button"
               whileHover={{ scale: 1.05 }}
             >
-              Contact me
+              Get in touch
             </motion.button>
           </div>
         </ContentContainer>
       </section>
       <Footer />
+      <AnimatePresence>
+        {dialogOpen && <ContactDialog onClose={() => setDialogOpen(false)} />}
+      </AnimatePresence>
     </div>
   );
 };

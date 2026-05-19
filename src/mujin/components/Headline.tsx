@@ -19,7 +19,7 @@ const Headline: React.FunctionComponent<HeadlineProps> = ({
     <div
       className={css({
         display: "flex",
-        flexDirection: "column",
+        flexDir: "column",
         gap: 2,
         ...(align === "center" && {
           alignItems: "center",

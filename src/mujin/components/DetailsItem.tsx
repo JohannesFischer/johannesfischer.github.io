@@ -40,7 +40,7 @@ const DetailsItem = ({
       <summary
         className={css({
           display: "flex",
-          fontSize: "2xl",
+          fontSize: "xl",
           fontWeight: "bold",
           justifyContent: "space-between",
           p: 4,
