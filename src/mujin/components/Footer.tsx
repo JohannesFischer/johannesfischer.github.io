@@ -143,7 +143,7 @@ const Footer = () => (
       >
         <div>&copy; copyright 2026</div>
         <a
-          href="https://github.com/JohannesFischer/johannesfischer.github.io/tree/master/mujin"
+          href="https://github.com/JohannesFischer/johannesfischer.github.io/tree/master/src/mujin"
           rel="external"
           target="_blank"
         >
