@@ -6,6 +6,8 @@
   --color-link-hover: #1a1a1a;
   --color-body: #1a1a1a;
   --color-body-light: #ffffff;
+  --color-selection-bg: #ff641099;
+  --color-selection-text: #ffffff;
   --global-font-body: Switzer, sans-serif;
   --header-height: 3.5rem;
   --sizes-breakpoint-sm: 640px;
@@ -40,20 +42,23 @@ h1 {
 
 h2 {
   font-size: var(--font-sizes-4xl);
+  font-weight: var(--font-weights-bold);
+  margin-block-end: var(--spacing-6);
 }
 
 h3 {
   font-size: var(--font-sizes-4xl);
   font-weight: var(--font-weights-bold);
+  margin-block-end: var(--spacing-4);
 }
 
 h4 {
-  font-size: var(--font-sizes-xl);
+  font-size: var(--font-sizes-2xl);
 }
 
 h6 {
-  font-size: var(--font-sizes-md);
-  font-weight: normal;
+  font-size: var(--font-sizes-sm);
+  font-weight: var(--font-weights-bold);
   text-decoration: underline;
 }
 

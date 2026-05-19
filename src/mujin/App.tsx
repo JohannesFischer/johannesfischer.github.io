@@ -11,9 +11,11 @@ import "./index.css";
 import "./theme.css";
 import ceweLogo from "../../assets/images/cewe-logo.svg";
 import indeedLogo from "../../assets/images/indeed-logo.svg";
+import launchPlanningImg from "../../assets/images/launch-planning.png";
 import rakutenLogo from "../../assets/images/rakuten-logo.svg";
 import bgVideoPoster from "../../assets/images/robot.jpg";
 import tabletCodeImg from "../../assets/images/tablet-code.png";
+import warehouseImg from "../../assets/images/web-dev-warehouse.png";
 import webDevImg from "../../assets/images/webdev.png";
 import bgVideo from "../../files/robot.mp4";
 import { css } from "../../styled-system/css";
@@ -79,6 +81,7 @@ const App: React.FunctionComponent = () => {
           className={css({
             alignContent: "center",
             bg: "rgba(26,26,26,.45)",
+            color: "var(--color-body-light)",
             display: "flex",
             flexDir: "column",
             gap: 12,
@@ -90,32 +93,30 @@ const App: React.FunctionComponent = () => {
             zIndex: "var(--z-indices-overlay)",
           })}
         >
-          <div>
-            <FadeUp
-              as="h1"
-              className={css({
-                color: "var(--color-body-light)",
-                fontSize: "4xl",
-                fontWeight: "bold",
-                letterSpacing: "-0.02em",
-              })}
-            >
-              Crafting interfaces that move the world
+          <ContentContainer>
+            <div>
+              <FadeUp
+                as="h1"
+                className={css({
+                  fontSize: "4xl",
+                  fontWeight: "bold",
+                  letterSpacing: "-0.02em",
+                })}
+              >
+                Crafting interfaces that move the world
+              </FadeUp>
+              <FadeUp as="h2" transition={{ delay: 0.15 }}>
+                <span className={css({ fontSize: "2xl" })}>
+                  How I'd contribute to Mujin as a Senior Frontend Engineer
+                </span>
+              </FadeUp>
+            </div>
+            <FadeUp transition={{ delay: 0.3 }}>
+              <Button onClick={() => handleHeroButtonClick()}>
+                Learn more
+              </Button>
             </FadeUp>
-            <FadeUp
-              as="h2"
-              className={css({
-                color: "var(--color-body-light)",
-                fontSize: "xl",
-              })}
-              transition={{ delay: 0.15 }}
-            >
-              How I'd contribute to Mujin as a Senior Frontend Engineer
-            </FadeUp>
-          </div>
-          <FadeUp transition={{ delay: 0.3 }}>
-            <Button onClick={() => handleHeroButtonClick()}>Learn more</Button>
-          </FadeUp>
+          </ContentContainer>
         </div>
         <div
           className={css({
@@ -147,9 +148,9 @@ const App: React.FunctionComponent = () => {
       <section id="Role">
         <ContentContainer
           styles={{
-            display: "flex",
-            flexDir: ["column", undefined, undefined, "row"],
-            gap: 4,
+            display: "grid",
+            gap: 8,
+            gridTemplateColumns: ["1fr", "1fr 1fr"],
             p: 4,
           }}
         >
@@ -164,19 +165,25 @@ const App: React.FunctionComponent = () => {
               maintainability while mentoring junior engineers along the way.
             </p>
           </div>
-          <img
-            alt="A hand points out bad code on a tablet computer"
+          <div
             className={css({
-              borderRadius: 12,
-              maxInlineSize: ["unset", undefined, undefined, "50%"],
-              display: "block",
-              width: ["100%", undefined, undefined, "initial"],
-              height: ["100%", undefined, undefined, "initial"],
-              objectPosition: "center center",
-              objectFit: "cover",
+              borderRadius: "lg",
+              minBlockSize: ["200px", 0],
+              overflow: "hidden",
             })}
-            src={tabletCodeImg}
-          />
+          >
+            <img
+              alt="A hand points out bad code on a tablet computer"
+              className={css({
+                display: "block",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center center",
+                width: "100%",
+              })}
+              src={tabletCodeImg}
+            />
+          </div>
         </ContentContainer>
       </section>
       <section className={css({ bg: "var(--color-background)" })}>
@@ -184,7 +191,7 @@ const App: React.FunctionComponent = () => {
           <motion.div
             className={css({
               bgLinear: "to-b",
-              boxShadow: "lg",
+              boxShadow: "xl",
               borderColor: "gray.200",
               borderRadius: 14,
               borderWidth: "1px",
@@ -200,13 +207,13 @@ const App: React.FunctionComponent = () => {
           >
             <div className={css({ mb: 6, textAlign: "center" })}>
               <Headline align="center" level="h2">
-                MujinOS simplifies automation to drive businesses forward
+                My approach to frontend engineering
               </Headline>
               <p>
-                Accelerate deployment, cut engineering costs, and streamline
-                control, without adding complexity. Whether automating for the
-                first time or scaling an existing system, MujinOS grows with
-                your company— adapting as your goals and operations change.
+                Good frontend work means bridging complex logic and the people
+                who operate it. I focus on accessibility, consistency, and
+                clarity — so operators can trust the interface and developers
+                can maintain it.
               </p>
             </div>
             <div
@@ -281,8 +288,10 @@ const App: React.FunctionComponent = () => {
                     </p>
                   </DetailsItem>
                 </div>
-                <FadeUp className={css({ marginBlockStart: [6, undefined] })}>
-                  <Button>Button</Button>
+                <FadeUp className={css({ marginBlockStart: [2, undefined] })}>
+                  <Button onClick={() => setDialogOpen(true)}>
+                    Explore more
+                  </Button>
                 </FadeUp>
               </div>
             </div>
@@ -303,16 +312,24 @@ const App: React.FunctionComponent = () => {
           <div
             className={css({
               display: "flex",
+              flexDir: ["column", undefined, "row"],
               gap: 6,
               "& > div": {
                 flexBasis: "50%",
               },
             })}
           >
-            <ImageCard imageSrc={webDevImg} title="Real-time UI expertise" />
             <ImageCard
-              imageSrc={webDevImg}
-              title="No-code interface thinking"
+              imageSrc={warehouseImg}
+              listItems={["React", "TypeScript", "Web standards"]}
+              textContent="Some placeholder text representing the text content that I still have to come up with"
+              title="Real-time UI expertise"
+            />
+            <ImageCard
+              imageSrc={launchPlanningImg}
+              listItems={["Figma", "Components", "Design feedback"]}
+              textContent="I stay involved across the full delivery cycle — design handoffs, component architecture, performance budgets, and release pipelines. Fewer handoff gaps, fewer surprises in production."
+              title="From Figma to production"
             />
           </div>
         </ContentContainer>

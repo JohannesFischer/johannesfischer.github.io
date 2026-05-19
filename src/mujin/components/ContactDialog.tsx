@@ -1,7 +1,9 @@
 import { motion } from "motion/react";
 import React, { useEffect, useRef } from "react";
 
+import resumeFile from "../../../files/resume-johannes-fischer.pdf";
 import { css } from "../../../styled-system/css";
+import { URLS } from "../../const";
 import { CloseIcon } from "./CloseIcon";
 
 interface ContactDialogProps {
@@ -20,8 +22,8 @@ const ContactDialog: React.FunctionComponent<ContactDialogProps> = ({
   useEffect(() => {
     const dialog = ref.current;
     const handleCancel = (e: Event) => {
-      e.preventDefault(); // stop browser closing dialog immediately
-      onClose(); // parent sets open=false → AnimatePresence exits
+      e.preventDefault();
+      onClose();
     };
     dialog?.addEventListener("cancel", handleCancel);
     return () => dialog?.removeEventListener("cancel", handleCancel);
@@ -42,7 +44,7 @@ const ContactDialog: React.FunctionComponent<ContactDialogProps> = ({
         "&::backdrop": {
           backdropFilter: "blur(2px)",
           opacity: 1,
-          transition: "opacity, 1s easeIn",
+          transition: "opacity, .5s ease-in",
           "@starting-style": {
             opacity: 0,
           },
@@ -65,19 +67,19 @@ const ContactDialog: React.FunctionComponent<ContactDialogProps> = ({
             justifyContent: "space-between",
           })}
         >
-          <h2
+          <h4
             className={css({
-              fontSize: "xl",
               fontWeight: "bold",
               color: "var(--color-body)",
               m: 0,
             })}
           >
-            Contact me
-          </h2>
+            I'm looking for the next challenge
+          </h4>
           <button
             aria-label="Close dialog"
             className={css({
+              alignSelf: "flex-start",
               background: "none",
               border: "none",
               cursor: "pointer",
@@ -92,108 +94,50 @@ const ContactDialog: React.FunctionComponent<ContactDialogProps> = ({
             <CloseIcon />
           </button>
         </div>
-        <form method="dialog" onSubmit={onClose}>
-          <div
+        <p className={css({ color: "var(--color-body)", mt: 2, mb: 6 })}>
+          Want to learn more about my experience? Check out my resume or connect
+          with me on LinkedIn.
+        </p>
+        <div className={css({ display: "flex", gap: 4, flexWrap: "wrap" })}>
+          <a
             className={css({
-              display: "flex",
-              flexDirection: "column",
-              gap: 4,
+              bg: "var(--color-primary)",
+              borderRadius: "sm",
+              color: "var(--color-body-light)",
+              fontWeight: "bold",
+              px: 5,
+              py: 3,
+              textDecoration: "none",
+              _hover: { opacity: 0.9 },
             })}
+            download
+            href={resumeFile}
           >
-            <label
-              className={css({
-                display: "flex",
-                flexDirection: "column",
-                gap: 1,
-              })}
-            >
-              <span
-                className={css({ fontSize: "sm", color: "var(--color-body)" })}
-              >
-                Name
-              </span>
-              <input
-                className={css({
-                  border: "1px solid",
-                  borderColor: "gray.300",
-                  borderRadius: "sm",
-                  p: 2,
-                  fontSize: "md",
-                })}
-                name="name"
-                required
-                type="text"
-              />
-            </label>
-            <label
-              className={css({
-                display: "flex",
-                flexDirection: "column",
-                gap: 1,
-              })}
-            >
-              <span
-                className={css({ fontSize: "sm", color: "var(--color-body)" })}
-              >
-                Email
-              </span>
-              <input
-                className={css({
-                  border: "1px solid",
-                  borderColor: "gray.300",
-                  borderRadius: "sm",
-                  p: 2,
-                  fontSize: "md",
-                })}
-                name="email"
-                required
-                type="email"
-              />
-            </label>
-            <label
-              className={css({
-                display: "flex",
-                flexDirection: "column",
-                gap: 1,
-              })}
-            >
-              <span
-                className={css({ fontSize: "sm", color: "var(--color-body)" })}
-              >
-                Message
-              </span>
-              <textarea
-                className={css({
-                  border: "1px solid",
-                  borderColor: "gray.300",
-                  borderRadius: "sm",
-                  p: 2,
-                  fontSize: "md",
-                  minBlockSize: "120px",
-                  resize: "vertical",
-                })}
-                name="message"
-                required
-              />
-            </label>
-            <button
-              className={css({
+            Resume
+          </a>
+          <a
+            className={css({
+              border: "2px solid",
+              borderColor: "var(--color-primary)",
+              borderRadius: "sm",
+              color: "var(--color-primary)",
+              fontWeight: "bold",
+              px: 5,
+              py: 3,
+              textDecoration: "none",
+              _hover: {
                 bg: "var(--color-primary)",
-                border: "none",
-                borderRadius: "sm",
                 color: "var(--color-body-light)",
-                cursor: "pointer",
-                fontSize: "md",
-                fontWeight: "bold",
-                mt: 2,
-                p: 3,
-              })}
-              type="submit"
-            >
-              Send
-            </button>
-          </div>
-        </form>
+              },
+              transition: "all .2s ease",
+            })}
+            href={URLS.LINKEDIN}
+            rel="external noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </div>
       </div>
     </motion.dialog>
   );
