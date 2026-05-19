@@ -79,7 +79,7 @@ const ImageCard: React.FunctionComponent<ImageCardProps> = ({
             gap: 4,
             "& li": {
               border: "1px solid",
-              borderColor: "var(--color-body-light))",
+              borderColor: "var(--color-body-light)",
               gap: 2,
               p: 2,
               transition: "all .35s ease-in",
