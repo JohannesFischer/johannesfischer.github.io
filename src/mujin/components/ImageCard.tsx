@@ -20,9 +20,8 @@ const ImageCard: React.FunctionComponent<ImageCardProps> = ({
   return (
     <div
       className={css({
-        blockSize: "400px",
         borderRadius: "xl",
-        minBlockSize: "300px",
+        minBlockSize: "360px",
         overflow: "hidden",
         position: "relative",
         "& > img": {

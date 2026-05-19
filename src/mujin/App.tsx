@@ -321,13 +321,13 @@ const App: React.FunctionComponent = () => {
           >
             <ImageCard
               imageSrc={warehouseImg}
-              listItems={["React", "TypeScript", "Web standards"]}
-              textContent="Some placeholder text representing the text content that I still have to come up with"
+              listItems={["Profiling", "Bundle analysis", "Browser APIs"]}
+              textContent="At Indeed and Rakuten I shipped high-traffic UIs where performance regressions had direct business impact. I profile before I optimize, and I reach for browser APIs before abstractions."
               title="Real-time UI expertise"
             />
             <ImageCard
               imageSrc={launchPlanningImg}
-              listItems={["Figma", "Components", "Design feedback"]}
+              listItems={["Figma", "Component design", "Design feedback"]}
               textContent="I stay involved across the full delivery cycle, design handoffs, component design, performance budgets, and release pipelines. Fewer handoff gaps, fewer surprises in production."
               title="From Figma to production"
             />
