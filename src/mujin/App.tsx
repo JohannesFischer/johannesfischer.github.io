@@ -384,7 +384,7 @@ const App: React.FunctionComponent = () => {
               color: "var(--color-body-light)",
               display: "flex",
               flexDir: ["column", undefined, "row"],
-              gap: 8,
+              gap: [8, undefined, 16],
               justifyContent: ["center", undefined, "flex-start"],
               marginBlockEnd: 6,
               mx: 4,

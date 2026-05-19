@@ -37,7 +37,7 @@ const ContactDialog: React.FunctionComponent<ContactDialogProps> = ({
         borderRadius: "lg",
         border: "none",
         boxShadow: "lg",
-        blockSize: ["100vh", undefined, "fit-content"],
+        blockSize: "fit-content",
         inlineSize: ["100vw", undefined, "min(90vw, 600px)"],
         m: "auto",
         p: 0,

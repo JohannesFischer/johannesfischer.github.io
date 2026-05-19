@@ -96,6 +96,15 @@ const Footer = () => (
             <ul>
               <li>
                 <a
+                  href="https://johannesfischer.github.io/"
+                  rel="external"
+                  target="_blank"
+                >
+                  My Portfolio
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://www.linkedin.com/in/johannestheuxguy/"
                   rel="external"
                   target="_blank"
