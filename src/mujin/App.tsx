@@ -159,9 +159,9 @@ const App: React.FunctionComponent = () => {
             <p>
               I'm a senior frontend engineer specialising in React and
               TypeScript, with a track record of building accessible,
-              component-driven UIs for complex domains. I'd join Mujin's
-              Frontend System Team to improve MujinOS's real-time controller UI
-              — raising the bar on responsiveness, animation fidelity, and
+              component-driven UIs for complex domains. I'd love to join Mujin's
+              Frontend System Team to improve MujinOS's real-time controller UI,
+              raising the bar on responsiveness, animation fidelity, and
               maintainability while mentoring junior engineers along the way.
             </p>
           </div>
@@ -212,8 +212,8 @@ const App: React.FunctionComponent = () => {
               <p>
                 Good frontend work means bridging complex logic and the people
                 who operate it. I focus on accessibility, consistency, and
-                clarity — so operators can trust the interface and developers
-                can maintain it.
+                clarity, so operators can trust the interface and developers can
+                maintain it.
               </p>
             </div>
             <div
@@ -328,7 +328,7 @@ const App: React.FunctionComponent = () => {
             <ImageCard
               imageSrc={launchPlanningImg}
               listItems={["Figma", "Components", "Design feedback"]}
-              textContent="I stay involved across the full delivery cycle — design handoffs, component architecture, performance budgets, and release pipelines. Fewer handoff gaps, fewer surprises in production."
+              textContent="I stay involved across the full delivery cycle, design handoffs, component design, performance budgets, and release pipelines. Fewer handoff gaps, fewer surprises in production."
               title="From Figma to production"
             />
           </div>
