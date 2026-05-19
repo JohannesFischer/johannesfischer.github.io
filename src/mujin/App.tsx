@@ -323,7 +323,7 @@ const App: React.FunctionComponent = () => {
               imageSrc={warehouseImg}
               listItems={["Profiling", "Bundle analysis", "Browser APIs"]}
               textContent="At Indeed and Rakuten I shipped high-traffic UIs where performance regressions had direct business impact. I profile before I optimize, and I reach for browser APIs before abstractions."
-              title="Real-time UI expertise"
+              title="Vast UI expertise"
             />
             <ImageCard
               imageSrc={launchPlanningImg}
