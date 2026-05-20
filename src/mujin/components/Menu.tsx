@@ -9,7 +9,9 @@ const slideIn = {
   visible: { opacity: 1, x: 0 },
 };
 
-const Menu: React.FunctionComponent = () => {
+const Menu: React.FunctionComponent<{ onClose: () => void }> = ({
+  onClose,
+}) => {
   useLockBodyScroll();
 
   return (
@@ -23,6 +25,9 @@ const Menu: React.FunctionComponent = () => {
         top: "var(--header-height)",
         width: "100%",
         zIndex: "var(--z-indices-menu)",
+        "& li": {
+          mb: 6,
+        },
       })}
       initial="hidden"
       transition={{ duration: 0.25, ease: "easeOut" }}
@@ -31,16 +36,24 @@ const Menu: React.FunctionComponent = () => {
       <nav id="hamburger-menu">
         <ul>
           <li>
-            <a href="#one">Section 1</a>
+            <a href="#Role" onClick={onClose}>
+              My role at Mujin
+            </a>
           </li>
           <li>
-            <a href="#two">Section 2</a>
+            <a href="#Approach" onClick={onClose}>
+              My approach to frontend engineering
+            </a>
           </li>
           <li>
-            <a href="#three">Section 3</a>
+            <a href="#Team" onClick={onClose}>
+              What I bring to your team
+            </a>
           </li>
           <li>
-            <a href="#four">Section 4</a>
+            <a href="#Talk" onClick={onClose}>
+              Let's talk about the role
+            </a>
           </li>
         </ul>
       </nav>

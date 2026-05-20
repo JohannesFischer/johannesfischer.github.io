@@ -76,7 +76,7 @@ const Header: React.FunctionComponent<{ solidBg?: boolean }> = ({
         </button>
       </header>
       <motion.div animate={open ? "visible" : "hidden"}>
-        {open && <Menu />}
+        {open && <Menu onClose={() => setOpen(false)} />}
       </motion.div>
     </>
   );

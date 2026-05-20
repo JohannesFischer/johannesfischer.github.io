@@ -186,7 +186,7 @@ const App: React.FunctionComponent = () => {
           </div>
         </ContentContainer>
       </section>
-      <section className={css({ bg: "var(--color-background)" })}>
+      <section className={css({ bg: "var(--color-background)" })} id="Approach">
         <ContentContainer>
           <motion.div
             className={css({
@@ -306,6 +306,7 @@ const App: React.FunctionComponent = () => {
           gradientTo: "var(--color-background-gray)",
           px: 4,
         })}
+        id="Team"
       >
         <ContentContainer>
           <Headline level="h2">What I bring to your team</Headline>
@@ -374,7 +375,7 @@ const App: React.FunctionComponent = () => {
           </div>
         </ContentContainer>
       </section>
-      <section>
+      <section id="Talk">
         <ContentContainer>
           <div
             className={css({
