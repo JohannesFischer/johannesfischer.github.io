@@ -5,6 +5,12 @@ import { css } from "../../../styled-system/css";
 import { DetailsIcon } from "./DetailsIcon";
 import FadeUp from "./FadeUp";
 
+const openStyles = {
+  bgLinear: "to-b",
+  gradientFrom: "rgba(255, 100, 16, 0)",
+  gradientTo: "rgba(255, 100, 16, 0.2)",
+};
+
 const DetailsItem = ({
   children,
   onClick,
@@ -17,11 +23,6 @@ const DetailsItem = ({
   summary: string;
 }) => {
   const [isMounted, setIsMounted] = useState(false);
-  const openStyles = {
-    bgLinear: "to-b",
-    gradientFrom: "rgba(255, 100, 16, 0)",
-    gradientTo: "rgba(255, 100, 16, 0.2)",
-  };
 
   return (
     <details

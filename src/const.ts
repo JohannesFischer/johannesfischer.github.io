@@ -1,3 +1,10 @@
+export const SECTION_IDS = {
+  APPROACH: "Approach",
+  ROLE: "Role",
+  TALK: "Talk",
+  TEAM: "Team",
+} as const;
+
 export const COLOR_SCHEMES = {
   DARK: "dark",
   LIGHT: "light",

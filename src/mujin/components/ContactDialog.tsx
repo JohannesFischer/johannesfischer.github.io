@@ -26,6 +26,7 @@ const ContactDialog: React.FunctionComponent<ContactDialogProps> = ({
       onClose();
     };
     dialog?.addEventListener("cancel", handleCancel);
+
     return () => dialog?.removeEventListener("cancel", handleCancel);
   }, [onClose]);
 

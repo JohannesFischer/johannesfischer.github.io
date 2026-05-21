@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import React from "react";
 
 import { css } from "../../../styled-system/css";
+import { SECTION_IDS } from "../../const";
 import useLockBodyScroll from "../hooks/useLockBodyScroll";
 
 const slideIn = {
@@ -36,22 +37,22 @@ const Menu: React.FunctionComponent<{ onClose: () => void }> = ({
       <nav id="hamburger-menu">
         <ul>
           <li>
-            <a href="#Role" onClick={onClose}>
+            <a href={`#${SECTION_IDS.ROLE}`} onClick={onClose}>
               My role at Mujin
             </a>
           </li>
           <li>
-            <a href="#Approach" onClick={onClose}>
+            <a href={`#${SECTION_IDS.APPROACH}`} onClick={onClose}>
               My approach to frontend engineering
             </a>
           </li>
           <li>
-            <a href="#Team" onClick={onClose}>
+            <a href={`#${SECTION_IDS.TEAM}`} onClick={onClose}>
               What I bring to your team
             </a>
           </li>
           <li>
-            <a href="#Talk" onClick={onClose}>
+            <a href={`#${SECTION_IDS.TALK}`} onClick={onClose}>
               Let's talk about the role
             </a>
           </li>

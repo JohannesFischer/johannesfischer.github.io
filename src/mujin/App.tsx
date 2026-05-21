@@ -19,6 +19,7 @@ import warehouseImg from "../../assets/images/web-dev-warehouse.png";
 import webDevImg from "../../assets/images/webdev.png";
 import bgVideo from "../../files/robot.mp4";
 import { css } from "../../styled-system/css";
+import { SECTION_IDS } from "../const";
 import Button from "./components/Button";
 import ContactDialog from "./components/ContactDialog";
 import ContentContainer from "./components/ContentContainer";
@@ -28,6 +29,10 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Headline from "./components/Headline";
 import ImageCard from "./components/ImageCard";
+
+const prefersReducedMotion = globalThis.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+);
 
 const App: React.FunctionComponent = () => {
   const [openDetailsItem, setOpenDetailsItem] = useState(-1);
@@ -40,9 +45,6 @@ const App: React.FunctionComponent = () => {
   });
   const { scrollY } = useScroll();
   const scale = useTransform(cardScrollProgress, [0, 1], [0.9, 1]);
-  const prefersReducedMotion = globalThis.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  );
 
   const handleOpenDetailsItem = (index: typeof openDetailsItem) => {
     let nextIndex = index;
@@ -59,7 +61,9 @@ const App: React.FunctionComponent = () => {
   });
 
   const handleHeroButtonClick = () => {
-    document.getElementById("Role")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById(SECTION_IDS.ROLE)
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -112,9 +116,7 @@ const App: React.FunctionComponent = () => {
               </FadeUp>
             </div>
             <FadeUp transition={{ delay: 0.3 }}>
-              <Button onClick={() => handleHeroButtonClick()}>
-                Learn more
-              </Button>
+              <Button onClick={handleHeroButtonClick}>Learn more</Button>
             </FadeUp>
           </ContentContainer>
         </div>
@@ -145,7 +147,7 @@ const App: React.FunctionComponent = () => {
           />
         </div>
       </section>
-      <section id="Role">
+      <section id={SECTION_IDS.ROLE}>
         <ContentContainer
           styles={{
             display: "grid",
@@ -186,7 +188,10 @@ const App: React.FunctionComponent = () => {
           </div>
         </ContentContainer>
       </section>
-      <section className={css({ bg: "var(--color-background)" })} id="Approach">
+      <section
+        className={css({ bg: "var(--color-background)" })}
+        id={SECTION_IDS.APPROACH}
+      >
         <ContentContainer>
           <motion.div
             className={css({
@@ -306,7 +311,7 @@ const App: React.FunctionComponent = () => {
           gradientTo: "var(--color-background-gray)",
           px: 4,
         })}
-        id="Team"
+        id={SECTION_IDS.TEAM}
       >
         <ContentContainer>
           <Headline level="h2">What I bring to your team</Headline>
@@ -375,7 +380,7 @@ const App: React.FunctionComponent = () => {
           </div>
         </ContentContainer>
       </section>
-      <section id="Talk">
+      <section id={SECTION_IDS.TALK}>
         <ContentContainer>
           <div
             className={css({

@@ -19,7 +19,6 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   useEffect(() => {
     return hover(ref.current, () => {
       setHoverState(true);
-      console.log("hover");
 
       return () => setHoverState(false);
     });

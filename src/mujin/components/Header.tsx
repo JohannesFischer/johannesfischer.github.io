@@ -64,6 +64,7 @@ const Header: React.FunctionComponent<{ solidBg?: boolean }> = ({
         </div>
         <button
           aria-controls="hamburger-menu"
+          aria-expanded={open}
           className={css({
             color: solidBg
               ? "var(--color-body)"
@@ -71,6 +72,7 @@ const Header: React.FunctionComponent<{ solidBg?: boolean }> = ({
             transition: "color .5s",
           })}
           onClick={() => setOpen(!open)}
+          type="button"
         >
           <MenuIcon open={open} />
         </button>

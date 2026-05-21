@@ -2,8 +2,6 @@ import { type HTMLMotionProps } from "motion/react";
 import { motion } from "motion/react";
 import React from "react";
 
-import type { SystemStyleObject } from "../../../styled-system/types";
-
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0 },
@@ -12,7 +10,6 @@ const fadeUp = {
 type FadeUpProps<T extends keyof HTMLElementTagNameMap = "div"> =
   HTMLMotionProps<T> & {
     as?: T;
-    styles?: SystemStyleObject;
   };
 
 function FadeUp<T extends keyof HTMLElementTagNameMap = "div">({
