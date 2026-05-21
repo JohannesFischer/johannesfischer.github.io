@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { css } from "../../../styled-system/css";
 import { SECTION_IDS } from "../../const";
@@ -10,13 +10,27 @@ const slideIn = {
   visible: { opacity: 1, x: 0 },
 };
 
-const Menu: React.FunctionComponent<{ onClose: () => void }> = ({
+const Menu: React.FunctionComponent<{ onClose: () => void; open: boolean }> = ({
   onClose,
+  open,
 }) => {
-  useLockBodyScroll();
+  useLockBodyScroll(open);
+
+  useEffect(() => {
+    const closeMenu = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+
+    if (open) {
+      globalThis.addEventListener("keydown", closeMenu);
+    }
+
+    return () => globalThis.removeEventListener("keydown", closeMenu);
+  }, [onClose, open]);
 
   return (
     <motion.div
+      animate={open ? "visible" : "hidden"}
       className={css({
         bg: "var(--color-background)",
         left: 0,

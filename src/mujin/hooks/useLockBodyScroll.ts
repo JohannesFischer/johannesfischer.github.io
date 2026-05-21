@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 
-const useLockBodyScroll = (): void => {
+const useLockBodyScroll = (locked: boolean): void => {
   useEffect(() => {
+    if (!locked) return;
+
     const originalStyle: string = globalThis.getComputedStyle(
       document.body,
     ).overflow;
@@ -11,7 +13,7 @@ const useLockBodyScroll = (): void => {
     return () => {
       document.body.style.overflow = originalStyle || "";
     };
-  }, []);
+  }, [locked]);
 };
 
 export default useLockBodyScroll;
