@@ -91,6 +91,6 @@ Design tokens: semantic color tokens for light/dark, typography tokens (Inter fo
 
 ## Deployment
 
-Push to `master` → GitHub Actions builds and deploys to GitHub Pages automatically.
+Push to `main` → GitHub Actions builds and deploys to GitHub Pages automatically.
 
 Workflow: `npm ci` → `npm run build` → upload `dist/` → deploy to Pages.

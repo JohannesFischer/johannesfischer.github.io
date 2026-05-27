@@ -6,17 +6,29 @@ export interface ButtonProps
     React.AriaAttributes,
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     React.PropsWithChildren {
+  /** Icon rendered after the button label. */
   iconAfter?: React.ReactNode;
+  /**
+   * Size of the button.
+   * @default "md"
+   */
   size?: "md" | "lg";
+  /**
+   * Visual style of the button.
+   * @default "primary"
+   */
   variant?: "primary" | "secondary" | "tertiary";
 }
 
+/**
+ * Primary action element. Supports three visual variants, two sizes, and an optional trailing icon.
+ */
 const Button: React.FunctionComponent<ButtonProps> = ({
   children,
   disabled = false,
   iconAfter,
-  size,
-  variant,
+  size = "md",
+  variant = "primary",
   ...props
 }) => {
   return (
