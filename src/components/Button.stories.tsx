@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { ExternalLink } from "lucide-react";
+import { Copy } from "lucide-react";
 
 import Button from "./Button";
 
@@ -31,9 +31,17 @@ export const Large: Story = {
   },
 };
 
+export const WithIconAfter: Story = {
+  args: {
+    children: "Copy",
+    iconAfter: <Copy />,
+  },
+};
+
 export const LargeWithIconAfter: Story = {
   args: {
-    iconAfter: <ExternalLink />,
+    children: "Copy",
+    iconAfter: <Copy />,
     size: "lg",
   },
 };

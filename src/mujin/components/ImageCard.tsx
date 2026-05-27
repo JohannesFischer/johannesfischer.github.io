@@ -37,9 +37,8 @@ const ImageCard: React.FunctionComponent<ImageCardProps> = ({
       <div
         className={css({
           bg: "var(--color-body)",
-          height: "100%",
+          boxSize: "100%",
           opacity: 0.5,
-          width: "100%",
           zIndex: 2,
         })}
       ></div>
@@ -58,14 +57,13 @@ const ImageCard: React.FunctionComponent<ImageCardProps> = ({
       />
       <div
         className={css({
+          boxSize: "100%",
           color: "var(--color-body-light)",
           display: "flex",
           flexDir: "column",
-          height: "100%",
           inset: 0,
           justifyContent: "space-between",
           p: 4,
-          width: "100%",
           zIndex: 3,
         })}
       >

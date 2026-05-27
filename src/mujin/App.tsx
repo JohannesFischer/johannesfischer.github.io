@@ -133,12 +133,11 @@ const App: React.FunctionComponent = () => {
           <video
             autoPlay={!prefersReducedMotion.matches}
             className={css({
-              position: "absolute",
+              boxSize: "100%",
               inset: 0,
-              height: "100%",
+              position: "absolute",
               objectFit: "cover",
               objectPosition: "center",
-              width: "100%",
             })}
             loop={true}
             muted={true}
@@ -178,11 +177,10 @@ const App: React.FunctionComponent = () => {
             <img
               alt="A hand points out bad code on a tablet computer"
               className={css({
+                boxSize: "100%",
                 display: "block",
-                height: "100%",
                 objectFit: "cover",
                 objectPosition: "center center",
-                width: "100%",
               })}
               loading="lazy"
               src={tabletCodeImg}

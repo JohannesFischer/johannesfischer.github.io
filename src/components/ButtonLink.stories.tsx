@@ -38,6 +38,7 @@ export const Large: Story = {
 
 export const LargeWithIconAfter: Story = {
   args: {
+    children: "External link",
     iconAfter: <ExternalLink />,
     size: "lg",
   },

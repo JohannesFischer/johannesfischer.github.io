@@ -21,10 +21,16 @@ export const buttonStyles = cva({
       md: {
         fontSize: "sm",
         p: 1,
+        "& svg": {
+          boxSize: ".9rem",
+        },
       },
       lg: {
         fontSize: "md",
         p: 2,
+        "& svg": {
+          boxSize: "1.15rem",
+        },
       },
     },
     variant: {
