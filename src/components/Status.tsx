@@ -1,6 +1,9 @@
 import { css } from "../../styled-system/css";
 import { square } from "../../styled-system/patterns";
 
+/**
+ * Availability badge indicating the owner is open to job opportunities.
+ */
 const Status: React.FunctionComponent = () => (
   <div
     className={css({

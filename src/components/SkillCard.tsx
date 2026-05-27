@@ -1,10 +1,15 @@
 import { css } from "../../styled-system/css";
 
 interface SkillCardProps extends React.PropsWithChildren {
+  /** Icon rendered above the title. */
   icon: React.ReactNode;
+  /** Skill category heading. */
   title: string;
 }
 
+/**
+ * Card displaying a skill category with an icon, title, and list of specific skills as children.
+ */
 const SkillCard: React.FunctionComponent<SkillCardProps> = ({
   children,
   icon,

@@ -1,10 +1,15 @@
 import { css } from "../../styled-system/css";
 
 interface HeadingGroupProps {
+  /** Main section heading rendered as h3. */
   heading: string;
+  /** Superscript label rendered as h2 with a `//` prefix. */
   headingSup: string;
 }
 
+/**
+ * Two-level section heading: a small labeled superscript above a larger primary heading.
+ */
 const HeadingGroup: React.FunctionComponent<HeadingGroupProps> = ({
   heading,
   headingSup,

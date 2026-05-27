@@ -6,6 +6,9 @@ type ButtonLinkProps = React.PropsWithChildren &
   React.AnchorHTMLAttributes<HTMLAnchorElement> &
   Pick<ButtonProps, "iconAfter" | "size" | "variant">;
 
+/**
+ * Anchor element styled identically to `Button`. Use when the action navigates rather than triggers behaviour.
+ */
 const ButtonLink: React.FunctionComponent<ButtonLinkProps> = ({
   children,
   iconAfter,

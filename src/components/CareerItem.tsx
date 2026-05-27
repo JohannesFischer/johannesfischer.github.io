@@ -1,12 +1,20 @@
 import { css } from "../../styled-system/css";
 
 interface CareerItemProps extends React.PropsWithChildren {
+  /** Company name displayed alongside the date range. */
   company?: string;
+  /** Employment end date string (e.g. `"2024"`). */
   endDate?: string;
+  /** Job title. */
   role: string;
+  /** Employment start date string (e.g. `"2022"`). */
   startDate?: string;
 }
 
+/**
+ * Work history entry showing role, company, date range, and a free-form description as children.
+ * Company and dates are only rendered when all three props are provided.
+ */
 const CareerItem: React.FunctionComponent<CareerItemProps> = ({
   children,
   company,

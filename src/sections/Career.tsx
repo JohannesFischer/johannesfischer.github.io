@@ -4,6 +4,7 @@ import resumeFile from "../../files/resume-johannes-fischer.pdf";
 import { css } from "../../styled-system/css";
 import ButtonLink from "../components/ButtonLink";
 import CareerItem from "../components/CareerItem";
+import CTACard from "../components/CTACard";
 import HeadingGroup from "../components/HeadingGroup";
 import { URLS } from "../const";
 
@@ -93,50 +94,28 @@ const Career: React.FunctionComponent = () => (
           </li>
         </ul>
       </CareerItem>
-      <div
-        className={css({
-          bg: "background",
-          borderBlockStart: "2px solid",
-          borderColor: "primary",
-          display: "flex",
-          flexDir: "column",
-          p: 6,
-          rowGap: 4,
-        })}
+      <CTACard
+        description="Want to learn more about my experience? Check out my resume or connect with me on LinkedIn."
+        heading="I'm looking for the next challenge"
       >
-        <h4 className={css({ textStyle: "heading" })}>
-          I'm looking for the next challenge
-        </h4>
-        <p>
-          Want to learn more about my experience? Check out my resume or connect
-          with me on LinkedIn.
-        </p>
-        <div
-          className={css({
-            display: "flex",
-            gap: 4,
-            marginBlockStart: 4,
-          })}
+        <ButtonLink
+          href={resumeFile}
+          iconAfter={<FileDown />}
+          size="lg"
+          target="_blank"
         >
-          <ButtonLink
-            href={resumeFile}
-            iconAfter={<FileDown />}
-            size="lg"
-            target="_blank"
-          >
-            Resume
-          </ButtonLink>
-          <ButtonLink
-            href={URLS.LINKEDIN}
-            iconAfter={<ExternalLink />}
-            rel="external"
-            size="lg"
-            variant="secondary"
-          >
-            LinkedIn
-          </ButtonLink>
-        </div>
-      </div>
+          Resume
+        </ButtonLink>
+        <ButtonLink
+          href={URLS.LINKEDIN}
+          iconAfter={<ExternalLink />}
+          rel="external"
+          size="lg"
+          variant="secondary"
+        >
+          LinkedIn
+        </ButtonLink>
+      </CTACard>
     </div>
   </section>
 );

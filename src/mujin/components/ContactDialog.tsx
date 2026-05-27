@@ -42,7 +42,7 @@ const ContactDialog: React.FunctionComponent<ContactDialogProps> = ({
         inlineSize: ["100vw", undefined, "min(90vw, 600px)"],
         m: "auto",
         p: 0,
-        "&::backdrop": {
+        _backdrop: {
           backdropFilter: "blur(2px)",
           opacity: 1,
           transition: "opacity, .5s ease-in",

@@ -5,6 +5,11 @@ import { css } from "../../styled-system/css";
 import { grid, scrollable } from "../../styled-system/patterns";
 import Button from "./Button";
 
+/**
+ * Horizontal scroll carousel with prev/next navigation buttons.
+ * Tracks visible item indices to disable navigation buttons at the boundaries.
+ * Each direct child must be wrapped in a `<div>` so subgrid row alignment works correctly.
+ */
 const Carousel: React.FunctionComponent<React.PropsWithChildren> = ({
   children,
 }) => {

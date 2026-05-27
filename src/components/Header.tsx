@@ -7,9 +7,13 @@ import ThemeContext from "../ThemeContext";
 import Button from "./Button";
 
 type HeaderProps = {
+  /** Called when the user clicks the light/dark theme toggle button. */
   onThemeChange: React.MouseEventHandler<HTMLButtonElement>;
 };
 
+/**
+ * Site header with name branding and a theme toggle button that switches between light and dark modes.
+ */
 const Header: React.FunctionComponent<HeaderProps> = ({ onThemeChange }) => {
   const theme = useContext(ThemeContext);
 

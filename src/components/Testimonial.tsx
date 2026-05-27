@@ -3,11 +3,17 @@ import { Quote } from "lucide-react";
 import { css } from "../../styled-system/css";
 
 interface HeadingGroupProps {
+  /** Full name of the person giving the testimonial. */
   name: string;
+  /** The testimonial text, rendered as a blockquote. */
   quote: string;
+  /** Job title or role of the person. */
   role: string;
 }
 
+/**
+ * Attributed quote block with a decorative quote icon, blockquote text, author name, and role.
+ */
 const Testimonial: React.FunctionComponent<HeadingGroupProps> = ({
   name,
   quote,
