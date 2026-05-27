@@ -2,15 +2,16 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { ExternalLink } from "lucide-react";
 
-import Button from "./Button";
+import ButtonLink from "./ButtonLink";
 
 const meta = {
   args: {
-    children: "Button",
+    children: "Button link",
+    href: "#",
     variant: "primary",
   },
-  component: Button,
-} satisfies Meta<typeof Button>;
+  component: ButtonLink,
+} satisfies Meta<typeof ButtonLink>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -18,11 +19,15 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 
 export const Secondary: Story = {
-  args: { variant: "secondary" },
+  args: {
+    variant: "secondary",
+  },
 };
 
 export const Tertiary: Story = {
-  args: { variant: "tertiary" },
+  args: {
+    variant: "tertiary",
+  },
 };
 
 export const Large: Story = {

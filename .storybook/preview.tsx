@@ -5,12 +5,10 @@ import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import { ReactRenderer } from "@storybook/react-vite";
 
 import "../src/index.css";
-// import ThemeContext from "../src/ThemeContext";
+import { css } from "../styled-system/css";
 
 const preview: Preview = {
   decorators: [
-    //   (Story) => <ThemeContext value="light">{Story()}</ThemeContext>
-    //   (Story) => <div data-color-mode="light">{Story()}</div>
     withThemeByDataAttribute<ReactRenderer>({
       attributeName: "data-color-mode",
       defaultTheme: "light",
@@ -19,6 +17,18 @@ const preview: Preview = {
         light: "light",
       },
     }),
+    (Story) => (
+      <div
+        className={css({
+          bg: "background",
+          color: "body",
+          //   minHeight: "dvh",
+          p: 6,
+        })}
+      >
+        {Story()}
+      </div>
+    ),
   ],
   parameters: {
     controls: {
@@ -27,6 +37,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    layout: "fullscreen",
   },
   tags: ["autodocs"],
 };

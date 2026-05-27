@@ -9,8 +9,8 @@ type ButtonLinkProps = React.PropsWithChildren &
 const ButtonLink: React.FunctionComponent<ButtonLinkProps> = ({
   children,
   iconAfter,
-  size,
-  variant,
+  size = "md",
+  variant = "primary",
   ...props
 }) => (
   <a

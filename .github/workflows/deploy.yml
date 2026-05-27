@@ -39,8 +39,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Build Storybook
-        run: npm run build-storybook
+      - name: Build Storybook Docs
+        run: npm run build-storybook-docs
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
