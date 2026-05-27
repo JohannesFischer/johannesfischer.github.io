@@ -1,4 +1,5 @@
 import { Moon, Sun } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import React, { useContext } from "react";
 
 import { css } from "../../styled-system/css";
@@ -46,7 +47,29 @@ const Header: React.FunctionComponent<HeaderProps> = ({ onThemeChange }) => {
         onClick={onThemeChange}
         variant="tertiary"
       >
-        {theme === COLOR_SCHEMES.LIGHT ? <Sun /> : <Moon />}
+        <AnimatePresence initial={false} mode="popLayout">
+          {theme === COLOR_SCHEMES.LIGHT ? (
+            <motion.span
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: "100%" }}
+              initial={{ opacity: 0, y: "100%" }}
+              key="sun"
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+            >
+              <Sun />
+            </motion.span>
+          ) : (
+            <motion.span
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: "-100%" }}
+              initial={{ opacity: 0, y: "-100%" }}
+              key="moon"
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+            >
+              <Moon />
+            </motion.span>
+          )}
+        </AnimatePresence>
       </Button>
     </header>
   );

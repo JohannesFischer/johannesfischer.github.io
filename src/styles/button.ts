@@ -3,7 +3,9 @@ import { cva } from "../../styled-system/css";
 
 export const buttonStyles = cva({
   base: {
+    alignItems: "center",
     border: "1px solid",
+    display: "inline-flex",
     fontWeight: "bold",
     letterSpacing: 2,
     textTransform: "uppercase",
