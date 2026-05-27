@@ -17,7 +17,7 @@ import bgVideoPoster from "../../assets/images/robot.webp";
 import tabletCodeImg from "../../assets/images/tablet-code.webp";
 import warehouseImg from "../../assets/images/web-dev-warehouse.webp";
 import webDevImg from "../../assets/images/webdev.webp";
-import bgVideo from "../../files/robot.mp4";
+import bgVideo from "../../files/robot-warehouse.mp4";
 import { css } from "../../styled-system/css";
 import { SECTION_IDS } from "../const";
 import Button from "./components/Button";
@@ -143,6 +143,7 @@ const App: React.FunctionComponent = () => {
             loop={true}
             muted={true}
             poster={bgVideoPoster}
+            preload="none"
             src={bgVideo}
           />
         </div>
