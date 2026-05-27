@@ -40,8 +40,7 @@ export const WithIconAfter: Story = {
 
 export const LargeWithIconAfter: Story = {
   args: {
-    children: "Copy",
-    iconAfter: <Copy />,
+    ...WithIconAfter.args,
     size: "lg",
   },
 };

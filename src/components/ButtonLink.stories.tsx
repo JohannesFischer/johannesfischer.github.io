@@ -36,10 +36,16 @@ export const Large: Story = {
   },
 };
 
-export const LargeWithIconAfter: Story = {
+export const WithIconAfter: Story = {
   args: {
     children: "External link",
     iconAfter: <ExternalLink />,
+  },
+};
+
+export const LargeWithIconAfter: Story = {
+  args: {
+    ...WithIconAfter.args,
     size: "lg",
   },
 };

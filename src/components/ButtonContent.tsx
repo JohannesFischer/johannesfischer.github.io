@@ -11,7 +11,9 @@ const ButtonContent: React.FunctionComponent<ButtonContentProps> = ({
   children,
   iconAfter,
 }) => (
-  <span className={css({ alignItems: "center", display: "flex", gap: 2 })}>
+  <span
+    className={css({ alignItems: "center", display: "inline-flex", gap: 2 })}
+  >
     {children}
     {iconAfter}
   </span>
