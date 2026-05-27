@@ -6,6 +6,10 @@ import { defineConfig } from "vite";
 export default defineConfig({
   build: {
     rollupOptions: {
+      input: {
+        main: "./index.html",
+        mujin: "./mujin/index.html",
+      },
       output: {
         manualChunks: (id) => {
           if (
