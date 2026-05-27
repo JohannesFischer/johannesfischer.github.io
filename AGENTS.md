@@ -9,6 +9,7 @@ Personal portfolio site for Johannes Fischer. Static React SPA deployed to GitHu
 - **Vite** — build tool and dev server
 - **Panda CSS** — atomic CSS-in-JS, design tokens, CVA variants
 - **Lucide React** — icons
+- **Storybook** — component development and documentation (`@storybook/react-vite`)
 
 ## Commands
 
@@ -16,6 +17,7 @@ Personal portfolio site for Johannes Fischer. Static React SPA deployed to GitHu
 npm run dev        # dev server with HMR
 npm run build      # production build → dist/
 npm run preview    # preview production build
+npm run storybook  # Storybook dev server (http://localhost:6006)
 npm run lint       # ESLint on src/
 npm run format     # Prettier on all files
 npm run prepare    # regenerate Panda CSS types (panda codegen)
@@ -29,7 +31,7 @@ No tests exist. `npm test` exits with error by design.
 
 ```
 src/
-├── components/    # reusable UI (Button, Carousel, Header, Footer, …)
+├── components/    # reusable UI (Button, Carousel, Header, Footer, …) + *.stories.tsx
 ├── sections/      # page sections (Hero, Skills, Testimonials, Career)
 ├── styles/        # CVA variant definitions (button.ts)
 ├── App.tsx        # root, theme provider
