@@ -96,7 +96,7 @@ const Career: React.FunctionComponent = () => (
       </CareerItem>
       <CTACard
         description="Want to learn more about my experience? Check out my resume or connect with me on LinkedIn."
-        heading="I'm looking for the next challenge"
+        heading="Looking for the right team and the right opportunity."
       >
         <ButtonLink
           href={resumeFile}

@@ -24,7 +24,7 @@ const Status: React.FunctionComponent = () => (
         size: "3",
       })}
     ></div>
-    <span>Status: Available for job opportunities</span>
+    <span>Currently: between great companies</span>
   </div>
 );
 

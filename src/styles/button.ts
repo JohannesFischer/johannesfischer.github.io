@@ -20,16 +20,16 @@ export const buttonStyles = cva({
     size: {
       md: {
         fontSize: "sm",
-        p: 1,
+        p: 2,
         "& svg": {
-          boxSize: ".9rem",
+          boxSize: "1rem",
         },
       },
       lg: {
         fontSize: "md",
-        p: 2,
+        p: 3,
         "& svg": {
-          boxSize: "1.15rem",
+          boxSize: "1.2rem",
         },
       },
     },
