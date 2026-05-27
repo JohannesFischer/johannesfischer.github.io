@@ -1,4 +1,4 @@
-import logoImg from "../../../assets/images/jfischer-logo-color.png";
+import logoImg from "../../../assets/images/jfischer-logo-color.webp";
 import resumeFile from "../../../files/resume-johannes-fischer.pdf";
 import { css } from "../../../styled-system/css";
 import ContentContainer from "./ContentContainer";

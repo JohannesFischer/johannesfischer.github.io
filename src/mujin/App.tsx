@@ -11,12 +11,12 @@ import "./index.css";
 import "./theme.css";
 import ceweLogo from "../../assets/images/cewe-logo.svg";
 import indeedLogo from "../../assets/images/indeed-logo.svg";
-import launchPlanningImg from "../../assets/images/launch-planning.png";
+import launchPlanningImg from "../../assets/images/launch-planning.webp";
 import rakutenLogo from "../../assets/images/rakuten-logo.svg";
-import bgVideoPoster from "../../assets/images/robot.jpg";
-import tabletCodeImg from "../../assets/images/tablet-code.png";
-import warehouseImg from "../../assets/images/web-dev-warehouse.png";
-import webDevImg from "../../assets/images/webdev.png";
+import bgVideoPoster from "../../assets/images/robot.webp";
+import tabletCodeImg from "../../assets/images/tablet-code.webp";
+import warehouseImg from "../../assets/images/web-dev-warehouse.webp";
+import webDevImg from "../../assets/images/webdev.webp";
 import bgVideo from "../../files/robot.mp4";
 import { css } from "../../styled-system/css";
 import { SECTION_IDS } from "../const";
@@ -183,6 +183,7 @@ const App: React.FunctionComponent = () => {
                 objectPosition: "center center",
                 width: "100%",
               })}
+              loading="lazy"
               src={tabletCodeImg}
             />
           </div>
@@ -235,6 +236,7 @@ const App: React.FunctionComponent = () => {
                     objectFit: "cover",
                     objectPosition: "center",
                   })}
+                  loading="lazy"
                   src={webDevImg}
                 />
               </div>

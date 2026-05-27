@@ -47,6 +47,7 @@ const ImageCard: React.FunctionComponent<ImageCardProps> = ({
         alt=""
         aria-hidden="true"
         className={css({ filter: "blur(0.5px)", zIndex: 0 })}
+        loading="lazy"
         src={imageSrc}
       />
       <img

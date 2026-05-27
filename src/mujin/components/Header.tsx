@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import React, { useState } from "react";
 
-import logoColorImg from "../../../assets/images/jfischer-logo-color.png";
-import logoWhiteImg from "../../../assets/images/jfischer-logo-white.png";
+import logoColorImg from "../../../assets/images/jfischer-logo-color.webp";
+import logoWhiteImg from "../../../assets/images/jfischer-logo-white.webp";
 import { css } from "../../../styled-system/css";
 import Menu from "./Menu";
 import MenuIcon from "./MenuIcon";
