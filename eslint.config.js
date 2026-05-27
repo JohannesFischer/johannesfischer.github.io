@@ -9,34 +9,38 @@ import tseslint from "typescript-eslint";
 import { defineConfig, globalIgnores } from "eslint/config";
 import perfectionist from "eslint-plugin-perfectionist";
 
-export default defineConfig([globalIgnores(["dist"]), {
-  files: ["**/*.{ts,tsx}"],
-  extends: [
-    js.configs.recommended,
-    tseslint.configs.recommended,
-    reactHooks.configs.flat.recommended,
-    reactRefresh.configs.vite,
-    perfectionist.configs["recommended-natural"],
-  ],
-  languageOptions: {
-    ecmaVersion: 2020,
-    globals: globals.browser,
-  },
-  rules: {
-    "perfectionist/sort-imports": [
-      "warn",
-      {
-        type: "natural",
-        order: "asc",
-      },
+export default defineConfig([
+  globalIgnores(["dist"]),
+  {
+    files: ["**/*.{ts,tsx}"],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+      perfectionist.configs["recommended-natural"],
     ],
-    "perfectionist/sort-objects": [
-      "error",
-      {
-        styledComponents: false,
-      },
-    ],
-    "perfectionist/sort-union-types": "off",
-    "perfectionist/sort-intersection-types": "off",
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+    },
+    rules: {
+      "perfectionist/sort-imports": [
+        "warn",
+        {
+          type: "natural",
+          order: "asc",
+        },
+      ],
+      "perfectionist/sort-objects": [
+        "error",
+        {
+          styledComponents: false,
+        },
+      ],
+      "perfectionist/sort-union-types": "off",
+      "perfectionist/sort-intersection-types": "off",
+    },
   },
-}, ...storybook.configs["flat/recommended"]]);
+  ...storybook.configs["flat/recommended"],
+]);

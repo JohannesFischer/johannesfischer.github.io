@@ -37,7 +37,15 @@ const Header: React.FunctionComponent<HeaderProps> = ({ onThemeChange }) => {
       >
         Johannes_Fischer
       </p>
-      <Button onClick={onThemeChange} variant="tertiary">
+      <Button
+        aria-label={
+          theme === COLOR_SCHEMES.LIGHT
+            ? "Switch to dark mode"
+            : "Switch to light mode"
+        }
+        onClick={onThemeChange}
+        variant="tertiary"
+      >
         {theme === COLOR_SCHEMES.LIGHT ? <Sun /> : <Moon />}
       </Button>
     </header>

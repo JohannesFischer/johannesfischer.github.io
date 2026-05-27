@@ -11,17 +11,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-}
-
 :root {
   color-scheme: light dark;
 }

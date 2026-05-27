@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import "./index.css";
 import { css } from "../styled-system/css";
@@ -14,20 +14,17 @@ import { usePreferredColorScheme } from "./usePreferredColorScheme";
 
 const App = () => {
   const preferredColorScheme = usePreferredColorScheme();
-  const [theme, setTheme] = useState(preferredColorScheme);
-
-  useEffect(() => {
-    setTheme(preferredColorScheme);
-  }, [preferredColorScheme]);
+  const [themeOverride, setThemeOverride] = useState<string | null>(null);
+  const theme = themeOverride ?? preferredColorScheme;
 
   const handleThemeChange = useCallback<
     React.MouseEventHandler<HTMLButtonElement>
   >(
     () =>
-      setTheme(
+      setThemeOverride(
         theme === COLOR_SCHEMES.DARK ? COLOR_SCHEMES.LIGHT : COLOR_SCHEMES.DARK,
       ),
-    [theme, setTheme],
+    [theme],
   );
 
   return (

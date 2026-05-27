@@ -30,14 +30,14 @@ const Skills: React.FunctionComponent = () => (
       <SkillCard icon={<Code strokeWidth={2} />} title="Frontend_Coding">
         JavaScript / TypeScript / React / Vue
       </SkillCard>
-      <SkillCard icon={<Palette strokeWidth={2} />} title="UI_Design">
+      <SkillCard icon={<Palette strokeWidth={2} />} title="UI_Styling">
         CSS-in-JS / Emotion / Design Systems
       </SkillCard>
       <SkillCard
         icon={<PersonStanding strokeWidth={2} />}
         title="Accessibility"
       >
-        A11y Testing / WCAG / Automated Accessibility Testing
+        AXE / WCAG / Manual & Automated Accessibility Testing
       </SkillCard>
       <SkillCard icon={<BugOff strokeWidth={2} />} title="Testing">
         Jest / Vitest / Testing Library / Cypress / Chromatic
@@ -46,7 +46,7 @@ const Skills: React.FunctionComponent = () => (
         GitLab CI / Docker / Jenkins
       </SkillCard>
       <SkillCard icon={<Puzzle strokeWidth={2} />} title="Dev_Tools">
-        StoryBook / Git / AI-assisted development
+        StoryBook / Git / Figma / AI-assisted development
       </SkillCard>
       <SkillCard icon={<Combine strokeWidth={2} />} title="State_Management">
         Redux / Redux Toolkit / Zustand

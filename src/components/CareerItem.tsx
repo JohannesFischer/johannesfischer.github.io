@@ -43,7 +43,7 @@ const CareerItem: React.FunctionComponent<CareerItemProps> = ({
         >{`${startDate} – ${endDate} // ${company}`}</p>
       )}
     </div>
-    <div className={css({ color: "" })}>{children}</div>
+    <div>{children}</div>
   </div>
 );
 
