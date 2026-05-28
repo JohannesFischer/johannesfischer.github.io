@@ -10,7 +10,8 @@ export const buttonStyles = cva({
     letterSpacing: 2,
     textTransform: "uppercase",
     transition: "all",
-    transitionDuration: "slow",
+    transitionDuration: "medium",
+    _motionReduce: { transition: "none" },
   },
   variants: {
     disabled: {

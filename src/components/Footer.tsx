@@ -47,6 +47,7 @@ const Footer: React.FunctionComponent = () => (
           textDecoration: "underline",
           transition: "color ease 0.3s",
           zIndex: 0,
+          _motionReduce: { transition: "none" },
           _after: {
             bg: "body",
             bottom: 0,
@@ -58,6 +59,7 @@ const Footer: React.FunctionComponent = () => (
             transitionDuration: "medium",
             width: "100%",
             zIndex: -1,
+            _motionReduce: { transition: "none" },
           },
           _focus: linkHoverStyles,
           _hover: linkHoverStyles,
