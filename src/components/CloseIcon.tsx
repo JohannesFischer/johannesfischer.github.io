@@ -4,7 +4,12 @@ import type { Variants } from "motion/react";
 import type { HTMLAttributes } from "react";
 
 import { motion, useAnimation } from "motion/react";
-import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
+import React, {
+  forwardRef,
+  useCallback,
+  useImperativeHandle,
+  useRef,
+} from "react";
 
 export interface XIconHandle {
   startAnimation: () => void;

@@ -5,7 +5,7 @@ const config: StorybookConfig = {
   framework: "@storybook/react-vite",
   stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   viteFinal: (config) => {
-    config.base = "/storybook/";
+    config.base = "./";
     return config;
   },
 };

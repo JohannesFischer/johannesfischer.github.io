@@ -41,7 +41,14 @@ const RotatingHeadline: React.FunctionComponent<RotatingHeadlineProps> = ({
   }, [items.length, interval]);
 
   return (
-    <span className={css({ display: "block", position: "relative" })}>
+    <span
+      className={css({
+        display: "block",
+        fontSize: "2xl",
+        fontWeight: "bold",
+        position: "relative",
+      })}
+    >
       <span className={css({ opacity: 0 })}>{items[currentIndex].text}</span>
       <span
         className={css({

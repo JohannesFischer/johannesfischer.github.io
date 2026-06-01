@@ -22,7 +22,8 @@
     "deploy": "gh-pages -d dist -u \"github-actions-bot <github-actions@github.com>\" --repo https://x-access-token:${GITHUB_TOKEN}@github.com/<your-username>/<your-repo-name>.git",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o dist/storybook",
-    "build-storybook-docs": "npm run build-storybook -- --docs"
+    "build-storybook-docs": "npm run build-storybook -- --docs",
+    "chromatic": "npx chromatic"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
@@ -34,6 +35,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "chromatic": "^17.1.0",
     "eslint": "^9.39.4",
     "eslint-plugin-perfectionist": "^5.9.0",
     "eslint-plugin-react": "^7.37.5",

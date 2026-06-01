@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Children, useCallback, useRef, useState } from "react";
+import React, { Children, useCallback, useRef, useState } from "react";
 
 import { css } from "../../styled-system/css";
 import { grid, scrollable } from "../../styled-system/patterns";

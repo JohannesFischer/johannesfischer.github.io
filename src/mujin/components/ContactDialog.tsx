@@ -3,8 +3,8 @@ import React, { useEffect, useRef } from "react";
 
 import resumeFile from "../../../files/resume-johannes-fischer.pdf";
 import { css } from "../../../styled-system/css";
+import { CloseIcon } from "../../components/CloseIcon";
 import { URLS } from "../../const";
-import { CloseIcon } from "./CloseIcon";
 
 interface ContactDialogProps {
   onClose: () => void;
@@ -92,7 +92,7 @@ const ContactDialog: React.FunctionComponent<ContactDialogProps> = ({
             onClick={onClose}
             type="button"
           >
-            <CloseIcon />
+            <CloseIcon aria-hidden="true" />
           </button>
         </div>
         <p className={css({ color: "var(--color-body)", mt: 2, mb: 6 })}>

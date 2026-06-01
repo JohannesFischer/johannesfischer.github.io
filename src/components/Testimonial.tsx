@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import React from "react";
 
 import { css } from "../../styled-system/css";
 
