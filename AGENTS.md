@@ -10,6 +10,7 @@ Personal portfolio site for Johannes Fischer. Static React SPA deployed to GitHu
 - **Panda CSS** — atomic CSS-in-JS, design tokens, CVA variants
 - **Lucide React** — icons
 - **Storybook** — component development and documentation (`@storybook/react-vite`)
+- **Chromatic** — visual regression testing and Storybook publishing
 
 ## Commands
 
@@ -18,12 +19,15 @@ npm run dev        # dev server with HMR
 npm run build      # production build → dist/
 npm run preview    # preview production build
 npm run storybook  # Storybook dev server (http://localhost:6006)
+npm run chromatic  # publish Storybook to Chromatic (requires .env)
 npm run lint       # ESLint on src/
 npm run format     # Prettier on all files
 npm run prepare    # regenerate Panda CSS types (panda codegen)
 ```
 
 Run `npm run format && npm run lint` before committing.
+
+Chromatic requires a `.env` file with `CHROMATIC_PROJECT_TOKEN=<token>`. The `.env` is gitignored.
 
 No tests exist. `npm test` exits with error by design.
 

@@ -10,6 +10,7 @@ Personal portfolio site. Static React SPA deployed to GitHub Pages.
 - [Panda CSS](https://panda-css.com/) — atomic CSS-in-JS, design tokens, CVA variants
 - [Lucide React](https://lucide.dev/) — icons
 - [Storybook](https://storybook.js.org/) — component development and documentation
+- [Chromatic](https://www.chromatic.com/) — visual regression testing and Storybook publishing
 - [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks) + [lint-staged](https://github.com/lint-staged/lint-staged) — pre-commit linting and formatting
 
 ## Getting started
