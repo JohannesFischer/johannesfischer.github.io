@@ -5,6 +5,7 @@ import resumeFile from "../../../files/resume-johannes-fischer.pdf";
 import { css } from "../../../styled-system/css";
 import { CloseIcon } from "../../components/CloseIcon";
 import { URLS } from "../../const";
+import useFocusFirst from "../../hooks/useFocusFirst";
 
 interface ContactDialogProps {
   onClose: () => void;
@@ -14,9 +15,16 @@ const ContactDialog: React.FunctionComponent<ContactDialogProps> = ({
   onClose,
 }) => {
   const ref = useRef<HTMLDialogElement>(null);
+  const triggerEl = useRef(document.activeElement as HTMLElement | null);
+
+  useFocusFirst(ref);
 
   useEffect(() => {
     ref.current?.showModal();
+
+    return () => {
+      triggerEl.current?.focus();
+    };
   }, []);
 
   useEffect(() => {
