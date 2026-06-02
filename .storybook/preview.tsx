@@ -5,6 +5,8 @@ import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import { ReactRenderer } from "@storybook/react-vite";
 
 import "../src/index.css";
+import { COLOR_SCHEMES } from "../src/const";
+import ThemeContext from "../src/ThemeContext";
 import { css } from "../styled-system/css";
 
 const preview: Preview = {
@@ -17,24 +19,24 @@ const preview: Preview = {
         light: "light",
       },
     }),
-    (Story) => (
-      <div
-        className={css({
-          bg: "background",
-          color: "body",
-          //   minHeight: "dvh",
-          p: 6,
-        })}
-      >
-        {Story()}
-      </div>
+    (Story, { globals: { theme } }) => (
+      <ThemeContext value={theme || COLOR_SCHEMES.LIGHT}>
+        <div
+          className={css({
+            bg: "background",
+            color: "body",
+            p: 6,
+          })}
+        >
+          {Story()}
+        </div>
+      </ThemeContext>
     ),
   ],
   parameters: {
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/i,
       },
     },
     layout: "fullscreen",
