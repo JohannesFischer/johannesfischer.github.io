@@ -8,6 +8,7 @@ import "../src/index.css";
 import { COLOR_SCHEMES } from "../src/const";
 import ThemeContext from "../src/ThemeContext";
 import { css } from "../styled-system/css";
+import { allModes } from "./modes";
 
 const preview: Preview = {
   decorators: [
@@ -28,12 +29,18 @@ const preview: Preview = {
             p: 6,
           })}
         >
-          {Story()}
+          <Story />
         </div>
       </ThemeContext>
     ),
   ],
   parameters: {
+    chromatic: {
+      modes: {
+        dark: allModes["dark"],
+        light: allModes["light"],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
