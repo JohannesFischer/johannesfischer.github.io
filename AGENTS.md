@@ -34,6 +34,7 @@ No tests exist. `npm test` exits with error by design.
 ## Project Structure
 
 ```
+.storybook/        # Storybook config (main.ts, preview.tsx, modes.ts)
 src/
 ├── components/    # reusable UI (Button, Carousel, Header, Footer, …) + *.stories.tsx
 ├── sections/      # page sections (Hero, Skills, Testimonials, Career)
@@ -78,6 +79,37 @@ Dark/light theme via `ThemeContext`. System preference detected by `usePreferred
 ### Data
 
 No external API calls. Content is hardcoded in section components. Shared URLs/constants live in `src/const.ts`.
+
+## Storybook & Chromatic
+
+### Story conventions
+
+- Stories co-located with components: `src/components/ComponentName.stories.tsx`
+- CSF3 format — `Meta` and `StoryObj` imported from `@storybook/react-vite`
+
+### Decorators & global config
+
+All stories are automatically wrapped (via `.storybook/preview.tsx`) in:
+
+1. `withThemeByDataAttribute` — sets `data-color-mode` attribute to match the selected theme
+2. A `ThemeContext` decorator — provides theme value and a padded `bg`/`color` container
+
+`tags: ["autodocs"]` is set globally — every story gets an auto-generated docs page.
+
+### Chromatic modes
+
+Light and dark snapshots are captured for every story globally. No per-story config needed unless overriding. Modes are defined in `.storybook/modes.ts` and applied in `preview.tsx`:
+
+```ts
+parameters: {
+  chromatic: {
+    modes: {
+      dark: allModes["dark"],
+      light: allModes["light"],
+    },
+  },
+},
+```
 
 ## TypeScript
 

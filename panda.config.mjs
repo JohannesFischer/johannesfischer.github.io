@@ -131,7 +131,7 @@ export default defineConfig({
           },
           primary: {
             value: {
-              _light: "#4f46e5",
+              _light: "#2563eb",
               _dark: "#f59e0b",
             },
           },
