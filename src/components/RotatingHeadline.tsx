@@ -44,7 +44,7 @@ const RotatingHeadline: React.FunctionComponent<RotatingHeadlineProps> = ({
     <span
       className={css({
         display: "block",
-        fontSize: "2xl",
+        fontSize: "inherit",
         fontWeight: "bold",
         position: "relative",
       })}
