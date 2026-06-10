@@ -31,13 +31,18 @@ const Career: React.FunctionComponent = () => (
         startDate="2018"
       >
         <p>
-          I translated UX concepts into interactive prototypes and
-          production-ready React components, bridging design and engineering to
-          deliver user-centered solutions. I built and maintained the company
-          design system and internal component libraries to ensure visual
-          consistency, and I collaborated closely with product managers,
-          designers, and developers. My prototypes validated design decisions
-          and helped communicate ideas clearly to stakeholders.
+          Over nearly eight years I grew from Design Technologist to Senior UX
+          Developer, bridging design and engineering throughout. I championed
+          WCAG 2.1/2.2 compliance at scale and built Storybook integrations for
+          an internal Axe-based accessibility tool adopted across multiple
+          repositories. I crafted high-fidelity interactive prototypes to
+          validate design decisions early, and established unit, end-to-end, and
+          visual regression testing practices to maintain a reliable user
+          experience. I led a cross-functional guild to architect and maintain a
+          shared component library, enforcing consistency and accelerating
+          development velocity across surfaces. Throughout, I partnered closely
+          with designers, content strategists, and backend engineers to deliver
+          cohesive UI patterns at scale.
         </p>
       </CareerItem>
       <CareerItem
