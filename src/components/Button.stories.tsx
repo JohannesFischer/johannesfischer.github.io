@@ -7,7 +7,6 @@ import Button from "./Button";
 const meta = {
   args: {
     children: "Button",
-    variant: "primary",
   },
   component: Button,
 } satisfies Meta<typeof Button>;

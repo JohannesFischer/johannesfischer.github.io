@@ -19,21 +19,29 @@ const SkillCard: React.FunctionComponent<SkillCardProps> = ({
 }) => (
   <div
     className={css({
+      columnGap: 4,
       display: "flex",
-      flexDir: "column",
+      flexDir: ["row", "column"],
+      flexWrap: ["wrap", "column"],
+      rowGap: 4,
       "& svg": {
         color: "primary/80",
-        marginBlockEnd: 4,
         height: "2rem",
         width: "2rem",
       },
     })}
   >
     {icon}
-    <span className={css({ marginBlockEnd: 6, textStyle: "heading" })}>
+    <span className={css({ marginBlockEnd: [0, 2], textStyle: "heading" })}>
       {title}
     </span>
-    <span className={css({ fontSize: "sm", textTransform: "uppercase" })}>
+    <span
+      className={css({
+        flexBasis: ["100%", "auto"],
+        fontSize: "sm",
+        textTransform: "uppercase",
+      })}
+    >
       {children}
     </span>
   </div>

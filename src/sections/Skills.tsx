@@ -43,7 +43,7 @@ const Skills: React.FunctionComponent = () => (
         Jest / Vitest / Testing Library / Cypress / Chromatic
       </SkillCard>
       <SkillCard icon={<Rocket strokeWidth={2} />} title="Deployment">
-        GitLab CI / Docker / Jenkins
+        GitLab CI / GitHub Actions / Docker / Jenkins
       </SkillCard>
       <SkillCard icon={<Puzzle strokeWidth={2} />} title="Dev_Tools">
         StoryBook / Git / Figma / AI-assisted development
