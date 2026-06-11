@@ -16,3 +16,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const WithSource: Story = {
+  args: {
+    source: { title: "Peer Review" },
+  },
+};
+
+export const WithExternalSource: Story = {
+  args: {
+    source: { href: "#", title: "Link to testimonial" },
+  },
+};
