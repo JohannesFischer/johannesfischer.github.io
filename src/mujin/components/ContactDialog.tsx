@@ -20,10 +20,11 @@ const ContactDialog: React.FunctionComponent<ContactDialogProps> = ({
   useFocusFirst(ref);
 
   useEffect(() => {
+    const trigger = triggerEl.current;
     ref.current?.showModal();
 
     return () => {
-      triggerEl.current?.focus();
+      trigger?.focus();
     };
   }, []);
 

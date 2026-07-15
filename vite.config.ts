@@ -6,6 +6,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        kicks: "./kicks/index.html",
         main: "./index.html",
         mujin: "./mujin/index.html",
       },
