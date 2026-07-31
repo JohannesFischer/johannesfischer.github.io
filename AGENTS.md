@@ -139,4 +139,4 @@ Design tokens: semantic color tokens for light/dark, typography tokens (Inter fo
 
 Push to `main` → GitHub Actions builds and deploys to GitHub Pages automatically.
 
-Workflow: `npm ci` → `npm run build` → upload `dist/` → deploy to Pages.
+Workflow (`deploy.yml`): `npm ci` → `npm run build` → build Storybook docs → upload `dist/` → deploy to Pages. Linting and tests are not gated here — they run in `ci.yml` instead.
