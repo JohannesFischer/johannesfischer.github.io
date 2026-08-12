@@ -1,10 +1,11 @@
 # https://github.com/marketplace/actions/auto-merge-pull-request
 
 name: Auto-Merge Pull Request
-on:
-  pull_request:
-    branches: [main]
-    types: [opened, synchronize, reopened, labeled]
+
+# on:
+#   pull_request:
+#     branches: [main]
+#     types: [opened, synchronize, reopened, labeled]
 
 permissions:
   contents: write
@@ -19,4 +20,5 @@ jobs:
         with:
           required-labels: dependencies
           token: ${{ secrets.AUTOMERGE_TOKEN }}
-          merge-method: rebase
+          merge-method: squash
+          pull-request: ${{ github.event.inputs.pull-request }}
