@@ -7,7 +7,6 @@ on:
 
 jobs:
   automerge:
-    if: startsWith(github.head_ref, 'dependabot')
     runs-on: ubuntu-latest
     steps:
       - uses: reitermarkus/automerge@v2.8.0
