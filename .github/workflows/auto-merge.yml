@@ -1,0 +1,22 @@
+# https://github.com/marketplace/actions/auto-merge-pull-request
+
+name: Auto-Merge Pull Request
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: reitermarkus/automerge@v2.8.0
+        with:
+          required-labels: dependencies
+          token: ${{ secrets.AUTOMERGE_TOKEN }}
+          merge-method: rebase
