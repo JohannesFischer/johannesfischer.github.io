@@ -19,3 +19,4 @@ jobs:
         with:
           required-labels: dependencies
           token: ${{ secrets.AUTOMERGE_TOKEN }}
+          merge-method: rebase
