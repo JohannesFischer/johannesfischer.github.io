@@ -17,3 +17,4 @@ jobs:
       - uses: reitermarkus/automerge@v2.8.0
         with:
           required-labels: dependencies
+          token: ${{ secrets.GITHUB_TOKEN }}
