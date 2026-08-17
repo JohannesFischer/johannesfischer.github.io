@@ -1,10 +1,11 @@
 import { motion } from "motion/react";
 import React from "react";
 
-import tabletCodeImg from "../../../assets/images/tablet-code.webp";
+// import tabletCodeImg from "../../../assets/images/tablet-code.webp";
+import uiElements from "../../../assets/images/kicks/ui-elements.svg";
 import { css } from "../../../styled-system/css";
-import { ArrowUpRightIcon } from "./ArrowUpRightIcon";
-import Button from "./Button";
+import { ArrowUpRightIcon } from "../components/ArrowUpRightIcon";
+import Button from "../components/Button";
 
 const Hero: React.FunctionComponent<{ onCTAClick: () => void }> = ({
   onCTAClick,
@@ -204,16 +205,19 @@ const Hero: React.FunctionComponent<{ onCTAClick: () => void }> = ({
           zIndex: 2,
         }}
       />
-      <img
-        alt="Code on a tablet"
-        src={tabletCodeImg}
+      <object
+        data={uiElements}
+        id="animated-svg"
         style={{
           height: "100%",
           objectFit: "cover",
           objectPosition: "center",
           width: "100%",
         }}
-      />
+        type="image/svg+xml"
+      >
+        <img alt="Placeholder" src={uiElements} />
+      </object>
     </motion.div>
   </section>
 );
