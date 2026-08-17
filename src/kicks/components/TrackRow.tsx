@@ -20,7 +20,7 @@ const TrackRow: React.FunctionComponent<TrackRowProps> = ({
     className={css({
       display: "grid",
       gap: "var(--spacing-2) var(--spacing-4)",
-      gridTemplateColumns: ["auto 1fr 1fr", "1fr 1fr 2fr"],
+      gridTemplateColumns: ["auto 1fr 1fr", "auto 1fr 2fr"],
       gridTemplateRows: "auto auto",
       paddingBlock: "1.25rem",
       transition: "background 0.15s",
