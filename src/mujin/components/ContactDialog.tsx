@@ -6,6 +6,7 @@ import { css } from "../../../styled-system/css";
 import { CloseIcon } from "../../components/CloseIcon";
 import { URLS } from "../../const";
 import useFocusFirst from "../../hooks/useFocusFirst";
+import useLockBodyScroll from "../../hooks/useLockBodyScroll";
 
 interface ContactDialogProps {
   onClose: () => void;
@@ -18,12 +19,14 @@ const ContactDialog: React.FunctionComponent<ContactDialogProps> = ({
   const triggerEl = useRef(document.activeElement as HTMLElement | null);
 
   useFocusFirst(ref);
+  useLockBodyScroll(true);
 
   useEffect(() => {
+    const trigger = triggerEl.current;
     ref.current?.showModal();
 
     return () => {
-      triggerEl.current?.focus();
+      trigger?.focus();
     };
   }, []);
 

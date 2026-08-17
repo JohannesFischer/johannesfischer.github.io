@@ -11,6 +11,7 @@ Personal portfolio site for Johannes Fischer. Static React SPA deployed to GitHu
 - **Lucide React** — icons
 - **Storybook** — component development and documentation (`@storybook/react-vite`)
 - **Chromatic** — visual regression testing and Storybook publishing
+- **Vitest** + **@testing-library/react** — unit/hook tests, `jsdom` environment
 
 ## Commands
 
@@ -23,13 +24,12 @@ npm run chromatic  # publish Storybook to Chromatic (requires .env)
 npm run lint       # ESLint on src/
 npm run format     # Prettier on all files
 npm run prepare    # regenerate Panda CSS types (panda codegen)
+npm test           # run Vitest once (CI=true) or watch mode locally
 ```
 
-Run `npm run format && npm run lint` before committing.
+Run `npm run format && npm run lint && npm test` before committing.
 
 Chromatic requires a `.env` file with `CHROMATIC_PROJECT_TOKEN=<token>`. The `.env` is gitignored.
-
-No tests exist. `npm test` exits with error by design.
 
 ## Project Structure
 
@@ -111,6 +111,14 @@ parameters: {
 },
 ```
 
+## Testing
+
+- **Vitest** (`vitest.config.ts`) — `environment: "jsdom"`, no global setup file
+- **@testing-library/react** — `renderHook`/`act` for hooks, no components tested yet
+- Test files co-located with the source: `useFocusFirst.ts` → `useFocusFirst.test.ts`
+- `npm test` runs `vitest`; it auto-switches from watch mode to a single run when `CI` is set (GitHub Actions sets this automatically)
+- CI: `.github/workflows/ci.yml` runs lint + test on every PR and on pushes to non-`main` branches
+
 ## TypeScript
 
 Strict mode enabled. Key flags: `noUnusedLocals`, `noUnusedParameters`, `noUncheckedSideEffectImports`. Target ES2023 with bundler module resolution.
@@ -131,4 +139,4 @@ Design tokens: semantic color tokens for light/dark, typography tokens (Inter fo
 
 Push to `main` → GitHub Actions builds and deploys to GitHub Pages automatically.
 
-Workflow: `npm ci` → `npm run build` → upload `dist/` → deploy to Pages.
+Workflow (`deploy.yml`): `npm ci` → `npm run build` → build Storybook docs → upload `dist/` → deploy to Pages. Linting and tests are not gated here — they run in `ci.yml` instead.

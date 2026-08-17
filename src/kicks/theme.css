@@ -1,0 +1,57 @@
+[data-color-mode="kicks"] {
+  --color-bg: #f2efe4;
+  --color-bg-alt: #e8e4d8;
+  --color-bg-track: #ede9dc;
+  --color-accent: #f1b426;
+  --color-accent-dark: #f89e2c;
+  --color-text: #111110;
+  --color-text-muted: #888878;
+  --color-text-light: #ffffff;
+  --color-border: #d4cfc0;
+  --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+  --font-size-xs: 0.6rem;
+  --font-size-sm: 0.75rem;
+  --font-size-lg: 1.5rem;
+  --header-height: 3rem;
+  --z-header: 50;
+  --max-w: 1100px;
+  --track-h: 1px;
+}
+
+[data-color-mode="kicks"] body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-color-mode="kicks"] ::selection {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+[data-color-mode="kicks"] * {
+  box-sizing: border-box;
+}
+
+[data-color-mode="kicks"] ul {
+  list-style: none;
+}
+
+[data-color-mode="kicks"] a {
+  color: inherit;
+  text-decoration: none;
+}
+
+[data-color-mode="kicks"] button {
+  border: none;
+  cursor: pointer;
+}
+
+[data-color-mode="kicks"] img {
+  display: block;
+  max-inline-size: 100%;
+}

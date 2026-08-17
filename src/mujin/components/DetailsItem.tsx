@@ -33,7 +33,6 @@ const DetailsItem = ({
           px: 4,
           mb: 4,
         },
-        _hover: openStyles,
         _open: openStyles,
       })}
       open={isMounted}
@@ -45,6 +44,8 @@ const DetailsItem = ({
           fontWeight: "bold",
           justifyContent: "space-between",
           p: 4,
+          _focus: open ? undefined : openStyles,
+          _hover: open ? undefined : openStyles,
         })}
         onClick={(e) => {
           e.preventDefault();
