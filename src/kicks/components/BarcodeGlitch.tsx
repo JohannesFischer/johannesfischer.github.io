@@ -80,7 +80,7 @@ const BarcodeGlitch: React.FunctionComponent = () => {
         <rect
           fill="black"
           height={SVG_H}
-          key={i}
+          key={`rect${i}`}
           ref={(el) => {
             rectRefs.current[i] = el;
           }}

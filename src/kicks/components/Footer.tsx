@@ -21,7 +21,7 @@ const Footer: React.FunctionComponent = () => {
       })}
     >
       {/* <div
-          style={{
+          className={css({
             background: "var(--color-accent)",
             display: "flex",
             flexDirection: "column",
@@ -33,22 +33,22 @@ const Footer: React.FunctionComponent = () => {
             padding: "1.25rem",
             textTransform: "uppercase",
             width: "200px",
-          }}
+      })}
         >
           <div
-            style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}
+            className={css({ display: "flex", flexDirection: "column", gap: "0.3rem" })}
           >
             <span>JF-001</span>
             <span>REACT · TYPESCRIPT</span>
             <span>MADE IN BERLIN</span>
           </div>
           <div
-            style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
+            className={css({ display: "flex", flexDirection: "column", gap: "0.5rem" })}
           >
             <a
               href={URLS.LINKEDIN}
               rel="external noreferrer"
-              style={{ color: "inherit" }}
+              className={css({ color: "inherit" })}
               target="_blank"
             >
               LinkedIn ↗
@@ -56,12 +56,12 @@ const Footer: React.FunctionComponent = () => {
             <a
               href={URLS.GITHUB_PROFILE}
               rel="external noreferrer"
-              style={{ color: "inherit" }}
+              className={css({ color: "inherit" })}
               target="_blank"
             >
               GitHub ↗
             </a>
-            <a href={resumeFile} style={{ color: "inherit" }} target="_blank">
+            <a href={resumeFile} className={css({ color: "inherit" })} target="_blank">
               Resume ↓
             </a>
           </div>
@@ -152,7 +152,7 @@ const Footer: React.FunctionComponent = () => {
       </div>
 
       <div
-        style={{
+        className={css({
           color: "var(--color-text-muted)",
           display: "flex",
           fontSize: "var(--font-size-sm)",
@@ -161,7 +161,7 @@ const Footer: React.FunctionComponent = () => {
           lineHeight: 1.7,
           marginBlock: "var(--spacing-12)",
           marginInlineStart: "15vw",
-        }}
+        })}
       >
         <p>Hersteller / Manufacturer:</p>
         <div>

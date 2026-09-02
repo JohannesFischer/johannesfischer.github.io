@@ -20,18 +20,21 @@ const TrackRow: React.FunctionComponent<TrackRowProps> = ({
     className={css({
       display: "grid",
       gap: "var(--spacing-2) var(--spacing-4)",
-      gridTemplateColumns: ["auto 1fr 1fr", "1fr 1fr 2fr"],
-      gridTemplateRows: "auto auto",
+      gridTemplateColumns: ["auto 1fr 1fr", "auto 1fr 2fr"],
+      gridTemplateRows: ["auto auto auto", "auto auto"],
       paddingBlock: "1.25rem",
       transition: "background 0.15s",
     })}
     initial={{ opacity: 0, y: 10 }}
-    transition={{ delay: index * 0.05 + 0.1, duration: 0.35, ease: "easeOut" }}
+    transition={{
+      delay: index * 0.05 + 0.1,
+      duration: 0.25,
+      ease: "easeInOut",
+    }}
     viewport={{ margin: "-40px", once: true }}
     whileHover={{ backgroundColor: "rgba(240,160,48,0.07)" }}
     whileInView={{ opacity: 1, y: 0 }}
   >
-    {/* Side indicator */}
     <div
       className={css({
         alignItems: "flex-start",
@@ -54,32 +57,35 @@ const TrackRow: React.FunctionComponent<TrackRowProps> = ({
     </div>
 
     <div
-      style={{
+      className={css({
         alignItems: "baseline",
         display: "flex",
         flexWrap: "wrap",
         gap: "0.25rem 1.5rem",
         gridColumnEnd: subtitle ? "auto" : "span 2",
-      }}
+      })}
     >
       <span
-        style={{
+        className={css({
           fontFamily: "var(--font-display)",
-          fontSize: "clamp(1rem, 2.5vw, 1.35rem)",
+          fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
           letterSpacing: "0.04em",
           lineHeight: 1.1,
-        }}
+        })}
       >
         {title}
       </span>
     </div>
     {subtitle && (
       <span
-        style={{
+        className={css({
           color: "var(--color-text-muted)",
           fontSize: "0.8rem",
+          gridColumnEnd: ["span 2", undefined, 3],
+          gridColumnStart: [2, undefined, 3],
+          gridRow: [2, undefined, 1],
           letterSpacing: "0.02em",
-        }}
+        })}
       >
         {subtitle}
       </span>
@@ -90,7 +96,7 @@ const TrackRow: React.FunctionComponent<TrackRowProps> = ({
           fontSize: "var(--font-size-sm)",
           gridColumnEnd: "span 2",
           gridColumnStart: 2,
-          gridRow: 2,
+          gridRow: [3, undefined, 2],
           letterSpacing: "0.02em",
           lineHeight: 1.55,
           paddingInlineStart: "var(--spacing-4)",
