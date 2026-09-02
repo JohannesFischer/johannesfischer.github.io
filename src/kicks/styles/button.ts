@@ -15,6 +15,10 @@ export const buttonStyles = cva({
     textAlign: "start",
     textTransform: "uppercase",
     "& svg": { boxSize: ".65rem" },
+    // _active: {
+    //     transition: "transform 150ms",
+    //     transform: 'scale(.97)'
+    // }
   },
   variants: {
     disabled: {

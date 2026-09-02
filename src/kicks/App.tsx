@@ -15,8 +15,7 @@ import launchPlanningImg from "../../assets/images/launch-planning.webp";
 import rakutenLogo from "../../assets/images/rakuten-logo.svg";
 import warehouseImg from "../../assets/images/web-dev-warehouse.webp";
 import { css } from "../../styled-system/css";
-import { SECTION_IDS } from "../const";
-import { URLS } from "../const";
+import { SECTION_IDS, URLS } from "../const";
 import { ArrowUpRightIcon } from "./components/ArrowUpRightIcon";
 import Button from "./components/Button";
 import Carousel from "./components/Carousel";
@@ -135,7 +134,7 @@ const App: React.FunctionComponent = () => {
   useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 40));
 
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig reducedMotion="user" transition={{ ease: "easeOut" }}>
       <div
         className={css({
           bg: "var(--color-bg)",
@@ -156,20 +155,23 @@ const App: React.FunctionComponent = () => {
           })}
         >
           <div>
-            <section id="skills">
+            <section
+              className={css({
+                // TODO: create common styles for App > section
+                paddingBlockStart: "var(--header-height)",
+              })}
+              id="skills"
+            >
               <div
                 className={css({
                   marginInline: "auto",
-                  maxWidth: "var(--max-w)",
                 })}
               >
-                <SideHeader
-                  label="SKILLS"
-                  subtitle="4 Tracks · Frontend Engineering"
-                />
+                <SideHeader label="Skills" subtitle="Frontend Engineering" />
                 <div
                   className={css({
-                    paddingBlock: "clamp(4rem, 8vw, 7rem)",
+                    paddingBlockEnd: "clamp(4rem, 8vw, 7rem)",
+                    paddingBlockStart: "clamp(2rem, 8vw, 4rem)",
                     paddingInline: "clamp(1.5rem, 5vw, 4rem)",
                   })}
                 >
@@ -189,22 +191,20 @@ const App: React.FunctionComponent = () => {
               className={css({
                 background: "var(--color-bg-alt)",
                 borderBlock: "1px solid var(--color-border)",
+                paddingBlockStart: "var(--header-height)",
               })}
               id="experience"
             >
               <div
                 className={css({
                   marginInline: "auto",
-                  maxWidth: "var(--max-w)",
                 })}
               >
-                <SideHeader
-                  label="EXPERIENCE"
-                  subtitle="3 Tracks · Career History"
-                />
+                <SideHeader label="Experience" subtitle="Career History" />
                 <div
                   className={css({
-                    paddingBlock: "clamp(4rem, 8vw, 7rem)",
+                    paddingBlockEnd: "clamp(4rem, 8vw, 7rem)",
+                    paddingBlockStart: "clamp(2rem, 8vw, 4rem)",
                     paddingInline: "clamp(1.5rem, 5vw, 4rem)",
                   })}
                 >
@@ -230,9 +230,7 @@ const App: React.FunctionComponent = () => {
             paddingInline: "clamp(1.5rem, 5vw, 4rem)",
           })}
         >
-          <div
-            className={css({ marginInline: "auto", maxWidth: "var(--max-w)" })}
-          >
+          <div className={css({ marginInline: "auto" })}>
             <motion.div
               className={css({ marginBlockEnd: "2.5rem" })}
               initial={{ opacity: 0, y: 16 }}
@@ -372,135 +370,139 @@ const App: React.FunctionComponent = () => {
             </div>
           </div>
         </section>
+
         <section
           className={css({
-            paddingBlock: "clamp(4rem, 8vw, 7rem)",
-            paddingInline: "clamp(1.5rem, 5vw, 4rem)",
+            paddingBlockStart: "var(--header-height)",
           })}
           id="showcase"
         >
-          <div
-            className={css({ marginInline: "auto", maxWidth: "var(--max-w)" })}
-          >
-            <SideHeader
-              label="B-SIDES"
-              subtitle="2 Tracks · Further Listening"
-            />
-
+          <div className={css({ marginInline: "auto" })}>
+            <SideHeader label="Side Projects" subtitle="Further Listening" />
             <div
               className={css({
-                display: "grid",
-                gap: "1.5rem",
-                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                marginBlockStart: "clamp(2rem, 4vw, 3rem)",
+                paddingBlock: "clamp(4rem, 8vw, 7rem)",
+                paddingInline: "clamp(1.5rem, 5vw, 4rem)",
               })}
             >
-              {[
-                {
-                  href: "/mujin/",
-                  tag: "CASE STUDY",
-                  text: "A landing page built to apply for a frontend engineering role at a robotics company. I cloned their business site and rewrote the content to be about me, as a way to show how I'd approach their frontend: real-time UI patterns, motion, and a component system from scratch.",
-                  title: "MUJIN PITCH SITE",
-                },
-                {
-                  href: "/storybook/",
-                  tag: "COMPONENT LIBRARY",
-                  text: "Isolated, documented components from this site and the Mujin pitch, browsable and testable outside the page they live on.",
-                  title: "STORYBOOK",
-                },
-              ].map(({ href, tag, text, title }, i) => (
-                <motion.a
-                  className={css({
-                    background: "var(--color-bg-alt)",
-                    border: "1px solid var(--color-border)",
-                    display: "block",
-                    padding: "1.5rem",
-                    transition: "border-color 0.15s",
-                    _hover: {
-                      borderColor: "var(--color-accent)",
-                    },
-                  })}
-                  href={href}
-                  initial={{ opacity: 0, y: 20 }}
-                  key={title}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  transition={{ delay: i * 0.1, duration: 0.4 }}
-                  viewport={{ once: true }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                >
-                  <p
+              <div
+                className={css({
+                  display: "grid",
+                  gap: "1.5rem",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                  marginBlockStart: "clamp(2rem, 4vw, 3rem)",
+                })}
+              >
+                {[
+                  {
+                    href: "/mujin/",
+                    tag: "CASE STUDY",
+                    text: "A landing page built to apply for a frontend engineering role at a robotics company. I cloned their business site and rewrote the content to be about me, as a way to show how I'd approach their frontend: real-time UI patterns, motion, and a component system from scratch.",
+                    title: "MUJIN PITCH SITE",
+                  },
+                  {
+                    href: "/storybook/",
+                    tag: "COMPONENT LIBRARY",
+                    text: "Isolated, documented components from this site and the Mujin pitch, browsable and testable outside the page they live on.",
+                    title: "STORYBOOK",
+                  },
+                ].map(({ href, tag, text, title }, i) => (
+                  <motion.a
                     className={css({
-                      color: "var(--color-text-muted)",
-                      fontSize: "0.68rem",
-                      letterSpacing: "0.1em",
-                      marginBlockEnd: "0.5rem",
-                      textTransform: "uppercase",
+                      background: "var(--color-bg-alt)",
+                      border: "1px solid var(--color-border)",
+                      display: "block",
+                      padding: "1.5rem",
+                      transition: "border-color 0.15s",
+                      _hover: {
+                        borderColor: "var(--color-accent)",
+                      },
                     })}
+                    href={href}
+                    initial={{ opacity: 0, y: 20 }}
+                    key={title}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    transition={{ delay: i * 0.1, duration: 0.4 }}
+                    viewport={{ once: true }}
+                    whileInView={{ opacity: 1, y: 0 }}
                   >
-                    {tag}
-                  </p>
-                  <div
-                    className={css({
-                      alignItems: "center",
-                      display: "flex",
-                      gap: "0.5rem",
-                      justifyContent: "space-between",
-                      marginBlockEnd: "0.5rem",
-                    })}
-                  >
-                    <h3
+                    <p
                       className={css({
-                        fontFamily: "var(--font-display)",
-                        fontSize: "1.25rem",
-                        letterSpacing: "0.06em",
+                        color: "var(--color-text-muted)",
+                        fontSize: "0.68rem",
+                        letterSpacing: "0.1em",
+                        marginBlockEnd: "0.5rem",
+                        textTransform: "uppercase",
                       })}
                     >
-                      {title}
-                    </h3>
-                    <ArrowUpRightIcon size={20} />
-                  </div>
-                  <p
-                    className={css({
-                      color: "var(--color-text-muted)",
-                      fontSize: "0.8rem",
-                      lineHeight: 1.65,
-                    })}
-                  >
-                    {text}
-                  </p>
-                </motion.a>
-              ))}
+                      {tag}
+                    </p>
+                    <div
+                      className={css({
+                        alignItems: "center",
+                        display: "flex",
+                        gap: "0.5rem",
+                        justifyContent: "space-between",
+                        marginBlockEnd: "0.5rem",
+                      })}
+                    >
+                      <h3
+                        className={css({
+                          fontFamily: "var(--font-display)",
+                          fontSize: "1.25rem",
+                          letterSpacing: "0.06em",
+                        })}
+                      >
+                        {title}
+                      </h3>
+                      <ArrowUpRightIcon size={20} />
+                    </div>
+                    <p
+                      className={css({
+                        color: "var(--color-text-muted)",
+                        fontSize: "0.8rem",
+                        lineHeight: 1.65,
+                      })}
+                    >
+                      {text}
+                    </p>
+                  </motion.a>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         <section
           className={css({
-            paddingBlock: "clamp(4rem, 8vw, 7rem)",
-            paddingInline: "clamp(1.5rem, 5vw, 4rem)",
+            paddingBlockStart: "var(--header-height)",
           })}
           id="reviews"
         >
-          <div
-            className={css({ marginInline: "auto", maxWidth: "var(--max-w)" })}
-          >
-            <SideHeader label="REVIEWS" subtitle="6 Tracks · Peer Feedback" />
-
+          <div className={css({ marginInline: "auto" })}>
+            <SideHeader label="REVIEWS" subtitle="Peer Feedback" />
             <div
-              className={css({ marginBlockStart: "clamp(2rem, 4vw, 3rem)" })}
+              className={css({
+                paddingBlockEnd: "clamp(4rem, 8vw, 7rem)",
+                paddingInline: "clamp(1.5rem, 5vw, 4rem)",
+              })}
             >
-              <Carousel>
-                {testimonials.map((testimonial) => (
-                  <TestimonialCard
-                    key={testimonial.name}
-                    name={testimonial.name}
-                    quote={testimonial.quote}
-                    role={testimonial.role}
-                    source={testimonial.source}
-                  />
-                ))}
-              </Carousel>
+              <div
+                className={css({ marginBlockStart: "clamp(2rem, 4vw, 3rem)" })}
+              >
+                <Carousel>
+                  {testimonials.map((testimonial) => (
+                    <TestimonialCard
+                      key={testimonial.name}
+                      name={testimonial.name}
+                      quote={testimonial.quote}
+                      role={testimonial.role}
+                      source={testimonial.source}
+                    />
+                  ))}
+                </Carousel>
+              </div>
             </div>
           </div>
         </section>
@@ -514,7 +516,13 @@ const App: React.FunctionComponent = () => {
           })}
         >
           <div
-            className={css({ marginInline: "auto", maxWidth: "var(--max-w)" })}
+            className={css({
+              alignItems: ["flex-start", "center"],
+              display: "flex",
+              flexDirection: "column",
+              marginInline: "auto",
+              maxWidth: "var(--max-w)",
+            })}
           >
             <p
               className={css({
@@ -531,6 +539,7 @@ const App: React.FunctionComponent = () => {
               className={css({
                 alignItems: "center",
                 display: "flex",
+                flexDirection: ["column", "row"],
                 flexWrap: "wrap",
                 gap: "3rem",
               })}
@@ -551,10 +560,7 @@ const App: React.FunctionComponent = () => {
             </div>
           </div>
         </section>
-        <section
-          className={css({ paddingInline: "clamp(1.5rem, 5vw, 4rem)" })}
-          id={SECTION_IDS.TALK}
-        >
+        <section id={SECTION_IDS.TALK}>
           <div
             className={css({
               display: "grid",
@@ -568,7 +574,7 @@ const App: React.FunctionComponent = () => {
                 borderBottom: "1px solid var(--color-border)",
                 borderRight: "1px solid var(--color-border)",
                 paddingBlock: "clamp(3rem, 6vw, 5rem)",
-                paddingInlineEnd: "3rem",
+                paddingInlineStart: "3rem",
               })}
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.4 }}
