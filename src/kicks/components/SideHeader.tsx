@@ -20,6 +20,7 @@ const SideHeader: React.FunctionComponent<SideHeaderProps> = ({
       gap: "1.5rem",
       justifyContent: "space-between",
       paddingBlockEnd: "0.75rem",
+      paddingInlineEnd: "1rem",
     })}
     initial={{ opacity: 0, x: -24 }}
     transition={{ duration: 0.4, ease: "easeOut" }}
@@ -27,11 +28,11 @@ const SideHeader: React.FunctionComponent<SideHeaderProps> = ({
     whileInView={{ opacity: 1, x: 0 }}
   >
     <div
-      style={{
+      className={css({
         alignItems: "flex-end",
         display: "flex",
         position: "relative",
-      }}
+      })}
     >
       <motion.div
         className={css({
@@ -52,28 +53,30 @@ const SideHeader: React.FunctionComponent<SideHeaderProps> = ({
         {""}
       </motion.div>
       <h2
-        style={{
+        className={css({
           fontFamily: "var(--font-display)",
           fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+          inlineSize: "max-content",
           left: "calc(clamp(1.5rem, 5vw, 4rem) + 1rem)",
           letterSpacing: "0.06em",
           lineHeight: 1,
           position: "absolute",
-        }}
+          textTransform: "uppercase",
+        })}
       >
         {label}
       </h2>
     </div>
     {subtitle && (
       <span
-        style={{
+        className={css({
           color: "var(--color-text-muted)",
           fontSize: "0.7rem",
           letterSpacing: "0.08em",
           paddingBottom: "0.2rem",
           textTransform: "uppercase",
           whiteSpace: "nowrap",
-        }}
+        })}
       >
         {subtitle}
       </span>

@@ -15,6 +15,7 @@ interface AnimationHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
+
 const Button: React.FunctionComponent<ButtonProps> = ({
   children,
   disabled,
