@@ -99,7 +99,7 @@ const TrackRow: React.FunctionComponent<TrackRowProps> = ({
           gridRow: [3, undefined, 2],
           letterSpacing: "0.02em",
           lineHeight: 1.55,
-          paddingInlineStart: "var(--spacing-4)",
+          paddingInlineStart: [0, undefined, "var(--spacing-4)"],
         })}
       >
         {credits}
