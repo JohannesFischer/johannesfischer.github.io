@@ -1,6 +1,6 @@
 {
     "name": "johannesfischer.github.io",
-    "version": "1.0.0",
+    "version": "check",
     "description": "My github page",
     "main": "index.js",
     "author": "Johannes Fischer <mail@johannes-fischer.de>",
@@ -13,7 +13,7 @@
     "scripts": {
         "dev": "vp dev",
         "format": "vp fmt .",
-        "lint": "npx eslint src",
+        "lint": "vp lint",
         "prepare": "panda codegen",
         "test": "vp test",
         "build": "vp build",
@@ -39,10 +39,10 @@
         "chromatic": "^17.1.0",
         "eslint": "^9.39.5",
         "eslint-plugin-perfectionist": "^5.10.0",
-        "eslint-plugin-storybook": "^10.5.4",
+        "eslint-plugin-storybook": "^10.6.2",
         "globals": "^17.8.0",
         "jsdom": "^29.1.1",
-        "storybook": "^10.5.4",
+        "storybook": "^10.6.2",
         "typescript": "~5.9.3",
         "vite": "npm:@voidzero-dev/vite-plus-core@1.2.0",
         "vite-plus": "1.2.0"
