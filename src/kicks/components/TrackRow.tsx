@@ -85,6 +85,7 @@ const TrackRow: React.FunctionComponent<TrackRowProps> = ({
           gridColumnStart: [2, undefined, 3],
           gridRow: [2, undefined, 1],
           letterSpacing: "0.02em",
+          textAlign: ["start", undefined, "end"],
         })}
       >
         {subtitle}

@@ -1,76 +1,60 @@
 {
-  "name": "johannesfischer.github.io",
-  "version": "1.0.0",
-  "description": "My github page",
-  "main": "index.js",
-  "author": "Johannes Fischer <mail@johannes-fischer.de>",
-  "homepage": "https://github.com/JohannesFischer/johannesfischer.github.io#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JohannesFischer/johannesfischer.github.io.git"
-  },
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "format": "prettier . --write",
-    "lint": "npx eslint src",
-    "prepare": "panda codegen && npx simple-git-hooks",
-    "test": "vitest",
-    "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -u \"github-actions-bot <github-actions@github.com>\" --repo https://x-access-token:${GITHUB_TOKEN}@github.com/<your-username>/<your-repo-name>.git",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build -o dist/storybook",
-    "build-storybook-docs": "npm run build-storybook -- --docs",
-    "chromatic": "npx chromatic"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "@pandacss/dev": "^1.11.5",
-    "@pandacss/studio": "^1.11.5",
-    "@storybook/addon-docs": "^10.5.4",
-    "@storybook/addon-themes": "^10.5.4",
-    "@storybook/react-vite": "^10.5.4",
-    "@testing-library/react": "^16.3.2",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.4",
-    "chromatic": "^17.1.0",
-    "eslint": "^9.39.4",
-    "eslint-plugin-perfectionist": "^5.10.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.3",
-    "eslint-plugin-storybook": "^10.5.4",
-    "globals": "^17.8.0",
-    "jsdom": "^29.1.1",
-    "lint-staged": "^16.4.0",
-    "prettier": "3.9.6",
-    "simple-git-hooks": "^2.13.1",
-    "storybook": "^10.5.4",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "^8.65.0",
-    "vite": "^8.1.5",
-    "vitest": "^4.1.11"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{css,json,md}": "prettier --write"
-  },
-  "overrides": {
-    "postcss": ">=8.5.10"
-  },
-  "dependencies": {
-    "lucide-react": "^1.27.0",
-    "motion": "^12.42.2",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
-  }
+    "name": "johannesfischer.github.io",
+    "version": "1.0.0",
+    "description": "My github page",
+    "main": "index.js",
+    "author": "Johannes Fischer <mail@johannes-fischer.de>",
+    "homepage": "https://github.com/JohannesFischer/johannesfischer.github.io#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JohannesFischer/johannesfischer.github.io.git"
+    },
+    "type": "module",
+    "scripts": {
+        "dev": "vp dev",
+        "format": "vp fmt .",
+        "lint": "npx eslint src",
+        "prepare": "panda codegen",
+        "test": "vp test",
+        "build": "vp build",
+        "preview": "vp preview",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist -u \"github-actions-bot <github-actions@github.com>\" --repo https://x-access-token:${GITHUB_TOKEN}@github.com/<your-username>/<your-repo-name>.git",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build -o dist/storybook",
+        "build-storybook-docs": "npm run build-storybook -- --docs",
+        "chromatic": "npx chromatic"
+    },
+    "devDependencies": {
+        "@pandacss/dev": "^1.11.5",
+        "@pandacss/studio": "^1.11.5",
+        "@storybook/addon-docs": "^10.6.2",
+        "@storybook/addon-themes": "^10.6.2",
+        "@storybook/react-vite": "^10.6.2",
+        "@testing-library/react": "^16.3.2",
+        "@types/node": "^26.6.5",
+        "@types/react": "^19.2.17",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^6.0.4",
+        "chromatic": "^17.1.0",
+        "eslint": "^9.39.5",
+        "eslint-plugin-perfectionist": "^5.10.0",
+        "eslint-plugin-storybook": "^10.5.4",
+        "globals": "^17.8.0",
+        "jsdom": "^29.1.1",
+        "storybook": "^10.5.4",
+        "typescript": "~5.9.3",
+        "vite": "npm:@voidzero-dev/vite-plus-core@1.2.0",
+        "vite-plus": "1.2.0"
+    },
+    "overrides": {
+        "postcss": ">=8.5.10",
+        "vite": "npm:@voidzero-dev/vite-plus-core@1.2.0"
+    },
+    "dependencies": {
+        "lucide-react": "^1.27.0",
+        "motion": "^12.42.2",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8"
+    }
 }
