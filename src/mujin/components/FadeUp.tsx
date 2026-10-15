@@ -18,7 +18,7 @@ function FadeUp<T extends keyof HTMLElementTagNameMap = "div">({
   transition,
   ...props
 }: FadeUpProps<T>) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
   const Component = motion[as ?? "div"] as React.ComponentType<any>;
 
   return (
