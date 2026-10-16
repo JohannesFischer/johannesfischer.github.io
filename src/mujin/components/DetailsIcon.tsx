@@ -24,16 +24,16 @@ const DetailsIcon = forwardRef<DetailsIconHandle, DetailsIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start("animate"),
-        stopAnimation: () => controls.start("normal"),
+        startAnimation: () => void controls.start("animate"),
+        stopAnimation: () => void controls.start("normal"),
       };
     });
 
     useEffect(() => {
       if (open) {
-        controls.start("animate");
+        void controls.start("animate");
       } else {
-        controls.start("normal");
+        void controls.start("normal");
       }
     }, [controls, open]);
 

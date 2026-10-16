@@ -15,15 +15,17 @@ import launchPlanningImg from "../../assets/images/launch-planning.webp";
 import rakutenLogo from "../../assets/images/rakuten-logo.svg";
 import warehouseImg from "../../assets/images/web-dev-warehouse.webp";
 import { css } from "../../styled-system/css";
-import { SECTION_IDS } from "../const";
+import { SECTION_IDS, URLS } from "../const";
 import { ArrowUpRightIcon } from "./components/ArrowUpRightIcon";
 import Button from "./components/Button";
+import Carousel from "./components/Carousel";
 import ContactDialog from "./components/ContactDialog";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
 import SideHeader from "./components/SideHeader";
+import TestimonialCard from "./components/TestimonialCard";
 import TrackRow from "./components/TrackRow";
+import Hero from "./sections/Hero";
 
 const sideATracks = [
   {
@@ -75,6 +77,51 @@ const logos = [
   { alt: "CEWE", src: ceweLogo },
 ];
 
+const testimonials = [
+  {
+    name: "Akira S.",
+    quote:
+      "Whether he was leading the engineering efforts for the Indeed Apply team or optimizing workflows for our large-scale libraries, Johannes consistently balanced high technical standards with a deep understanding of UX. He is a rare engineer who can manage both infrastructure and design at scale, and I highly recommend him for any senior engineering or leadership role.",
+    role: "Staff Software Engineer, Indeed",
+    source: { href: URLS.LINKEDIN, title: "LinkedIn" },
+  },
+  {
+    name: "Corey C.",
+    quote:
+      "Designing elegant experiences for enterprise applications is not easy, especially when the subject matter involves high-density data visualization & other business analytics, but Johannes excelled here and even went above and beyond the responsibilities normally expected from his role to deliver a high-quality experience to a vital customer base. Any company looking for a knowledgeable, dedicated colleague that's also a pleasure to work with would be fortunate to have Johannes as part of the team.",
+    role: "UX Director, Indeed",
+    source: { href: URLS.LINKEDIN, title: "LinkedIn" },
+  },
+  {
+    name: "Pete W.",
+    quote:
+      "Johannes is nothing short of a god when it comes to his development knowledge and delivery here at Indeed. He was responsible for planning, architecture, and delivery the most heavily used [internal a11y] utility [...] and for the crucial storybook add-on.",
+    role: "Accessibility Engineer, Indeed",
+    source: { title: "Internal peer review" },
+  },
+  {
+    name: "Todd O.",
+    quote:
+      "Johannes extensive FE experience is a major asset to the Representation team and [internal component library]. He's one of our best FE resources. He's always on top of code reviews and gives thorough and well thought out feedback.",
+    role: "Senior UX Developer, Indeed",
+    source: { title: "Internal peer review" },
+  },
+  {
+    name: "Thomas S.",
+    quote:
+      "Johannes has a ton of Frontend expertise and is always sharing that knowledge in MR in helpful tips. He has been a huge help in building out the [internal component library].",
+    role: "Software Engineer I, Indeed",
+    source: { title: "Internal peer review" },
+  },
+  {
+    name: "Scott C.",
+    quote:
+      "Participating in mentorship with Johannes has continued to be a fruitful experience over this semester. In our weekly meetings he continually finds meaningful subject matter for us to discuss and work through together. [...] This has helped me stay motivated and gives me purpose.",
+    role: "Content Aggregation Engineer, Indeed",
+    source: { title: "Internal peer review" },
+  },
+];
+
 const App: React.FunctionComponent = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -87,7 +134,7 @@ const App: React.FunctionComponent = () => {
   useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 40));
 
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig reducedMotion="user" transition={{ ease: "easeOut" }}>
       <div
         className={css({
           bg: "var(--color-bg)",
@@ -110,29 +157,33 @@ const App: React.FunctionComponent = () => {
           <div>
             <section
               className={css({
-                paddingBlock: "clamp(4rem, 8vw, 7rem)",
-                paddingInline: "clamp(1.5rem, 5vw, 4rem)",
+                // TODO: create common styles for App > section
+                paddingBlockStart: "var(--header-height)",
               })}
               id="skills"
             >
               <div
                 className={css({
                   marginInline: "auto",
-                  maxWidth: "var(--max-w)",
                 })}
               >
-                <SideHeader
-                  label="SKILLS"
-                  subtitle="4 Tracks · Frontend Engineering"
-                />
-                {sideATracks.map((track, i) => (
-                  <TrackRow
-                    credits={track.credits}
-                    index={i}
-                    key={track.title}
-                    title={track.title}
-                  />
-                ))}
+                <SideHeader label="Skills" subtitle="Frontend Engineering" />
+                <div
+                  className={css({
+                    paddingBlockEnd: "clamp(4rem, 8vw, 7rem)",
+                    paddingBlockStart: "clamp(2rem, 8vw, 4rem)",
+                    paddingInline: "clamp(1.5rem, 5vw, 4rem)",
+                  })}
+                >
+                  {sideATracks.map((track, i) => (
+                    <TrackRow
+                      credits={track.credits}
+                      index={i}
+                      key={track.title}
+                      title={track.title}
+                    />
+                  ))}
+                </div>
               </div>
             </section>
 
@@ -140,30 +191,33 @@ const App: React.FunctionComponent = () => {
               className={css({
                 background: "var(--color-bg-alt)",
                 borderBlock: "1px solid var(--color-border)",
-                paddingBlock: "clamp(4rem, 8vw, 7rem)",
-                paddingInline: "clamp(1.5rem, 5vw, 4rem)",
+                paddingBlockStart: "var(--header-height)",
               })}
               id="experience"
             >
               <div
                 className={css({
                   marginInline: "auto",
-                  maxWidth: "var(--max-w)",
                 })}
               >
-                <SideHeader
-                  label="EXPERIENCE"
-                  subtitle="3 Tracks · Career History"
-                />
-                {sideBTracks.map((track, i) => (
-                  <TrackRow
-                    credits={track.credits}
-                    index={i}
-                    key={track.title}
-                    subtitle={track.subtitle}
-                    title={track.title}
-                  />
-                ))}
+                <SideHeader label="Experience" subtitle="Career History" />
+                <div
+                  className={css({
+                    paddingBlockEnd: "clamp(4rem, 8vw, 7rem)",
+                    paddingBlockStart: "clamp(2rem, 8vw, 4rem)",
+                    paddingInline: "clamp(1.5rem, 5vw, 4rem)",
+                  })}
+                >
+                  {sideBTracks.map((track, i) => (
+                    <TrackRow
+                      credits={track.credits}
+                      index={i}
+                      key={track.title}
+                      subtitle={track.subtitle}
+                      title={track.title}
+                    />
+                  ))}
+                </div>
               </div>
             </section>
           </div>
@@ -176,11 +230,9 @@ const App: React.FunctionComponent = () => {
             paddingInline: "clamp(1.5rem, 5vw, 4rem)",
           })}
         >
-          <div
-            className={css({ marginInline: "auto", maxWidth: "var(--max-w)" })}
-          >
+          <div className={css({ marginInline: "auto" })}>
             <motion.div
-              className={css({ marginBottom: "2.5rem" })}
+              className={css({ marginBlockEnd: "2.5rem" })}
               initial={{ opacity: 0, y: 16 }}
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
@@ -191,7 +243,7 @@ const App: React.FunctionComponent = () => {
                   color: "var(--color-text-muted)",
                   fontSize: "0.7rem",
                   letterSpacing: "0.1em",
-                  marginBottom: "0.5rem",
+                  marginBlockEnd: "0.5rem",
                   textTransform: "uppercase",
                 })}
               >
@@ -240,7 +292,7 @@ const App: React.FunctionComponent = () => {
                   <div
                     className={css({
                       height: "220px",
-                      marginBottom: "1rem",
+                      marginBlockEnd: "1rem",
                       overflow: "hidden",
                       position: "relative",
                     })}
@@ -273,7 +325,7 @@ const App: React.FunctionComponent = () => {
                       fontFamily: "var(--font-display)",
                       fontSize: "1.25rem",
                       letterSpacing: "0.06em",
-                      marginBottom: "0.5rem",
+                      marginBlockEnd: "0.5rem",
                     })}
                   >
                     {title}
@@ -283,7 +335,7 @@ const App: React.FunctionComponent = () => {
                       color: "var(--color-text-muted)",
                       fontSize: "0.8rem",
                       lineHeight: 1.65,
-                      marginBottom: "1rem",
+                      marginBlockEnd: "1rem",
                     })}
                   >
                     {text}
@@ -321,6 +373,142 @@ const App: React.FunctionComponent = () => {
 
         <section
           className={css({
+            paddingBlockStart: "var(--header-height)",
+          })}
+          id="showcase"
+        >
+          <div className={css({ marginInline: "auto" })}>
+            <SideHeader label="Side Projects" subtitle="Further Listening" />
+            <div
+              className={css({
+                paddingBlock: "clamp(4rem, 8vw, 7rem)",
+                paddingInline: "clamp(1.5rem, 5vw, 4rem)",
+              })}
+            >
+              <div
+                className={css({
+                  display: "grid",
+                  gap: "1.5rem",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                  marginBlockStart: "clamp(2rem, 4vw, 3rem)",
+                })}
+              >
+                {[
+                  {
+                    href: "/mujin/",
+                    tag: "CASE STUDY",
+                    text: "A landing page built to apply for a frontend engineering role at a robotics company. I cloned their business site and rewrote the content to be about me, as a way to show how I'd approach their frontend: real-time UI patterns, motion, and a component system from scratch.",
+                    title: "MUJIN PITCH SITE",
+                  },
+                  {
+                    href: "/storybook/",
+                    tag: "COMPONENT LIBRARY",
+                    text: "Isolated, documented components from this site and the Mujin pitch, browsable and testable outside the page they live on.",
+                    title: "STORYBOOK",
+                  },
+                ].map(({ href, tag, text, title }, i) => (
+                  <motion.a
+                    className={css({
+                      background: "var(--color-bg-alt)",
+                      border: "1px solid var(--color-border)",
+                      display: "block",
+                      padding: "1.5rem",
+                      transition: "border-color 0.15s",
+                      _hover: {
+                        borderColor: "var(--color-accent)",
+                      },
+                    })}
+                    href={href}
+                    initial={{ opacity: 0, y: 20 }}
+                    key={title}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    transition={{ delay: i * 0.1, duration: 0.4 }}
+                    viewport={{ once: true }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                  >
+                    <p
+                      className={css({
+                        color: "var(--color-text-muted)",
+                        fontSize: "0.68rem",
+                        letterSpacing: "0.1em",
+                        marginBlockEnd: "0.5rem",
+                        textTransform: "uppercase",
+                      })}
+                    >
+                      {tag}
+                    </p>
+                    <div
+                      className={css({
+                        alignItems: "center",
+                        display: "flex",
+                        gap: "0.5rem",
+                        justifyContent: "space-between",
+                        marginBlockEnd: "0.5rem",
+                      })}
+                    >
+                      <h3
+                        className={css({
+                          fontFamily: "var(--font-display)",
+                          fontSize: "1.25rem",
+                          letterSpacing: "0.06em",
+                        })}
+                      >
+                        {title}
+                      </h3>
+                      <ArrowUpRightIcon size={20} />
+                    </div>
+                    <p
+                      className={css({
+                        color: "var(--color-text-muted)",
+                        fontSize: "0.8rem",
+                        lineHeight: 1.65,
+                      })}
+                    >
+                      {text}
+                    </p>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className={css({
+            paddingBlockStart: "var(--header-height)",
+          })}
+          id="reviews"
+        >
+          <div className={css({ marginInline: "auto" })}>
+            <SideHeader label="REVIEWS" subtitle="Peer Feedback" />
+            <div
+              className={css({
+                paddingBlockEnd: "clamp(4rem, 8vw, 7rem)",
+                paddingInline: "clamp(1.5rem, 5vw, 4rem)",
+              })}
+            >
+              <div
+                className={css({ marginBlockStart: "clamp(2rem, 4vw, 3rem)" })}
+              >
+                <Carousel>
+                  {testimonials.map((testimonial) => (
+                    <TestimonialCard
+                      key={testimonial.name}
+                      name={testimonial.name}
+                      quote={testimonial.quote}
+                      role={testimonial.role}
+                      source={testimonial.source}
+                    />
+                  ))}
+                </Carousel>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className={css({
             background: "var(--color-bg-alt)",
             borderBlock: "1px solid var(--color-border)",
             paddingBlock: "clamp(3rem, 6vw, 5rem)",
@@ -328,23 +516,30 @@ const App: React.FunctionComponent = () => {
           })}
         >
           <div
-            className={css({ marginInline: "auto", maxWidth: "var(--max-w)" })}
+            className={css({
+              alignItems: ["flex-start", "center"],
+              display: "flex",
+              flexDirection: "column",
+              marginInline: "auto",
+              maxWidth: "var(--max-w)",
+            })}
           >
             <p
               className={css({
                 color: "var(--color-text-muted)",
                 fontSize: "0.7rem",
                 letterSpacing: "0.1em",
-                marginBottom: "2rem",
+                marginBlockEnd: "2rem",
                 textTransform: "uppercase",
               })}
             >
-              Licensed courtesy of
+              Worked for market leaders
             </p>
             <div
               className={css({
                 alignItems: "center",
                 display: "flex",
+                flexDirection: ["column", "row"],
                 flexWrap: "wrap",
                 gap: "3rem",
               })}
@@ -352,7 +547,7 @@ const App: React.FunctionComponent = () => {
               {logos.map(({ alt, src }, i) => (
                 <motion.img
                   alt={alt}
-                  className={css({ height: "2rem", objectFit: "contain" })}
+                  className={css({ height: "3rem", objectFit: "contain" })}
                   initial={{ opacity: 0 }}
                   key={alt}
                   loading="lazy"
@@ -365,11 +560,7 @@ const App: React.FunctionComponent = () => {
             </div>
           </div>
         </section>
-
-        <section
-          className={css({ paddingInline: "clamp(1.5rem, 5vw, 4rem)" })}
-          id={SECTION_IDS.TALK}
-        >
+        <section id={SECTION_IDS.TALK}>
           <div
             className={css({
               display: "grid",
@@ -383,7 +574,7 @@ const App: React.FunctionComponent = () => {
                 borderBottom: "1px solid var(--color-border)",
                 borderRight: "1px solid var(--color-border)",
                 paddingBlock: "clamp(3rem, 6vw, 5rem)",
-                paddingRight: "3rem",
+                paddingInlineStart: "3rem",
               })}
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.4 }}
@@ -395,7 +586,7 @@ const App: React.FunctionComponent = () => {
                   color: "var(--color-text-muted)",
                   fontSize: "0.7rem",
                   letterSpacing: "0.1em",
-                  marginBottom: "0.75rem",
+                  marginBlockEnd: "0.75rem",
                   textTransform: "uppercase",
                 })}
               >
@@ -407,7 +598,7 @@ const App: React.FunctionComponent = () => {
                   fontSize: "clamp(2rem, 6vw, 4rem)",
                   letterSpacing: "0.04em",
                   lineHeight: 1.05,
-                  marginBottom: "1.5rem",
+                  marginBlockEnd: "1.5rem",
                 })}
               >
                 LET'S TALK
@@ -419,7 +610,7 @@ const App: React.FunctionComponent = () => {
                   color: "var(--color-text-muted)",
                   fontSize: "0.85rem",
                   lineHeight: 1.7,
-                  marginBottom: "2rem",
+                  marginBlockEnd: "2rem",
                   maxWidth: "50ch",
                 })}
               >
@@ -460,11 +651,13 @@ const App: React.FunctionComponent = () => {
               <span>JOHANNES FISCHER</span>
               <span>SENIOR FRONTEND</span>
               <span>ENGINEER</span>
-              <span className={css({ marginTop: "0.75rem" })}>
+              <span className={css({ marginBlockStart: "0.75rem" })}>
                 YOKOHAMA, JAPAN
               </span>
               <span>REACT · TYPESCRIPT</span>
-              <span className={css({ marginTop: "0.75rem", opacity: 0.65 })}>
+              <span
+                className={css({ marginBlockStart: "0.75rem", opacity: 0.65 })}
+              >
                 JF-001
               </span>
             </motion.div>

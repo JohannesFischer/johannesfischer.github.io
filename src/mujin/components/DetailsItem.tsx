@@ -39,6 +39,7 @@ const DetailsItem = ({
     >
       <summary
         className={css({
+          cursor: "pointer",
           display: "flex",
           fontSize: "xl",
           fontWeight: "bold",
@@ -55,7 +56,6 @@ const DetailsItem = ({
             setIsMounted(true);
           }
         }}
-        style={{ cursor: "pointer" }}
       >
         {summary}
         <DetailsIcon open={open} />
@@ -64,10 +64,10 @@ const DetailsItem = ({
         {open && (
           <motion.div
             animate={{ height: "auto" }}
+            className={css({ overflow: "hidden" })}
             exit={{ height: 0 }}
             initial={{ height: 0 }}
             key={summary}
-            style={{ overflow: "hidden" }}
             transition={{ duration: 0.2, ease: "easeOut" }}
           >
             <FadeUp

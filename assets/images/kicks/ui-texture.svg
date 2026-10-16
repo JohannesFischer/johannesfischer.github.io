@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540">
+  <defs>
+    <mask id="crescent1" maskUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="180" height="180" fill="#fff"/>
+      <circle cx="130" cy="50" r="62" fill="#000"/>
+    </mask>
+    <mask id="crescent2" maskUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="180" height="180" fill="#fff"/>
+      <circle cx="40" cy="140" r="62" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="900" height="540" fill="#f2efe4"/>
+
+  <!-- row 1 -->
+  <g transform="translate(0,0)">
+    <rect width="180" height="180" fill="#f2efe4" stroke="#d4cfc0" stroke-width="1"/>
+    <circle cx="90" cy="90" r="46" fill="none" stroke="#111110" stroke-width="10"/>
+  </g>
+  <g transform="translate(180,0)">
+    <rect width="180" height="180" fill="#f1b426" stroke="#d4cfc0" stroke-width="1"/>
+    <g mask="url(#crescent1)"><rect width="180" height="180" fill="#f2efe4"/></g>
+  </g>
+  <g transform="translate(360,0)">
+    <rect width="180" height="180" fill="#111110" stroke="#d4cfc0" stroke-width="1"/>
+    <rect x="60" y="60" width="60" height="60" fill="#f1b426" transform="rotate(45 90 90)"/>
+  </g>
+  <g transform="translate(540,0)">
+    <rect width="180" height="180" fill="#e8e4d8" stroke="#d4cfc0" stroke-width="1"/>
+    <path d="M76,58 L76,122 L91,108 L100,128 L110,124 L101,104 L118,104 Z" fill="#111110"/>
+  </g>
+  <g transform="translate(720,0)">
+    <rect width="180" height="180" fill="#f2efe4" stroke="#d4cfc0" stroke-width="1"/>
+    <g fill="#f1b426">
+      <circle cx="65" cy="65" r="7"/><circle cx="90" cy="65" r="7"/><circle cx="115" cy="65" r="7"/>
+      <circle cx="65" cy="90" r="7"/><circle cx="90" cy="90" r="7"/><circle cx="115" cy="90" r="7"/>
+      <circle cx="65" cy="115" r="7"/><circle cx="90" cy="115" r="7"/><circle cx="115" cy="115" r="7"/>
+    </g>
+  </g>
+
+  <!-- row 2 -->
+  <g transform="translate(0,180)">
+    <rect width="180" height="180" fill="#f1b426" stroke="#d4cfc0" stroke-width="1"/>
+    <path d="M55,95 L80,120 L128,64" fill="none" stroke="#111110" stroke-width="12" stroke-linecap="square"/>
+  </g>
+  <g transform="translate(180,180)">
+    <rect width="180" height="180" fill="#e8e4d8" stroke="#d4cfc0" stroke-width="1"/>
+    <circle cx="90" cy="90" r="52" fill="none" stroke="#111110" stroke-width="2"/>
+    <circle cx="90" cy="90" r="26" fill="#f1b426"/>
+  </g>
+  <g transform="translate(360,180)">
+    <rect width="180" height="180" fill="#111110" stroke="#d4cfc0" stroke-width="1"/>
+    <rect x="45" y="70" width="90" height="40" rx="20" fill="none" stroke="#f2efe4" stroke-width="3"/>
+    <circle cx="110" cy="90" r="14" fill="#f2efe4"/>
+  </g>
+  <g transform="translate(540,180)">
+    <rect width="180" height="180" fill="#f2efe4" stroke="#d4cfc0" stroke-width="1"/>
+    <path d="M0,180 L180,180 L180,0 Z" fill="#111110"/>
+  </g>
+  <g transform="translate(720,180)">
+    <rect width="180" height="180" fill="#f89e2c" stroke="#d4cfc0" stroke-width="1"/>
+    <circle cx="60" cy="90" r="9" fill="#f2efe4"/>
+    <circle cx="90" cy="90" r="9" fill="#f2efe4"/>
+    <circle cx="120" cy="90" r="9" fill="#f2efe4"/>
+  </g>
+
+  <!-- row 3 -->
+  <g transform="translate(0,360)">
+    <rect width="180" height="180" fill="#e8e4d8" stroke="#d4cfc0" stroke-width="1"/>
+    <g mask="url(#crescent2)"><rect width="180" height="180" fill="#f1b426"/></g>
+  </g>
+  <g transform="translate(180,360)">
+    <rect width="180" height="180" fill="#f2efe4" stroke="#d4cfc0" stroke-width="1"/>
+    <rect x="80" y="45" width="20" height="90" fill="#111110"/>
+    <rect x="45" y="80" width="90" height="20" fill="#111110"/>
+  </g>
+  <g transform="translate(360,360)">
+    <rect width="180" height="180" fill="#111110" stroke="#d4cfc0" stroke-width="1"/>
+    <path d="M65,55 L115,90 L65,125" fill="none" stroke="#f1b426" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <g transform="translate(540,360)">
+    <rect width="180" height="180" fill="#f1b426" stroke="#d4cfc0" stroke-width="1"/>
+    <rect x="55" y="55" width="70" height="70" fill="none" stroke="#f2efe4" stroke-width="6" transform="rotate(45 90 90)"/>
+  </g>
+  <g transform="translate(720,360)">
+    <rect width="180" height="180" fill="#f2efe4" stroke="#d4cfc0" stroke-width="1"/>
+    <path d="M180,180 L180,40 A140,140 0 0 0 40,180 Z" fill="#111110"/>
+  </g>
+</svg>
