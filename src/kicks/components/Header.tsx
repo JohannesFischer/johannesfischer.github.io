@@ -29,7 +29,7 @@ const Header: React.FunctionComponent<{
       zIndex: "var(--z-header)",
     })}
     initial={false}
-    transition={{ duration: 0.25 }}
+    transition={{ duration: 0.25, ease: "easeInOut" }}
   >
     <span
       className={css({

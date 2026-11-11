@@ -6,7 +6,7 @@ import { buttonStyles } from "../styles/button";
 
 export interface ButtonProps extends HTMLMotionProps<"button"> {
   children: React.ReactNode;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
   iconAfter?: React.ForwardRefExoticComponent<any>;
   variant?: "primary" | "secondary" | "tertiary";
 }
@@ -15,6 +15,7 @@ interface AnimationHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
+
 const Button: React.FunctionComponent<ButtonProps> = ({
   children,
   disabled,

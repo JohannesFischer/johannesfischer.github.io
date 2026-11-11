@@ -50,8 +50,8 @@ const ArrowDownIcon = forwardRef<ArrowDownIconHandle, ArrowDownIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start("animate"),
-        stopAnimation: () => controls.start("normal"),
+        startAnimation: () => void controls.start("animate"),
+        stopAnimation: () => void controls.start("normal"),
       };
     });
 
@@ -60,7 +60,7 @@ const ArrowDownIcon = forwardRef<ArrowDownIconHandle, ArrowDownIconProps>(
         if (isControlledRef.current) {
           onMouseEnter?.(e);
         } else {
-          controls.start("animate");
+          void controls.start("animate");
         }
       },
       [controls, onMouseEnter],
@@ -71,7 +71,7 @@ const ArrowDownIcon = forwardRef<ArrowDownIconHandle, ArrowDownIconProps>(
         if (isControlledRef.current) {
           onMouseLeave?.(e);
         } else {
-          controls.start("normal");
+          void controls.start("normal");
         }
       },
       [controls, onMouseLeave],
